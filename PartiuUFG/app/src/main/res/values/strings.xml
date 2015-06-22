@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">#PartiuUFG</string>
+
+    <string name="action_settings">Configurações</string>
+    <string name="action_search">Buscar</string>
+    <string name="search_hint">Pesquisar ponto de ônibus</string>
+    <string name="title_activity_point">PointActivity</string>
+    <string name="hello_world">Hello world!</string>
+</resources>
