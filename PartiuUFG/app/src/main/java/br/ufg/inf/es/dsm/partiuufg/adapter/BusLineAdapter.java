@@ -1,6 +1,7 @@
 package br.ufg.inf.es.dsm.partiuufg.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
+import br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity;
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
 import br.ufg.inf.es.dsm.partiuufg.model.Point;
@@ -22,9 +24,11 @@ import br.ufg.inf.es.dsm.partiuufg.model.Point;
 public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineViewHolder> {
     private List<BusLine> busLines;
     private Integer pointNumber;
+    private Context context;
 
-    public BusLineAdapter(List<BusLine> busLines, Integer pointNumber) {
+    public BusLineAdapter(List<BusLine> busLines, Integer pointNumber, Context context) {
         this.pointNumber = pointNumber;
+        this.context = context;
 
         if(busLines == null) {
             this.busLines = new ArrayList<>();
@@ -44,7 +48,7 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
 
     @Override
     public void onBindViewHolder(BusLineViewHolder busLineViewHolder, int i) {
-        BusLine ci = busLines.get(i);
+        final BusLine ci = busLines.get(i);
 
         BusTime busTime = ci.getPoint(pointNumber).getBusTime(ci.getNumber());
         String destination = ci.getName();
@@ -53,7 +57,7 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
             nextTime = busTime.getNextTime();
         }
 
-        String displayNextTime = busLineViewHolder.context.getString(R.string.no_forecast);
+        String displayNextTime = context.getString(R.string.no_forecast);
         if( nextTime != null && nextTime > 0 ) {
             displayNextTime = nextTime.toString() + " min";
         }
@@ -62,6 +66,16 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         busLineViewHolder.vDestination.setText(destination);
         busLineViewHolder.vNextTime.setText(displayNextTime);
         busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
+
+        busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, BusStopLineActivity.class);
+                intent.putExtra("buLine", ci);
+                intent.putExtra("pointNumber", pointNumber);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -70,24 +84,24 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         View itemView = LayoutInflater.
                 from(context).
                 inflate(R.layout.bus_time_card, viewGroup, false);
-
-        return new BusLineViewHolder(itemView, context);
+        return new BusLineViewHolder(itemView);
     }
 
     public static class BusLineViewHolder extends RecyclerView.ViewHolder {
+        public View vCard;
         public TextView vLineNumber;
         public TextView vDestination;
         public TextView vNextTime;
         public TextView vNextTimeAproxLabel;
-        public final Context context;
 
-        public BusLineViewHolder(View v, final Context context) {
+        public BusLineViewHolder(View v) {
             super(v);
+
+            vCard = v;
             vLineNumber = (TextView) v.findViewById(R.id.lineNumber);
             vDestination = (TextView) v.findViewById(R.id.destination);
             vNextTime = (TextView) v.findViewById(R.id.nextTime);
             vNextTimeAproxLabel = (TextView) v.findViewById(R.id.nextTimeAproxLabel);
-            this.context = context;
         }
     }
 }

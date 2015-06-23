@@ -7,4 +7,7 @@
     <string name="title_activity_point">PointActivity</string>
     <string name="no_forecast">Sem prev.</string>
     <string name="about_next_minutes">(aprox.)</string>
+    <string name="title_activity_bus_stop_line">BusStopLineActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

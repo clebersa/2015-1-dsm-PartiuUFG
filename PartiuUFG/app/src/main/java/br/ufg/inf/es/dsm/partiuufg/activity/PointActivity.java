@@ -18,6 +18,15 @@ import br.ufg.inf.es.dsm.partiuufg.model.WebServiceResponse;
 public class PointActivity extends AbstractActivity implements WebServiceConsumer {
     NextPointBusTimeFragment fragment;
 
+    public void updatePointViewInformation(Point point) {
+        TextView address = (TextView) findViewById(R.id.tvAddress);
+        address.setText(point.getAddress());
+        TextView reference = (TextView) findViewById(R.id.tvReference);
+        reference.setText(point.getReferenceLocation());
+        TextView searchTime = (TextView) findViewById(R.id.tvSearchTime);
+        searchTime.setText(point.getSearchDateFormated());
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +58,6 @@ public class PointActivity extends AbstractActivity implements WebServiceConsume
         return super.onOptionsItemSelected(item);
     }
 
-    public void updatePointViewInformation(Point point) {
-        TextView address = (TextView) findViewById(R.id.tvAddress);
-        address.setText(point.getAddress());
-        TextView reference = (TextView) findViewById(R.id.tvReference);
-        reference.setText(point.getReferenceLocation());
-        TextView searchTime = (TextView) findViewById(R.id.tvSearchTime);
-        searchTime.setText(point.getSearchDateFormated());
-    }
     @Override
     public void receiveResponse(WebServiceResponse response) {
         if( response.isSuccess() ) {

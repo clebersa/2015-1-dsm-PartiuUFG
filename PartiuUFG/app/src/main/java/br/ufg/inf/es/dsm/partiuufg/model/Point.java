@@ -96,6 +96,10 @@ public class Point implements Serializable {
     }
 
     public String getSearchDateFormated() {
-        return new SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(searchDate);
+        try {
+            return new SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(searchDate);
+        } catch( Exception e ) {
+            return "Sem informação";
+        }
     }
 }
