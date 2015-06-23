@@ -12,6 +12,85 @@ android:orientation="vertical">
         android:background="?attr/colorPrimary"
         android:elevation="2dp" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Endereço:"
+            android:id="@+id/tvAddressLabel"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Interna Do Campus, Area Ufg - Goiania"
+            android:id="@+id/tvAddress"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/tvAddressLabel"
+            android:layout_alignTop="@+id/tvAddressLabel"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Referência:"
+            android:id="@+id/tvReferenceLabel"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Entre As Faculdades De Educacao Fisica E De Letras"
+            android:id="@+id/tvReference"
+            android:layout_alignTop="@+id/tvReferenceLabel"
+            android:layout_toRightOf="@+id/tvReferenceLabel"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Pesquisado em:"
+            android:id="@+id/tvSearchTimeLabel"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="23/06/2015 às 03:06"
+            android:id="@+id/tvSearchTime"
+            android:layout_toRightOf="@+id/tvSearchTimeLabel"
+            android:layout_alignTop="@+id/tvSearchTimeLabel"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools" android:id="@+id/linhas"
         android:layout_width="match_parent" android:layout_height="match_parent"

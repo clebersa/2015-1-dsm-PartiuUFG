@@ -16,13 +16,6 @@ public class BusTime implements Serializable {
     private Integer nextTime;
     private Integer followingTime;
 
-    public BusTime(Integer number, String destination, Integer nexTime, Integer followingTime) {
-        this.number = number;
-        this.destination = destination;
-        this.nextTime = nexTime;
-        this.followingTime = followingTime;
-    }
-
     public BusTime(String jsonIn) {
         try {
             JSONObject reader = new JSONObject(jsonIn);

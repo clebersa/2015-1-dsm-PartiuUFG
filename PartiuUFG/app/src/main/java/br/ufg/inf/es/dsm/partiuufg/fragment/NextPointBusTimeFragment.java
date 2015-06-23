@@ -2,13 +2,13 @@ package br.ufg.inf.es.dsm.partiuufg.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 
 import com.devspark.progressfragment.ProgressFragment;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.adapter.BusTimeAdapter;
-import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
+import br.ufg.inf.es.dsm.partiuufg.adapter.BusLineAdapter;
 import br.ufg.inf.es.dsm.partiuufg.model.Point;
 
 /**
@@ -42,8 +42,10 @@ public class NextPointBusTimeFragment extends ProgressFragment {
             return;
         }
 
-        BusTimeAdapter busTimeAdapter = new BusTimeAdapter(point.getNextBuses());
-        recList.setAdapter(busTimeAdapter);
+        BusLineAdapter busLineAdapter = new BusLineAdapter(
+                point.getAvailableLines(),
+                point.getNumber());
+        recList.setAdapter(busLineAdapter);
 
         setContentEmpty(false);
         setContentShown(true);

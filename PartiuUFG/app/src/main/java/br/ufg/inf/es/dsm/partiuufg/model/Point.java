@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Created by Bruno on 19/06/2015.
@@ -18,7 +19,7 @@ import java.util.Date;
 public class Point implements Serializable {
     private Integer number;
     private ArrayList<BusLine> availableLines = new ArrayList<BusLine>();
-    private ArrayList<BusTime> nextBuses = new ArrayList<BusTime>();
+    private HashMap<Integer, BusTime> busTimes = new HashMap<Integer, BusTime>();
     private String address;
     private String referenceLocation;
     private Boolean isTerminal;
@@ -43,6 +44,7 @@ public class Point implements Serializable {
             BusLine tmpBusLine;
             for( int i = 0; i < availableLines.length(); i++ ) {
                 tmpBusLine = new BusLine( availableLines.getJSONObject(i).toString() );
+                tmpBusLine.addPoint(this);
                 this.availableLines.add( tmpBusLine );
             }
 
@@ -50,7 +52,7 @@ public class Point implements Serializable {
             BusTime tmpBusTime;
             for( int i = 0; i < nextBuses.length(); i++ ) {
                 tmpBusTime = new BusTime( nextBuses.getJSONObject(i).toString() );
-                this.nextBuses.add( tmpBusTime );
+                this.busTimes.put( tmpBusTime.getNumber(), tmpBusTime );
             }
         } catch (JSONException e) {
             Log.d(this.getClass().getSimpleName(), e.getMessage());
@@ -65,8 +67,8 @@ public class Point implements Serializable {
         return availableLines;
     }
 
-    public ArrayList<BusTime> getNextBuses() {
-        return nextBuses;
+    public HashMap<Integer,BusTime> getNextBuses() {
+        return busTimes;
     }
 
     public String getAddress() {
@@ -83,5 +85,17 @@ public class Point implements Serializable {
 
     public Date getSearchDate() {
         return searchDate;
+    }
+
+    public BusTime getBusTime(Integer busLine) {
+        if(busTimes.containsKey(busLine)) {
+            return busTimes.get(busLine);
+        }
+
+        return null;
+    }
+
+    public String getSearchDateFormated() {
+        return new SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(searchDate);
     }
 }
