@@ -55,7 +55,7 @@
             android:layout_marginLeft="16dp"
             android:layout_alignParentBottom="false"
             android:layout_centerVertical="true"
-            android:onClick="gcmFavorited" />
+            android:onClick="gcmFavorite" />
 
     </RelativeLayout>
 
@@ -79,7 +79,6 @@
             android:text="00:00"
             android:textColor="@color/bus_timer_text"
             android:textSize="@dimen/bus_timer_text"
-            android:layout_alignParentStart="false"
             android:layout_centerInParent="true"
             android:textIsSelectable="true" />
 

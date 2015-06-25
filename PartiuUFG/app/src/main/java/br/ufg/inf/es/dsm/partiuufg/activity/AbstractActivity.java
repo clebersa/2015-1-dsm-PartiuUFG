@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.assyncTask.PointDataAssyncTask;
 
 
 public abstract class AbstractActivity extends ActionBarActivity implements SearchView.OnQueryTextListener {

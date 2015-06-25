@@ -74,6 +74,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.johnkil.android-progressfragment/progressfragment/1.4.0/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.satyan/sugar/1.3/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.malinskiy/superrecyclerview/1.1.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jacoco" />
@@ -95,6 +96,7 @@
     <orderEntry type="library" exported="" name="progressfragment-1.4.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-urlconnection-2.0.0" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-21.0.0" level="project" />
+    <orderEntry type="library" exported="" name="sugar-1.3" level="project" />
     <orderEntry type="library" exported="" name="okio-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
     <orderEntry type="library" exported="" name="retrofit-1.9.0" level="project" />

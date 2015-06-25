@@ -12,9 +12,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
+import br.ufg.inf.es.dsm.partiuufg.model.GCMBusPointTime;
 import br.ufg.inf.es.dsm.partiuufg.model.Point;
 
 public class BusStopLineActivity extends AbstractActivity {
@@ -24,10 +27,33 @@ public class BusStopLineActivity extends AbstractActivity {
     private TextView tvShowTime;
     private CheckedTextView checkGCMFav;
 
-    public void gcmFavorited(View view) {
+    private List<GCMBusPointTime> getLineFavorite() {
+        List<GCMBusPointTime> gcmBusPointTimes = GCMBusPointTime.find(GCMBusPointTime.class,
+                "point_number = ? and bus_line_number = ?",
+                point.getNumber().toString(),
+                busLine.getNumber().toString());
+
+        return gcmBusPointTimes;
+    }
+
+    private void deleteStopLineFavorite() {
+        for( GCMBusPointTime gcmBusPointTime : getLineFavorite() ) {
+            gcmBusPointTime.delete();
+        }
+    }
+
+    private void addStopLineFavorite() {
+        GCMBusPointTime gcmBusPointTime = new GCMBusPointTime(point.getNumber(),
+                busLine.getNumber());
+        gcmBusPointTime.save();
+    }
+
+    public void gcmFavorite(View view) {
         if( checkGCMFav.isChecked() ) {
+            deleteStopLineFavorite();
             checkGCMFav.setChecked(false);
         } else {
+            addStopLineFavorite();
             checkGCMFav.setChecked(true);
         }
     }
@@ -48,6 +74,15 @@ public class BusStopLineActivity extends AbstractActivity {
         lineName.setText(busLine.getName());
 
         setTimer();
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+        if( getLineFavorite().size() > 0 ) {
+            checkGCMFav.setChecked(true);
+        }
     }
 
     private void setTimer() {

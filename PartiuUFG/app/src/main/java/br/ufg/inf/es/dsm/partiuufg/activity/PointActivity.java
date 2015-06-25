@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.assyncTask.PointDataAssyncTask;
 import br.ufg.inf.es.dsm.partiuufg.fragment.NextPointBusTimeFragment;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
