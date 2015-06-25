@@ -2,13 +2,10 @@ package br.ufg.inf.es.dsm.partiuufg.model;
 
 import android.util.Log;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 /**
@@ -27,6 +24,11 @@ public class BusLine implements Serializable {
         } catch (JSONException e) {
             Log.d(this.getClass().getSimpleName(), e.getMessage());
         }
+    }
+
+    public BusLine(Integer number, String name){
+        this.number = number;
+        this.name = name;
     }
 
     public Integer getNumber() {

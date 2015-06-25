@@ -1,10 +1,13 @@
 package br.ufg.inf.es.dsm.partiuufg.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
+import br.ufg.inf.es.dsm.partiuufg.model.Campus;
 
 
 public class HomeActivity extends AbstractActivity {
@@ -27,5 +30,17 @@ public class HomeActivity extends AbstractActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+
+    public void loadSamambaiaBusLines(View v){
+        Intent intent = new Intent(this, CampusActivity.class);
+        intent.putExtra("campusId", 1);
+        this.startActivity(intent);
+    }
+
+    public void loadColemarBusLines(View v){
+        Intent intent = new Intent(this, CampusActivity.class);
+        intent.putExtra("campusId", 2);
+        this.startActivity(intent);
     }
 }

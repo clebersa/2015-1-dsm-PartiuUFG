@@ -34,6 +34,10 @@
             android:name=".activity.BusStopLineActivity"
             android:label="@string/title_activity_bus_stop_line" >
         </activity>
+        <activity
+            android:name=".activity.CampusActivity"
+            android:label="@string/title_activity_campus" >
+        </activity>
     </application>
 
 </manifest>
