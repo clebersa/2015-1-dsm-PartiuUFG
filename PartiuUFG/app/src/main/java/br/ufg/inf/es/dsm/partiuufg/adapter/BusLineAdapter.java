@@ -2,6 +2,7 @@ package br.ufg.inf.es.dsm.partiuufg.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -49,6 +50,8 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
     @Override
     public void onBindViewHolder(BusLineViewHolder busLineViewHolder, int i) {
         final BusLine ci = busLines.get(i);
+        final TextView vNextTime = busLineViewHolder.vNextTime;
+        final TextView vNextTimeAproxLabel = busLineViewHolder.vNextTimeAproxLabel;
 
         BusTime busTime = ci.getPoint(pointNumber).getBusTime(ci.getNumber());
         String destination = ci.getName();
@@ -60,6 +63,23 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         String displayNextTime = context.getString(R.string.no_forecast);
         if( nextTime != null && nextTime > 0 ) {
             displayNextTime = nextTime.toString() + " min";
+
+            long totalTime = nextTime * 60000;
+            busLineViewHolder.countDownTimer = new CountDownTimer(totalTime, 60000) {
+                @Override
+                public void onTick(long leftTimeInMilliseconds) {
+                    int minutes = Math.round(leftTimeInMilliseconds / 60000);
+                    String displayNextTime = minutes + " min";
+                    vNextTime.setText(displayNextTime);
+                    vNextTimeAproxLabel.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onFinish() {
+                    vNextTime.setText(context.getString(R.string.no_forecast));
+                }
+            };
+            busLineViewHolder.countDownTimer.start();
         }
 
         busLineViewHolder.vLineNumber.setText(ci.getNumber().toString());
@@ -93,6 +113,7 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         public TextView vDestination;
         public TextView vNextTime;
         public TextView vNextTimeAproxLabel;
+        public CountDownTimer countDownTimer;
 
         public BusLineViewHolder(View v) {
             super(v);

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/bus_timer_shape_background"/>
+    <stroke android:width="@dimen/bus_timer_shape_border_size" android:color="@color/bus_timer_shape_border" />
+    <corners android:radius="@dimen/bus_timer_shape_radius"/>
+</shape>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -19,9 +20,17 @@ public class BusStopLineActivity extends AbstractActivity {
     private BusLine busLine;
     private Integer pointNumber;
     private TextView tvShowTime;
-    private ProgressBar pbNextBusTime;
+    private CheckedTextView checkGCMFav;
 
     private long totalTimeCountInMilliseconds; // total count down time in miliseconds
+
+    public void gcmFavorited(View view) {
+        if( checkGCMFav.isChecked() ) {
+            checkGCMFav.setChecked(false);
+        } else {
+            checkGCMFav.setChecked(true);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +40,7 @@ public class BusStopLineActivity extends AbstractActivity {
         pointNumber = getIntent().getIntExtra( "pointNumber", -1 );
 
         tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
-        pbNextBusTime = (ProgressBar) findViewById(R.id.progressbar);
+        checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
 
         setTimer();
     }
@@ -44,7 +53,6 @@ public class BusStopLineActivity extends AbstractActivity {
         }
 
         totalTimeCountInMilliseconds = 60 * nextTime * 1000;
-        pbNextBusTime.setMax(60 * nextTime);
 
         startTimer();
     }
@@ -54,8 +62,6 @@ public class BusStopLineActivity extends AbstractActivity {
             @Override
             public void onTick(long leftTimeInMilliseconds) {
                 long seconds = leftTimeInMilliseconds / 1000;
-                //Setting the Progress Bar to decrease wih the timer
-                pbNextBusTime.setProgress((int) (leftTimeInMilliseconds / 1000));
 
                 tvShowTime.setText(String.format("%02d", seconds / 60)
                         + ":" + String.format("%02d", seconds % 60));
@@ -63,7 +69,6 @@ public class BusStopLineActivity extends AbstractActivity {
 
             @Override
             public void onFinish() {
-                tvShowTime.setText("Passando agora...");
             }
         };
 

@@ -13,33 +13,88 @@
         android:background="?attr/colorPrimary"
         android:elevation="2dp" />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="105"
+            android:id="@+id/lineNumber"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="false"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="PC Campus \/ T. Pra\u00e7a A - Via B. Say\u00e3o"
+            android:id="@+id/lineName"
+            android:layout_toRightOf="@+id/lineNumber"
+            android:layout_toEndOf="@+id/lineNumber"
+            android:layout_toLeftOf="@+id/gcmFavorite"
+            android:layout_alignParentBottom="false"
+            android:layout_centerVertical="true" />
+
+        <CheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkMark="@android:drawable/btn_star"
+            android:id="@+id/gcmFavorite"
+            android:clickable="true"
+            android:checked="false"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentBottom="false"
+            android:layout_centerVertical="true"
+            android:onClick="gcmFavorited" />
+
+    </RelativeLayout>
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/bus_timer_size"
+        android:layout_height="@dimen/bus_timer_size"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin">
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:background="@drawable/bus_timer_shape"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_horizontal">
 
-        <ProgressBar
-            android:id="@+id/progressbar"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:indeterminate="false"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:progress="100" />
 
         <TextView
             android:id="@+id/tvTimeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="00:00"
-            android:textColor="#000"
-            android:textSize="15dip"
+            android:textColor="@color/bus_timer_text"
+            android:textSize="@dimen/bus_timer_text"
             android:layout_alignParentStart="false"
-            android:layout_centerInParent="true" />
+            android:layout_centerInParent="true"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_next_minutes"
+            android:id="@+id/textView"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentLeft="false"
+            android:layout_below="@+id/tvTimeCount"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
+
 </LinearLayout>
 
 

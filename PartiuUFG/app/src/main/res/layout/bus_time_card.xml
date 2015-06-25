@@ -9,7 +9,9 @@
     card_view:cardElevation="0dp"
     card_view:cardMaxElevation="0dp"
     card_view:cardPreventCornerOverlap="false"
-    >
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="@drawable/item_background_cards">
 
     <RelativeLayout
         android:layout_width="match_parent"

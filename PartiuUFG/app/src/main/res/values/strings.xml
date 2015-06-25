@@ -9,5 +9,7 @@
     <string name="about_next_minutes">(aprox.)</string>
     <string name="title_activity_bus_stop_line">BusStopLineActivity</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="last_search_time">Atualizado em</string>
+    <string name="reference">Referência:</string>
+    <string name="address">Endereço:</string>
 </resources>

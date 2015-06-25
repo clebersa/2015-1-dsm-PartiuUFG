@@ -5,4 +5,9 @@
     <color name="accent">#FFC107</color>
     <color name="textHint">#DDDDDD</color>
     <color name="text">#000</color>
+    <color name="foregroundCardSelected">#B303A9F4</color>
+
+    <color name="bus_timer_shape_background">#FFF</color>
+    <color name="bus_timer_shape_border">#03A9F4</color>
+    <color name="bus_timer_text">#000</color>
 </resources>

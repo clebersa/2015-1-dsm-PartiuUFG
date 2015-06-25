@@ -16,15 +16,16 @@ import br.ufg.inf.es.dsm.partiuufg.model.Point;
 import br.ufg.inf.es.dsm.partiuufg.model.WebServiceResponse;
 
 public class PointActivity extends AbstractActivity implements WebServiceConsumer {
+    Point point;
     NextPointBusTimeFragment fragment;
 
-    public void updatePointViewInformation(Point point) {
+    public void updatePointViewInformation() {
         TextView address = (TextView) findViewById(R.id.tvAddress);
         address.setText(point.getAddress());
         TextView reference = (TextView) findViewById(R.id.tvReference);
         reference.setText(point.getReferenceLocation());
         TextView searchTime = (TextView) findViewById(R.id.tvSearchTime);
-        searchTime.setText(point.getSearchDateFormated());
+        searchTime.setText(getString(R.string.last_search_time) + " " + point.getSearchDateFormated());
     }
 
     @Override
@@ -40,6 +41,11 @@ public class PointActivity extends AbstractActivity implements WebServiceConsume
             fragment = new NextPointBusTimeFragment();
             ft.add(R.id.linhas, fragment);
             ft.commit();
+        } else {
+            try {
+                point = (Point) savedInstanceState.getSerializable("point");
+                updatePointViewInformation();
+            } catch( NullPointerException e) {}
         }
     }
 
@@ -61,8 +67,8 @@ public class PointActivity extends AbstractActivity implements WebServiceConsume
     @Override
     public void receiveResponse(WebServiceResponse response) {
         if( response.isSuccess() ) {
-            Point point = new Point(response.getBody());
-            updatePointViewInformation(point);
+            point = new Point(response.getBody());
+            updatePointViewInformation();
             fragment.setPoint(point);
         } else {
             Toast toast = Toast.makeText(this, "Ponto não encontrado", Toast.LENGTH_SHORT);
@@ -75,5 +81,11 @@ public class PointActivity extends AbstractActivity implements WebServiceConsume
         super.onQueryTextSubmit(query);
         finish();
         return false;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putSerializable("point", point);
+        super.onSaveInstanceState(outState);
     }
 }

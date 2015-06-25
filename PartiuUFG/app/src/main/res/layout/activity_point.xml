@@ -1,99 +1,81 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
-xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical">
+android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:elevation="2dp" />
+        android:elevation="2dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentTop="true" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Endereço:"
-            android:id="@+id/tvAddressLabel"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp" />
+        android:paddingRight="16dp"
+        android:layout_below="@+id/mainToolbar"
+        android:id="@+id/rLayoutEndereco">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Interna Do Campus, Area Ufg - Goiania"
             android:id="@+id/tvAddress"
             android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@+id/tvAddressLabel"
-            android:layout_alignTop="@+id/tvAddressLabel"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Referência:"
-            android:id="@+id/tvReferenceLabel"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp" />
+        android:paddingRight="16dp"
+        android:id="@+id/rLayoutReference"
+        android:layout_below="@+id/rLayoutEndereco">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Entre As Faculdades De Educacao Fisica E De Letras"
             android:id="@+id/tvReference"
-            android:layout_alignTop="@+id/tvReferenceLabel"
-            android:layout_toRightOf="@+id/tvReferenceLabel"
-            android:layout_centerVertical="true" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Pesquisado em:"
-            android:id="@+id/tvSearchTimeLabel"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="23/06/2015 às 03:06"
-            android:id="@+id/tvSearchTime"
-            android:layout_toRightOf="@+id/tvSearchTimeLabel"
-            android:layout_alignTop="@+id/tvSearchTimeLabel"
-            android:layout_centerVertical="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools" android:id="@+id/linhas"
         android:layout_width="match_parent" android:layout_height="match_parent"
         tools:context="br.ufg.inf.es.dsm.partiuufg.activity.PointActivity"
-        tools:ignore="MergeRootFrame"/>
-</LinearLayout>
+        tools:ignore="MergeRootFrame"
+        android:layout_below="@+id/rLayoutReference"
+        android:layout_above="@+id/rLayoutSearchDate"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:id="@+id/rLayoutSearchDate"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/last_search_time"
+            android:id="@+id/tvSearchTime"
+            android:layout_centerVertical="true"
+            android:gravity="center" />
+    </RelativeLayout>
+</RelativeLayout>
