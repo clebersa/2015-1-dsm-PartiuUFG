@@ -2,16 +2,11 @@ package br.ufg.inf.es.dsm.partiuufg.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.util.List;
-
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.model.Campus;
-import br.ufg.inf.es.dsm.partiuufg.model.GCMBusPointTime;
 
 
 public class HomeActivity extends AbstractActivity {

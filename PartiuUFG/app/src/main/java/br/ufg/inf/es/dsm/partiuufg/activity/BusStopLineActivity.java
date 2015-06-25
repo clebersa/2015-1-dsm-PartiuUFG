@@ -1,23 +1,19 @@
 package br.ufg.inf.es.dsm.partiuufg.activity;
 
 import android.os.CountDownTimer;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckedTextView;
-import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
-import br.ufg.inf.es.dsm.partiuufg.model.GCMBusPointTime;
+import br.ufg.inf.es.dsm.partiuufg.dbModel.GCMBusPointTime;
 import br.ufg.inf.es.dsm.partiuufg.model.Point;
 
 public class BusStopLineActivity extends AbstractActivity {

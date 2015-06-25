@@ -1,4 +1,4 @@
-package br.ufg.inf.es.dsm.partiuufg.model;
+package br.ufg.inf.es.dsm.partiuufg.dbModel;
 
 import com.orm.SugarRecord;
 
@@ -30,6 +30,7 @@ public class GCMBusPointTime extends SugarRecord<GCMBusPointTime> {
                 ", Bus line: " + busLineNumber +
                 ", Alert in: " + beforeMinutesToAlert + "}";
     }
+
     public Integer getPointNumber() {
         return pointNumber;
     }
