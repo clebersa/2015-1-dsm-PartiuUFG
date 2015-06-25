@@ -12,4 +12,6 @@
     <string name="last_search_time">Atualizado em</string>
     <string name="reference">Referência:</string>
     <string name="address">Endereço:</string>
+
+    <string name="title_activity_campus">Campus</string>
 </resources>

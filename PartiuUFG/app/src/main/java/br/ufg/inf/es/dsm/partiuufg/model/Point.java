@@ -2,72 +2,46 @@ package br.ufg.inf.es.dsm.partiuufg.model;
 
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Bruno on 19/06/2015.
  */
 public class Point implements Serializable {
+    @SerializedName("number")
     private Integer number;
-    private ArrayList<BusLine> availableLines = new ArrayList<BusLine>();
-    private HashMap<Integer, BusTime> busTimes = new HashMap<Integer, BusTime>();
+    @SerializedName("lines-available")
+    private List<BusLine> availableLines = new ArrayList<BusLine>();
+    @SerializedName("bus-lines")
+    private List<BusTime> busTimes = new ArrayList<BusTime>();
+    @SerializedName("address")
     private String address;
+    @SerializedName("reference-point")
     private String referenceLocation;
+    @SerializedName("terminal")
     private Boolean isTerminal;
-    private Date searchDate;
+    @SerializedName("request-date")
+    private String searchDate;
 
-    public Point(String jsonIn) {
-        try {
-            JSONObject reader = new JSONObject(jsonIn);
-            this.number = reader.getInt("number");
-            this.address = reader.getString("address");
-            this.referenceLocation = reader.getString("reference-point");
-            this.isTerminal = reader.getBoolean("terminal");
+    public Point() {
 
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-            try {
-                this.searchDate = formatter.parse(reader.getString("request-date"));
-            } catch (ParseException e) {
-                Log.d(this.getClass().getSimpleName(), e.getMessage());
-            }
-
-            JSONArray availableLines = reader.getJSONArray("lines-available");
-            BusLine tmpBusLine;
-            for( int i = 0; i < availableLines.length(); i++ ) {
-                tmpBusLine = new BusLine( availableLines.getJSONObject(i).toString() );
-                tmpBusLine.addPoint(this);
-                this.availableLines.add( tmpBusLine );
-            }
-
-            JSONArray nextBuses = reader.getJSONArray("bus-lines");
-            BusTime tmpBusTime;
-            for( int i = 0; i < nextBuses.length(); i++ ) {
-                tmpBusTime = new BusTime( nextBuses.getJSONObject(i).toString() );
-                this.busTimes.put( tmpBusTime.getNumber(), tmpBusTime );
-            }
-        } catch (JSONException e) {
-            Log.d(this.getClass().getSimpleName(), e.getMessage());
-        }
     }
 
     public Integer getNumber() {
         return number;
     }
 
-    public ArrayList<BusLine> getAvailableLines() {
+    public List<BusLine> getAvailableLines() {
         return availableLines;
     }
 
-    public HashMap<Integer,BusTime> getNextBuses() {
+    public List<BusTime> getBusTimes() {
         return busTimes;
     }
 
@@ -79,27 +53,33 @@ public class Point implements Serializable {
         return referenceLocation;
     }
 
-    public Boolean getIsTerminal() {
+    public Boolean isTerminal() {
         return isTerminal;
     }
 
-    public Date getSearchDate() {
+    public String getSearchDate() {
         return searchDate;
     }
 
+    public String getSearchDateFormatted() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        try {
+            Date searchDate = formatter.parse(this.searchDate);
+            return new SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(searchDate);
+        } catch (Exception e) {
+            Log.d(this.getClass().getSimpleName(), e.getMessage());
+        }
+
+        return "Sem informação";
+    }
+
     public BusTime getBusTime(Integer busLine) {
-        if(busTimes.containsKey(busLine)) {
-            return busTimes.get(busLine);
+        for( BusTime busTime : busTimes) {
+            if (busTime.getNumber().equals(busLine)) {
+                return busTime;
+            }
         }
 
         return null;
-    }
-
-    public String getSearchDateFormated() {
-        try {
-            return new SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(searchDate);
-        } catch( Exception e ) {
-            return "Sem informação";
-        }
     }
 }

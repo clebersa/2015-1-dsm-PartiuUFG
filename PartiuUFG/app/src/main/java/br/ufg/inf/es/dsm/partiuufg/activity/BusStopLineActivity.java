@@ -15,10 +15,11 @@ import android.widget.Toast;
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
+import br.ufg.inf.es.dsm.partiuufg.model.Point;
 
 public class BusStopLineActivity extends AbstractActivity {
     private BusLine busLine;
-    private Integer pointNumber;
+    private Point point;
 
     private TextView tvShowTime;
     private CheckedTextView checkGCMFav;
@@ -35,8 +36,8 @@ public class BusStopLineActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        busLine = (BusLine) getIntent().getSerializableExtra("buLine");
-        pointNumber = getIntent().getIntExtra("pointNumber", -1);
+        busLine = (BusLine) getIntent().getSerializableExtra("busLine");
+        point = (Point) getIntent().getSerializableExtra("point");
 
         tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
         checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
@@ -50,7 +51,7 @@ public class BusStopLineActivity extends AbstractActivity {
     }
 
     private void setTimer() {
-        BusTime busTime = busLine.getPoint(pointNumber).getBusTime(busLine.getNumber());
+        BusTime busTime = point.getBusTime(busLine.getNumber());
         Integer nextTime = 0;
         if( busTime != null ) {
             nextTime = busTime.getNextTime();

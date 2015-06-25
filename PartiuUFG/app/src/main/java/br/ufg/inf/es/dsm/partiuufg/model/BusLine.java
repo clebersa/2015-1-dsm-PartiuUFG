@@ -2,31 +2,28 @@ package br.ufg.inf.es.dsm.partiuufg.model;
 
 import android.util.Log;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Bruno on 20/06/2015.
  */
 public class BusLine implements Serializable {
+    @SerializedName("number")
     private Integer number;
+    @SerializedName("name")
     private String name;
-    private HashMap<Integer,Point> points = new HashMap<>();
+    @SerializedName("points")
+    private List<Point> points = new ArrayList<Point>();
 
-    public BusLine(String jsonIn) {
-        try {
-            JSONObject reader = new JSONObject(jsonIn);
-            this.number = reader.getInt("number");
-            this.name = reader.getString("name");
-        } catch (JSONException e) {
-            Log.d(this.getClass().getSimpleName(), e.getMessage());
-        }
+    public BusLine() {
+
     }
 
-    public BusLine(Integer number, String name){
+    public BusLine(Integer number, String name) {
         this.number = number;
         this.name = name;
     }
@@ -39,19 +36,15 @@ public class BusLine implements Serializable {
         return name;
     }
 
-    public HashMap<Integer, Point> getPoints() {
+    public List<Point> getPoints() {
         return points;
     }
 
-    public void addPoint(Point point) {
-        if(!points.containsKey(point.getNumber())) {
-            points.put(point.getNumber(), point);
-        }
-    }
-
     public Point getPoint(Integer pointNumber) {
-        if(points.containsKey(pointNumber)) {
-            return points.get(pointNumber);
+        for( Point point : points ) {
+            if(point.getNumber().equals(pointNumber)) {
+                return point;
+            }
         }
 
         return null;

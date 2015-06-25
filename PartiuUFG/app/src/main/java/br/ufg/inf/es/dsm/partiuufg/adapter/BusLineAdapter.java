@@ -24,17 +24,17 @@ import br.ufg.inf.es.dsm.partiuufg.model.Point;
  */
 public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineViewHolder> {
     private List<BusLine> busLines;
-    private Integer pointNumber;
+    private Point point;
     private Context context;
 
-    public BusLineAdapter(List<BusLine> busLines, Integer pointNumber, Context context) {
-        this.pointNumber = pointNumber;
+    public BusLineAdapter(Point point, Context context) {
+        this.point = point;
         this.context = context;
 
-        if(busLines == null) {
-            this.busLines = new ArrayList<>();
+        if(point == null) {
+            this.busLines = new ArrayList<BusLine>();
         } else {
-            this.busLines = busLines;
+            this.busLines = point.getAvailableLines();
         }
     }
 
@@ -50,10 +50,8 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
     @Override
     public void onBindViewHolder(BusLineViewHolder busLineViewHolder, int i) {
         final BusLine ci = busLines.get(i);
-        final TextView vNextTime = busLineViewHolder.vNextTime;
-        final TextView vNextTimeAproxLabel = busLineViewHolder.vNextTimeAproxLabel;
 
-        BusTime busTime = ci.getPoint(pointNumber).getBusTime(ci.getNumber());
+        BusTime busTime = point.getBusTime(ci.getNumber());
         String destination = ci.getName();
         Integer nextTime = null;
         if( busTime != null ) {
@@ -63,23 +61,6 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         String displayNextTime = context.getString(R.string.no_forecast);
         if( nextTime != null && nextTime > 0 ) {
             displayNextTime = nextTime.toString() + " min";
-
-            long totalTime = nextTime * 60000;
-            busLineViewHolder.countDownTimer = new CountDownTimer(totalTime, 60000) {
-                @Override
-                public void onTick(long leftTimeInMilliseconds) {
-                    int minutes = Math.round(leftTimeInMilliseconds / 60000);
-                    String displayNextTime = minutes + " min";
-                    vNextTime.setText(displayNextTime);
-                    vNextTimeAproxLabel.setVisibility(View.VISIBLE);
-                }
-
-                @Override
-                public void onFinish() {
-                    vNextTime.setText(context.getString(R.string.no_forecast));
-                }
-            };
-            busLineViewHolder.countDownTimer.start();
         }
 
         busLineViewHolder.vLineNumber.setText(ci.getNumber().toString());
@@ -90,10 +71,10 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, BusStopLineActivity.class);
-                intent.putExtra("buLine", ci);
-                intent.putExtra("pointNumber", pointNumber);
-                context.startActivity(intent);
+            Intent intent = new Intent(context, BusStopLineActivity.class);
+            intent.putExtra("busLine", ci);
+            intent.putExtra("point", point);
+            context.startActivity(intent);
             }
         });
     }

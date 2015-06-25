@@ -6,19 +6,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v4.widget.SearchViewCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.InputType;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.assyncTask.PointDataAssyncTask;
-import br.ufg.inf.es.dsm.partiuufg.interfaces.WebServiceConsumer;
-import br.ufg.inf.es.dsm.partiuufg.model.WebServiceResponse;
 
 
 public abstract class AbstractActivity extends ActionBarActivity implements SearchView.OnQueryTextListener {

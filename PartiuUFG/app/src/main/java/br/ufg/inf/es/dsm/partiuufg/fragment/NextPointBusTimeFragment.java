@@ -42,10 +42,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
             return;
         }
 
-        BusLineAdapter busLineAdapter = new BusLineAdapter(
-                point.getAvailableLines(),
-                point.getNumber(),
-                getActivity());
+        BusLineAdapter busLineAdapter = new BusLineAdapter(point, getActivity());
         recList.setAdapter(busLineAdapter);
 
         setContentEmpty(false);
