@@ -22,8 +22,6 @@ public class PointActivity extends AbstractActivity implements WebServiceConsume
     public void updatePointViewInformation() {
         TextView address = (TextView) findViewById(R.id.tvAddress);
         address.setText(point.getAddress());
-        TextView reference = (TextView) findViewById(R.id.tvReference);
-        reference.setText(point.getReferenceLocation());
         TextView searchTime = (TextView) findViewById(R.id.tvSearchTime);
         searchTime.setText(getString(R.string.last_search_time) + " " + point.getSearchDateFormated());
     }

@@ -19,10 +19,9 @@ import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
 public class BusStopLineActivity extends AbstractActivity {
     private BusLine busLine;
     private Integer pointNumber;
+
     private TextView tvShowTime;
     private CheckedTextView checkGCMFav;
-
-    private long totalTimeCountInMilliseconds; // total count down time in miliseconds
 
     public void gcmFavorited(View view) {
         if( checkGCMFav.isChecked() ) {
@@ -37,10 +36,15 @@ public class BusStopLineActivity extends AbstractActivity {
         super.onCreate(savedInstanceState);
 
         busLine = (BusLine) getIntent().getSerializableExtra("buLine");
-        pointNumber = getIntent().getIntExtra( "pointNumber", -1 );
+        pointNumber = getIntent().getIntExtra("pointNumber", -1);
 
         tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
         checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
+
+        TextView lineNumber = (TextView) findViewById(R.id.lineNumber);
+        lineNumber.setText(busLine.getNumber().toString());
+        TextView lineName = (TextView) findViewById(R.id.lineName);
+        lineName.setText(busLine.getName());
 
         setTimer();
     }
@@ -52,13 +56,13 @@ public class BusStopLineActivity extends AbstractActivity {
             nextTime = busTime.getNextTime();
         }
 
-        totalTimeCountInMilliseconds = 60 * nextTime * 1000;
+        long totalTime = 60 * nextTime * 1000;
 
-        startTimer();
+        startTimer(totalTime);
     }
 
-    private void startTimer() {
-        CountDownTimer countDownTimer = new CountDownTimer(totalTimeCountInMilliseconds, 1000) {
+    private void startTimer(long totalTime) {
+        CountDownTimer countDownTimer = new CountDownTimer(totalTime, 1000) {
             @Override
             public void onTick(long leftTimeInMilliseconds) {
                 long seconds = leftTimeInMilliseconds / 1000;
