@@ -26,7 +26,7 @@ public class GCMBusPointTime extends SugarRecord<GCMBusPointTime> {
 
     @Override
     public String toString() {
-        return "{Stop line: " + pointNumber +
+        return "GCMBusPointTime{Bus stop number: " + pointNumber +
                 ", Bus line: " + busLineNumber +
                 ", Alert in: " + beforeMinutesToAlert + "}";
     }
