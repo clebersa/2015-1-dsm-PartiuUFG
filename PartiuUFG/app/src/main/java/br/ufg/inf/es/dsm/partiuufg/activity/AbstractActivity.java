@@ -57,7 +57,7 @@ public abstract class AbstractActivity extends ActionBarActivity implements Sear
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        Intent intent = new Intent(this, PointActivity.class);
+        Intent intent = new Intent(this, BusStopActivity.class);
         intent.putExtra("pointId", Integer.valueOf(query));
         startActivity(intent);
         return false;

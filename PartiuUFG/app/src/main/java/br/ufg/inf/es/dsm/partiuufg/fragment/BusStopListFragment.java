@@ -81,6 +81,12 @@ public class BusStopListFragment extends ProgressFragment {
         }
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(mode == DATABASE_MODE) loadByDatabase();
+    }
+
     public void loadByDatabase(){
         Log.i(TAG, "Loading bus stop list from database...");
         List<SingleBusStop> busStopList;
@@ -110,6 +116,7 @@ public class BusStopListFragment extends ProgressFragment {
                     singleBusStopList.add(singleBusStop);
                 }
                 Log.i(TAG, "List size: " + singleBusStopList.size());
+                getActivity().setTitle(getActivity().getTitle() + ": " + busline.getName());
                 busStopAdapter = new BusStopAdapter(singleBusStopList, getActivity());
                 recList.setAdapter(busStopAdapter);
                 setContentEmpty(false);

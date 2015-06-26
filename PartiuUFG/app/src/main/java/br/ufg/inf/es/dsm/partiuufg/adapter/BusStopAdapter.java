@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.activity.PointActivity;
+import br.ufg.inf.es.dsm.partiuufg.activity.BusStopActivity;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
 
 /**
@@ -56,7 +56,7 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
         busStopViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PointActivity.class);
+                Intent intent = new Intent(context, BusStopActivity.class);
                 intent.putExtra("pointId", ci.getNumber());
                 context.startActivity(intent);
             }

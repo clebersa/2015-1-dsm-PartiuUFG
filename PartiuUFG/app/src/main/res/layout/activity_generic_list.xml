@@ -11,6 +11,5 @@
         android:id="@+id/list_lines"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="MergeRootFrame">
-    </FrameLayout>
+        tools:ignore="MergeRootFrame" />
 </LinearLayout>

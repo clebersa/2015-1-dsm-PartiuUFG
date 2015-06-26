@@ -1,33 +1,27 @@
 package br.ufg.inf.es.dsm.partiuufg.activity;
 
-import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.fragment.BusStopListFragment;
+import br.ufg.inf.es.dsm.partiuufg.fragment.NextPointBusTimeFragment;
 
-public class BusLineActivity extends AbstractActivity {
+public class BusStopActivity extends AbstractActivity {
     private final String TAG = this.getClass().getName();
-
-    private Integer lineNumber;
-    private BusStopListFragment fragment;
+    private NextPointBusTimeFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        lineNumber = getIntent().getIntExtra("lineNumber", -1);
-        Log.d(TAG, "Line number received: " + lineNumber);
+        Integer busStopNumber = getIntent().getIntExtra("pointId", -1);
 
         if(savedInstanceState == null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = new BusStopListFragment();
+            fragment = new NextPointBusTimeFragment();
             Bundle b = new Bundle();
-            b.putInt("mode", BusStopListFragment.WEB_MODE);
-
-            b.putInt("lineNumber", lineNumber);
+            b.putInt("busStopNumber", busStopNumber);
             fragment.setArguments(b);
             ft.add(R.id.list_lines, fragment);
             ft.commit();
@@ -54,11 +48,5 @@ public class BusLineActivity extends AbstractActivity {
         super.onQueryTextSubmit(query);
         finish();
         return false;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("busLine", lineNumber);
-        super.onSaveInstanceState(outState);
     }
 }
