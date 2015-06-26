@@ -6,40 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    card_view:cardElevation="0dp"
+    card_view:cardElevation="2dp"
     card_view:cardMaxElevation="0dp"
     card_view:cardPreventCornerOverlap="false"
+    card_view:cardCornerRadius="5dp"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:minHeight="50dp">
+        android:minHeight="70dp"
+        android:maxHeight="70dp"
+        android:padding="5dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="5199"
+            android:text="----"
             android:id="@+id/bus_line_number"
-            android:gravity="center"
             android:layout_centerVertical="true"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="10dp"
+            android:gravity="center_vertical|center" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Avenida Esperança"
+            android:text="Endereço"
             android:id="@+id/bus_line_name"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/bus_line_number"
-            android:layout_toEndOf="@+id/bus_line_number"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:minLines="2"
+            android:maxLines="2"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="match_parent"
@@ -49,8 +52,10 @@
             android:layout_below="@+id/bus_line_name"
             android:layout_alignLeft="@+id/bus_line_name"
             android:layout_alignStart="@+id/bus_line_name"
-            android:text="Próximo à faculdade de letras"
-            android:singleLine="false" />
+            android:text="Referência"
+
+            android:singleLine="false"
+            android:lines="1" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>
