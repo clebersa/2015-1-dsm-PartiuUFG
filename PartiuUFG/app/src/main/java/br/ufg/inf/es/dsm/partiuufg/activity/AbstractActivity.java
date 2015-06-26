@@ -22,7 +22,7 @@ import br.ufg.inf.es.dsm.partiuufg.R;
 
 public abstract class AbstractActivity extends ActionBarActivity implements SearchView.OnQueryTextListener {
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-    private static final String TAG = "AbstractActivity";
+    protected String TAG = getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +73,10 @@ public abstract class AbstractActivity extends ActionBarActivity implements Sear
      * it doesn't, display a dialog that allows users to download the APK from
      * the Google Play Store or enable it in the device's system settings.
      */
-    protected boolean checkPlayServices() {
+    protected boolean checkPlayServices(boolean displayInstall) {
         int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
         if (resultCode != ConnectionResult.SUCCESS) {
-            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode) && displayInstall) {
                 GooglePlayServicesUtil.getErrorDialog(resultCode, this,
                         PLAY_SERVICES_RESOLUTION_REQUEST).show();
             } else {

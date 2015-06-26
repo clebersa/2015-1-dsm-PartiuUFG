@@ -17,4 +17,5 @@
     <string name="title_activity_bus_line">Linha de Ônibus</string>
 
     <string name="GCMauthorizedEntity">153415196554</string>
+    <string name="registrationCompleteIntentName">registrationComplete</string>
 </resources>

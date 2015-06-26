@@ -10,7 +10,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,37 +21,49 @@ import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.Campus;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine;
 import br.ufg.inf.es.dsm.partiuufg.fragment.BusStopListFragment;
-import br.ufg.inf.es.dsm.partiuufg.service.QuickstartPreferences;
+import br.ufg.inf.es.dsm.partiuufg.service.GCMServer;
 import br.ufg.inf.es.dsm.partiuufg.service.RegistrationIntentService;
 
 
 public class HomeActivity extends AbstractActivity {
-    private static final String TAG = "HomeActivity";
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private final String CAMPUS_SAMAMBAIA_NAME = "Campus Samambaia";
     private final String CAMPUS_COLEMAR_NAME = "Campus Colemar Natal e Silva";
     private HashMap<String, Campus> campi;
 
+    public void gcmTokenReceived() {
+        Intent intent = new Intent(getBaseContext(), GCMServer.class);
+        startService(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPreferences = PreferenceManager.
+                getDefaultSharedPreferences(getBaseContext());
+        String gcmToken = sharedPreferences.getString("gcmToken", null);
 
         mRegistrationBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 SharedPreferences sharedPreferences =
                         PreferenceManager.getDefaultSharedPreferences(context);
-                boolean sentToken = sharedPreferences
-                        .getBoolean(QuickstartPreferences.SENT_TOKEN_TO_SERVER, false);
+                String gcmToken = sharedPreferences.getString("gcmToken", null);
 
-                Log.d(TAG, "TOKEN RECEBIDO!");
+                if(gcmToken != null) {
+                    gcmTokenReceived();
+                }
             }
         };
 
-        if (checkPlayServices()) {
-            Intent intent = new Intent(this, RegistrationIntentService.class);
-            startService(intent);
+        if (checkPlayServices(false)) {
+            if(gcmToken == null) {
+                Intent intent = new Intent(this, RegistrationIntentService.class);
+                startService(intent);
+            } else {
+                gcmTokenReceived();
+            }
         }
 
         if(savedInstanceState == null) {
@@ -89,7 +100,7 @@ public class HomeActivity extends AbstractActivity {
     protected void onResume() {
         super.onResume();
         LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
-                new IntentFilter(QuickstartPreferences.REGISTRATION_COMPLETE));
+                new IntentFilter(getString(R.string.registrationCompleteIntentName)));
     }
 
     @Override

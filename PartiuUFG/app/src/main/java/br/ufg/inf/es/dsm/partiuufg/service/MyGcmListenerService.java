@@ -1,67 +1,51 @@
 package br.ufg.inf.es.dsm.partiuufg.service;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
-import br.ufg.inf.es.dsm.partiuufg.activity.HomeActivity;
+import br.ufg.inf.es.dsm.partiuufg.R;
+import br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
 /**
  * Created by Bruno on 26/06/2015.
  */
 public class MyGcmListenerService extends GcmListenerService {
-    public String TAG = getClass().getSimpleName();
+    private static String TAG = MyGcmListenerService.class.getSimpleName();
 
     @Override
     public void onMessageReceived(String from, Bundle data) {
         String message = data.getString("message");
-        Log.d(TAG, "From: " + from);
-        Log.d(TAG, "Message: " + message);
+        Integer busStopNumber = Integer.valueOf(data.getString("bus_stop"));
+        Integer busLineNumber = Integer.valueOf(data.getString("bus_line"));
 
-        /**
-         * Production applications would usually process the message here.
-         * Eg: - Syncing with server.
-         *     - Store message in local database.
-         *     - Update UI.
-         */
-
-        /**
-         * In some cases it may be useful to show a notification indicating to the user
-         * that a message was received.
-         */
-        sendNotification(message);
+        sendNotification(message, busStopNumber, busLineNumber);
     }
 
-    /**
-     * Create and show a simple notification containing the received GCM message.
-     *
-     * @param message GCM message received.
-     */
-    private void sendNotification(String message) {
-        Intent intent = new Intent(this, HomeActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
-                PendingIntent.FLAG_ONE_SHOT);
+    private void sendNotification(String message, Integer busStopNumber, Integer busLineNumber) {
+        Intent targetIntent = new Intent(this, BusStopLineActivity.class);
+        targetIntent.putExtra("busStopNumber", busStopNumber);
+        targetIntent.putExtra("busLineNumber", busLineNumber);
 
-        Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setContentTitle("GCM Message")
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, targetIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Notification notification = new NotificationCompat.Builder(this)
+                .setContentTitle(getString(R.string.app_name))
                 .setContentText(message)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentIntent(contentIntent)
                 .setAutoCancel(true)
-                .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent);
+                .build();
 
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-        notificationManager.notify(0, notificationBuilder.build());
+        NotificationManager nManager = (NotificationManager) getSystemService(
+                Context.NOTIFICATION_SERVICE);
+        nManager.notify(0, notification);
     }
 }

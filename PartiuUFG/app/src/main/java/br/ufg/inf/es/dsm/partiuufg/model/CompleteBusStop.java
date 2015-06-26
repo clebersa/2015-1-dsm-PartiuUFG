@@ -73,6 +73,16 @@ public class CompleteBusStop implements Serializable {
         return "Sem informação";
     }
 
+    public BusLine getBusLine(Integer busLineNumber) {
+        for( BusLine busLine : availableLines) {
+            if (busLine.getNumber().equals(busLineNumber)) {
+                return busLine;
+            }
+        }
+
+        return null;
+    }
+
     public BusTime getBusTime(Integer busLine) {
         for( BusTime busTime : busTimes) {
             if (busTime.getNumber().equals(busLine)) {
