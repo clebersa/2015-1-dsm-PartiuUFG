@@ -2,7 +2,6 @@ package br.ufg.inf.es.dsm.partiuufg.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 
 import com.devspark.progressfragment.ProgressFragment;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
@@ -25,7 +24,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        setContentView(R.layout.fragment_point);
+        setContentView(R.layout.fragment_bus_point_times);
 
         recList = (SuperRecyclerView) getContentView().findViewById(R.id.bus_times_list);
         LinearLayoutManager layout = new LinearLayoutManager(getActivity());

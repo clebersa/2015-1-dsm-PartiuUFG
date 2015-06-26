@@ -28,4 +28,11 @@
         android:id="@+id/campus_colemar_button"
         android:layout_gravity="left|top"
         android:onClick="loadColemarBusLines"/>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/most_visited_stop_bus"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        tools:ignore="MergeRootFrame"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp" />
 </LinearLayout>
