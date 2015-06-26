@@ -14,4 +14,6 @@
     <string name="address">Endereço:</string>
 
     <string name="title_activity_campus">Campus</string>
+
+    <string name="GCMauthorizedEntity">153415196554</string>
 </resources>

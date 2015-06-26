@@ -6,6 +6,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 public class GCMServer extends Service {
+    private static final String GOOGLE_API_KEY =  "AIzaSyCYKPh_MMBMaF1EFgQVkmu6sgLYuFhMUoE";
     private static final String TAG = "GCMService";
     private boolean isRunning  = false;
 
