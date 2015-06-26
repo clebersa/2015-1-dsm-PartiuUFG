@@ -27,9 +27,9 @@ public class BusStopListFragment extends ProgressFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        setContentView(R.layout.fragment_bus_stop_list);
+        setContentView(R.layout.fragment_list);
 
-        recList = (SuperRecyclerView) getContentView().findViewById(R.id.bus_stop_list);
+        recList = (SuperRecyclerView) getContentView().findViewById(R.id.rec_list);
         LinearLayoutManager layout = new LinearLayoutManager(getActivity());
         layout.setOrientation(LinearLayoutManager.VERTICAL);
         layout.scrollToPosition(0);
