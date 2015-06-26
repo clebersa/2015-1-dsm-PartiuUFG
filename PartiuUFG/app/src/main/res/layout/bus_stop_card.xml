@@ -10,14 +10,14 @@
     card_view:cardMaxElevation="0dp"
     card_view:cardPreventCornerOverlap="false"
     card_view:cardCornerRadius="5dp"
-    >
+    android:foreground="@drawable/item_background_cards" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:minHeight="70dp"
         android:maxHeight="70dp"
-        android:padding="5dp">
+        android:padding="5dp" >
 
         <TextView
             android:layout_width="70dp"

@@ -6,19 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    card_view:cardElevation="0dp"
+    card_view:cardElevation="2dp"
     card_view:cardMaxElevation="0dp"
     card_view:cardPreventCornerOverlap="false"
-    >
+    card_view:cardCornerRadius="5dp"
+    android:foreground="@drawable/item_background_cards" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:minHeight="50dp">
+        android:minHeight="48dp"
+        android:maxHeight="48dp"
+        android:padding="5dp">
 
         <TextView
             android:layout_width="60dp"
@@ -28,16 +27,19 @@
             android:id="@+id/bus_line_number"
             android:gravity="center"
             android:layout_centerVertical="true"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="5dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Desconhecido"
             android:id="@+id/bus_line_name"
             android:layout_centerVertical="true"
+            android:gravity="center"
             android:layout_toRightOf="@+id/bus_line_number"
-            android:layout_toEndOf="@+id/bus_line_number" />
+            android:layout_toEndOf="@+id/bus_line_number"
+            android:minLines="2"
+            android:maxLines="2"/>
     </RelativeLayout>
 </android.support.v7.widget.CardView>
