@@ -8,10 +8,9 @@
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/bus_line_lines"
+        android:id="@+id/list_lines"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="br.ufg.inf.es.dsm.partiuufg.activity.PointActivity"
         tools:ignore="MergeRootFrame">
     </FrameLayout>
 </LinearLayout>

@@ -14,11 +14,11 @@ import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.GCMBusPointTime;
-import br.ufg.inf.es.dsm.partiuufg.model.Point;
+import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 
 public class BusStopLineActivity extends AbstractActivity {
     private BusLine busLine;
-    private Point point;
+    private CompleteBusStop completeBusStop;
 
     private TextView tvShowTime;
     private CheckedTextView checkGCMFav;
@@ -26,7 +26,7 @@ public class BusStopLineActivity extends AbstractActivity {
     private List<GCMBusPointTime> getLineFavorite() {
         List<GCMBusPointTime> gcmBusPointTimes = GCMBusPointTime.find(GCMBusPointTime.class,
                 "point_number = ? and bus_line_number = ?",
-                point.getNumber().toString(),
+                completeBusStop.getNumber().toString(),
                 busLine.getNumber().toString());
 
         return gcmBusPointTimes;
@@ -39,7 +39,7 @@ public class BusStopLineActivity extends AbstractActivity {
     }
 
     private void addStopLineFavorite() {
-        GCMBusPointTime gcmBusPointTime = new GCMBusPointTime(point.getNumber(),
+        GCMBusPointTime gcmBusPointTime = new GCMBusPointTime(completeBusStop.getNumber(),
                 busLine.getNumber());
         gcmBusPointTime.save();
     }
@@ -59,7 +59,7 @@ public class BusStopLineActivity extends AbstractActivity {
         super.onCreate(savedInstanceState);
 
         busLine = (BusLine) getIntent().getSerializableExtra("busLine");
-        point = (Point) getIntent().getSerializableExtra("point");
+        completeBusStop = (CompleteBusStop) getIntent().getSerializableExtra("completeBusStop");
 
         tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
         checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
@@ -82,7 +82,7 @@ public class BusStopLineActivity extends AbstractActivity {
     }
 
     private void setTimer() {
-        BusTime busTime = point.getBusTime(busLine.getNumber());
+        BusTime busTime = completeBusStop.getBusTime(busLine.getNumber());
         Integer nextTime = 0;
         if( busTime != null ) {
             nextTime = busTime.getNextTime();

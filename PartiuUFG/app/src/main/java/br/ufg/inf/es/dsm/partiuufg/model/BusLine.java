@@ -1,7 +1,5 @@
 package br.ufg.inf.es.dsm.partiuufg.model;
 
-import android.util.Log;
-
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -17,15 +15,10 @@ public class BusLine implements Serializable {
     @SerializedName("name")
     private String name;
     @SerializedName("points")
-    private List<Point> points = new ArrayList<Point>();
+    private List<CompleteBusStop> completeBusStops = new ArrayList<CompleteBusStop>();
 
     public BusLine() {
 
-    }
-
-    public BusLine(Integer number, String name) {
-        this.number = number;
-        this.name = name;
     }
 
     public Integer getNumber() {
@@ -36,14 +29,14 @@ public class BusLine implements Serializable {
         return name;
     }
 
-    public List<Point> getPoints() {
-        return points;
+    public List<CompleteBusStop> getCompleteBusStops() {
+        return completeBusStops;
     }
 
-    public Point getPoint(Integer pointNumber) {
-        for( Point point : points ) {
-            if(point.getNumber().equals(pointNumber)) {
-                return point;
+    public CompleteBusStop getPoint(Integer pointNumber) {
+        for( CompleteBusStop completeBusStop : completeBusStops) {
+            if(completeBusStop.getNumber().equals(pointNumber)) {
+                return completeBusStop;
             }
         }
 

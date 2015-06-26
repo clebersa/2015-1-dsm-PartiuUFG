@@ -2,30 +2,34 @@ package br.ufg.inf.es.dsm.partiuufg.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.fragment.CampusBusLinesFragment;
-import br.ufg.inf.es.dsm.partiuufg.dbModel.Campus;
+import br.ufg.inf.es.dsm.partiuufg.fragment.BusStopListFragment;
+import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 
-/**
- * Created by Cleber on 25/06/2015.
- */
-public class CampusActivity extends AbstractActivity{
+public class BusLineActivity extends AbstractActivity {
     private final String TAG = this.getClass().getName();
-    private Campus campus;
-    private CampusBusLinesFragment fragment;
+
+    private Integer lineNumber;
+    private CompleteBusStop completeBusStop;
+    private BusStopListFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        lineNumber = getIntent().getIntExtra("lineNumber", -1);
+        Log.d(TAG, "Line number received: " + lineNumber);
 
         if(savedInstanceState == null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = new CampusBusLinesFragment();
+            fragment = new BusStopListFragment();
             Bundle b = new Bundle();
-            b.putLong("campusId", getIntent().getLongExtra("campusId", 0));
+            b.putInt("mode", BusStopListFragment.WEB_MODE);
+
+            b.putInt("lineNumber", lineNumber);
             fragment.setArguments(b);
             ft.add(R.id.list_lines, fragment);
             ft.commit();
@@ -52,5 +56,11 @@ public class CampusActivity extends AbstractActivity{
         super.onQueryTextSubmit(query);
         finish();
         return false;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putSerializable("busLine", lineNumber);
+        super.onSaveInstanceState(outState);
     }
 }

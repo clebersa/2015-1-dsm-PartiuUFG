@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,24 +16,24 @@ import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity;
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
-import br.ufg.inf.es.dsm.partiuufg.model.Point;
+import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 
 /**
  * Created by Bruno on 21/06/2015.
  */
 public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineViewHolder> {
     private List<BusLine> busLines;
-    private Point point;
+    private CompleteBusStop completeBusStop;
     private Context context;
 
-    public BusLineAdapter(Point point, Context context) {
-        this.point = point;
+    public BusLineAdapter(CompleteBusStop completeBusStop, Context context) {
+        this.completeBusStop = completeBusStop;
         this.context = context;
 
-        if(point == null) {
+        if(completeBusStop == null) {
             this.busLines = new ArrayList<BusLine>();
         } else {
-            this.busLines = point.getAvailableLines();
+            this.busLines = completeBusStop.getAvailableLines();
         }
     }
 
@@ -51,7 +50,7 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
     public void onBindViewHolder(BusLineViewHolder busLineViewHolder, int i) {
         final BusLine ci = busLines.get(i);
 
-        BusTime busTime = point.getBusTime(ci.getNumber());
+        BusTime busTime = completeBusStop.getBusTime(ci.getNumber());
         String destination = ci.getName();
         Integer nextTime = null;
         if( busTime != null ) {
@@ -73,7 +72,7 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
             public void onClick(View v) {
             Intent intent = new Intent(context, BusStopLineActivity.class);
             intent.putExtra("busLine", ci);
-            intent.putExtra("point", point);
+            intent.putExtra("completeBusStop", completeBusStop);
             context.startActivity(intent);
             }
         });

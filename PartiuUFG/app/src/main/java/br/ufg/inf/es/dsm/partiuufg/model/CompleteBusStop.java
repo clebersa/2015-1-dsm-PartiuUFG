@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Bruno on 19/06/2015.
  */
-public class Point implements Serializable {
+public class CompleteBusStop implements Serializable {
     @SerializedName("number")
     private Integer number;
     @SerializedName("lines-available")
@@ -29,7 +29,7 @@ public class Point implements Serializable {
     @SerializedName("request-date")
     private String searchDate;
 
-    public Point() {
+    public CompleteBusStop() {
 
     }
 

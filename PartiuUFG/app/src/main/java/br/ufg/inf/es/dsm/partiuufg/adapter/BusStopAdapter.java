@@ -2,7 +2,6 @@ package br.ufg.inf.es.dsm.partiuufg.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity;
 import br.ufg.inf.es.dsm.partiuufg.activity.PointActivity;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
-import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
-import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
-import br.ufg.inf.es.dsm.partiuufg.model.Point;
 
 /**
  * Created by Bruno on 21/06/2015.
@@ -53,6 +48,10 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
         busStopViewHolder.vLineNumber.setText(ci.getNumber().toString());
         busStopViewHolder.vAddress.setText(ci.getAddress());
         busStopViewHolder.vReference.setText(ci.getReference());
+
+        if("".equals(ci.getReference())) {
+            busStopViewHolder.vReference.setVisibility(View.GONE);
+        }
 
         busStopViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
             @Override

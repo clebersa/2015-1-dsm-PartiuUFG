@@ -1,7 +1,9 @@
 package br.ufg.inf.es.dsm.partiuufg.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
+import br.ufg.inf.es.dsm.partiuufg.activity.BusLineActivity;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine;
 
 /**
  * Created by Cleber on 21/06/2015.
  */
 public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<CampusSingleBusLinesAdapter.CampusBusLineViewHolder> {
+    private final String TAG = this.getClass().getName();
+
     private List<SingleBusLine> singleBusLines;
     private Context context;
 
@@ -48,14 +53,15 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<CampusSing
             busLineViewHolder.vDestination.setText(busLine.getName());
         }
 
-        /*busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
+        busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, BusLineActivity.class);
-                intent.putExtra("busLine", busLine.getNumber());
+                Log.d(TAG, "Sending line number " + busLine.getNumber() + " to the activity BusLineActivity.");
+                intent.putExtra("lineNumber", busLine.getNumber());
                 context.startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override

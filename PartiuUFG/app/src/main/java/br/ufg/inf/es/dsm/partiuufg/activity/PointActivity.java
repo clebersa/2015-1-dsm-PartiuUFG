@@ -16,21 +16,21 @@ import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
 import br.ufg.inf.es.dsm.partiuufg.fragment.NextPointBusTimeFragment;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
-import br.ufg.inf.es.dsm.partiuufg.model.Point;
+import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 public class PointActivity extends AbstractActivity {
     private Integer pointNumber;
-    private Point point;
+    private CompleteBusStop completeBusStop;
     private NextPointBusTimeFragment fragment;
 
     public void updatePointViewInformation() {
         TextView address = (TextView) findViewById(R.id.tvAddress);
-        address.setText(point.getAddress());
+        address.setText(completeBusStop.getAddress());
         TextView searchTime = (TextView) findViewById(R.id.tvSearchTime);
-        searchTime.setText(getString(R.string.last_search_time) + " " + point.getSearchDateFormatted());
+        searchTime.setText(getString(R.string.last_search_time) + " " + completeBusStop.getSearchDateFormatted());
     }
 
     public void increasePointAccess() {
@@ -39,20 +39,20 @@ public class PointActivity extends AbstractActivity {
             accessList = SingleBusStop.find(SingleBusStop.class,
                     "number = ?", pointNumber.toString());
         } catch(SQLiteException e) {
-            accessList = new ArrayList<SingleBusStop>();
+            accessList = new ArrayList<>();
         }
 
         if(accessList.size() > 0 ) {
             for (SingleBusStop access : accessList) {
-                access.setAddress(point.getAddress());
-                access.setReference(point.getReferenceLocation());
-                access.setLastSearchDate(point.getSearchDate());
+                access.setAddress(completeBusStop.getAddress());
+                access.setReference(completeBusStop.getReferenceLocation());
+                access.setLastSearchDate(completeBusStop.getSearchDate());
                 access.setAccessCount(access.getAccessCount() + 1);
                 access.save();
             }
         } else {
-            SingleBusStop access = new SingleBusStop(pointNumber, point.getAddress(),
-                    point.getReferenceLocation(), point.getSearchDate(), (long) 1);
+            SingleBusStop access = new SingleBusStop(pointNumber, completeBusStop.getAddress(),
+                    completeBusStop.getReferenceLocation(), completeBusStop.getSearchDate(), (long) 1);
             access.save();
         }
     }
@@ -69,13 +69,13 @@ public class PointActivity extends AbstractActivity {
             ft.commit();
 
             EasyBusService service = RestBusServiceFactory.getAdapter();
-            service.getPoint(pointNumber.toString(), new Callback<Point>() {
+            service.getPoint(pointNumber.toString(), new Callback<CompleteBusStop>() {
                 @Override
-                public void success(Point vPoint, Response response) {
-                    point = vPoint;
+                public void success(CompleteBusStop vCompleteBusStop, Response response) {
+                    completeBusStop = vCompleteBusStop;
                     increasePointAccess();
                     updatePointViewInformation();
-                    fragment.setPoint(point);
+                    fragment.setCompleteBusStop(completeBusStop);
                 }
 
                 @Override
@@ -87,7 +87,7 @@ public class PointActivity extends AbstractActivity {
             });
         } else {
             try {
-                point = (Point) savedInstanceState.getSerializable("point");
+                completeBusStop = (CompleteBusStop) savedInstanceState.getSerializable("completeBusStop");
                 updatePointViewInformation();
             } catch( NullPointerException e) {}
         }
@@ -117,7 +117,7 @@ public class PointActivity extends AbstractActivity {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("point", point);
+        outState.putSerializable("completeBusStop", completeBusStop);
         super.onSaveInstanceState(outState);
     }
 }

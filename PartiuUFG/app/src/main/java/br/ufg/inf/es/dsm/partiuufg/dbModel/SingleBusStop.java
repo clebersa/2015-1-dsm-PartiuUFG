@@ -2,6 +2,8 @@ package br.ufg.inf.es.dsm.partiuufg.dbModel;
 
 import com.orm.SugarRecord;
 
+import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
+
 /**
  * Created by bruno on 6/25/15.
  */
@@ -24,6 +26,9 @@ public class SingleBusStop extends SugarRecord<SingleBusStop> {
         this.accessCount = accessCount;
     }
 
+    public SingleBusStop(CompleteBusStop completeBusStop){
+        this(completeBusStop.getNumber(), completeBusStop.getAddress(), completeBusStop.getReferenceLocation(), completeBusStop.getSearchDate(), null);
+    }
     @Override
     public String toString() {
         return "SingleBusStop{" +

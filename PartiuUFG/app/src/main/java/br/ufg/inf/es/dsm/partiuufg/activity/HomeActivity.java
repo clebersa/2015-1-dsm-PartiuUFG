@@ -58,6 +58,9 @@ public class HomeActivity extends AbstractActivity {
         if(savedInstanceState == null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             Fragment fragment = new BusStopListFragment();
+            Bundle b = new Bundle();
+            b.putInt("mode", BusStopListFragment.DATABASE_MODE);
+            fragment.setArguments(b);
             ft.add(R.id.most_visited_stop_bus, fragment);
             ft.commit();
         }

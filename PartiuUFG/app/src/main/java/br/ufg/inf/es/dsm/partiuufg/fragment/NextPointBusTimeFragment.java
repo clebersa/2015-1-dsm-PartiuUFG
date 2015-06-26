@@ -8,13 +8,13 @@ import com.malinskiy.superrecyclerview.SuperRecyclerView;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.adapter.BusLineAdapter;
-import br.ufg.inf.es.dsm.partiuufg.model.Point;
+import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 
 /**
  * Created by Bruno on 20/06/2015.
  */
 public class NextPointBusTimeFragment extends ProgressFragment {
-    private Point point;
+    private CompleteBusStop completeBusStop;
     private SuperRecyclerView recList;
 
     public NextPointBusTimeFragment() {
@@ -41,21 +41,21 @@ public class NextPointBusTimeFragment extends ProgressFragment {
             return;
         }
 
-        BusLineAdapter busLineAdapter = new BusLineAdapter(point, getActivity());
+        BusLineAdapter busLineAdapter = new BusLineAdapter(completeBusStop, getActivity());
         recList.setAdapter(busLineAdapter);
 
         setContentEmpty(false);
         setContentShown(true);
     }
 
-    public void setPoint(Point point) {
-        this.point = point;
+    public void setCompleteBusStop(CompleteBusStop completeBusStop) {
+        this.completeBusStop = completeBusStop;
         updatePointData();
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("point", point);
+        outState.putSerializable("completeBusStop", completeBusStop);
         super.onSaveInstanceState(outState);
     }
 
@@ -65,7 +65,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
 
         if(savedInstanceState != null) {
             try {
-                setPoint((Point) savedInstanceState.getSerializable("point"));
+                setCompleteBusStop((CompleteBusStop) savedInstanceState.getSerializable("completeBusStop"));
             } catch( NullPointerException e) {}
         }
     }

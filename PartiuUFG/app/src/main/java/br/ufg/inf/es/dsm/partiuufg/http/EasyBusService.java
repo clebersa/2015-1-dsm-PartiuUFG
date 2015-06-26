@@ -2,7 +2,7 @@ package br.ufg.inf.es.dsm.partiuufg.http;
 
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
-import br.ufg.inf.es.dsm.partiuufg.model.Point;
+import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Path;
@@ -15,7 +15,7 @@ public interface EasyBusService {
     void getBusLine(@Path("lineNumber") String lineNumber, Callback<BusLine> callback);
 
     @GET("/point/{pointNumber}")
-    void getPoint(@Path("pointNumber") String pointNumber, Callback<Point> callback);
+    void getPoint(@Path("pointNumber") String pointNumber, Callback<CompleteBusStop> callback);
 
     @GET("/point/{pointNumber}/bus/{lineNumber}")
     void getBusNextTimeInPoint(@Path("pointNumber") String pointNumber,

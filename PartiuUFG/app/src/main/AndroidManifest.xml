@@ -63,7 +63,10 @@
             android:name=".activity.CampusActivity"
             android:label="@string/title_activity_campus" >
         </activity>
-
+        <activity
+            android:name=".activity.BusLineActivity"
+            android:label="@string/title_activity_bus_line" >
+        </activity>
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:exported="true"
