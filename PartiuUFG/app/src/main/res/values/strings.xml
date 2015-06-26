@@ -18,4 +18,5 @@
 
     <string name="GCMauthorizedEntity">153415196554</string>
     <string name="registrationCompleteIntentName">registrationComplete</string>
+    <string name="GCMNotificationMessage">O ônibus %1$d passa em %2$d minutos no ponto %3$d</string>
 </resources>

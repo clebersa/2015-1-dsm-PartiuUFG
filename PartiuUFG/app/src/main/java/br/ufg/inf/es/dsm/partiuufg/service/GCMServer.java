@@ -7,11 +7,21 @@ import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import java.util.List;
+
+import br.ufg.inf.es.dsm.partiuufg.R;
+import br.ufg.inf.es.dsm.partiuufg.dbModel.GCMBusPointTime;
+import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.GCMHttpService;
+import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
 import br.ufg.inf.es.dsm.partiuufg.http.RestGCMServiceFactory;
+import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
 import br.ufg.inf.es.dsm.partiuufg.model.GCMMessage;
 import br.ufg.inf.es.dsm.partiuufg.model.GCMResult;
 import br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class GCMServer extends Service {
     private static final String TAG = GCMServer.class.getSimpleName();
@@ -37,16 +47,39 @@ public class GCMServer extends Service {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                if(isRunning){
-                    GCMMessageData data = new GCMMessageData("ônibus 105 no ponto 6363 passa em 5 minutos", 6363, 105);
-                    GCMMessage GCMMessage = new GCMMessage(deviceToken, data);
+                while(true) {
+                    if (isRunning) {
+                        List<GCMBusPointTime> alertBusStopLines = GCMBusPointTime.listAll(GCMBusPointTime.class);
+                        EasyBusService easyBusService = RestBusServiceFactory.getAdapter();
+                        for (final GCMBusPointTime alertBusStopLine : alertBusStopLines) {
+                            try {
+                                BusTime busTime = easyBusService.getBusNextTimeInPoint(
+                                        alertBusStopLine.getPointNumber().toString(),
+                                        alertBusStopLine.getBusLineNumber().toString());
 
-                    GCMHttpService service = RestGCMServiceFactory.getAdapter();
-                    GCMResult resposta = service.send(GCMMessage);
-                    Log.i(TAG, resposta.toString());
+                                if (busTime.getNextTime() <= alertBusStopLine.getBeforeMinutesToAlert()) {
+                                    String message = getString(R.string.GCMNotificationMessage,
+                                            alertBusStopLine.getBusLineNumber(),
+                                            busTime.getNextTime(),
+                                            alertBusStopLine.getPointNumber());
+                                    GCMMessageData data = new GCMMessageData(message,
+                                            alertBusStopLine.getPointNumber(),
+                                            alertBusStopLine.getBusLineNumber());
+                                    GCMMessage GCMMessage = new GCMMessage(deviceToken, data);
+
+                                    Log.d("teste", message);
+                                    GCMHttpService service = RestGCMServiceFactory.getAdapter();
+                                    GCMResult result = service.send(GCMMessage);
+                                    Log.d("teste", result.toString());
+                                }
+                            } catch(Exception e) {}
+                        }
+                    }
+
+                    try {
+                        Thread.sleep(50000);
+                    } catch (InterruptedException e) {}
                 }
-
-                stopSelf();
             }
         }).start();
 

@@ -75,6 +75,11 @@ public class BusStopLineActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
+        checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
+        lineNumber = (TextView) findViewById(R.id.lineNumber);
+        lineName = (TextView) findViewById(R.id.lineName);
+
         busLine = (BusLine) getIntent().getSerializableExtra("busLine");
         completeBusStop = (CompleteBusStop) getIntent().getSerializableExtra("completeBusStop");
 
@@ -101,11 +106,6 @@ public class BusStopLineActivity extends AbstractActivity {
         } else {
             loadView();
         }
-
-        tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
-        checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
-        lineNumber = (TextView) findViewById(R.id.lineNumber);
-        lineName = (TextView) findViewById(R.id.lineName);
     }
 
     private void setTimer() {

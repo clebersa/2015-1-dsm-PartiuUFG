@@ -1,5 +1,6 @@
 package br.ufg.inf.es.dsm.partiuufg.activity;
 
+import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,11 +33,6 @@ public class HomeActivity extends AbstractActivity {
     private final String CAMPUS_COLEMAR_NAME = "Campus Colemar Natal e Silva";
     private HashMap<String, Campus> campi;
 
-    public void gcmTokenReceived() {
-        Intent intent = new Intent(getBaseContext(), GCMServer.class);
-        startService(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,19 +47,18 @@ public class HomeActivity extends AbstractActivity {
                 SharedPreferences sharedPreferences =
                         PreferenceManager.getDefaultSharedPreferences(context);
                 String gcmToken = sharedPreferences.getString("gcmToken", null);
-
-                if(gcmToken != null) {
-                    gcmTokenReceived();
-                }
             }
         };
+
+        if( isMyServiceRunning(GCMServer.class) == false) {
+            Intent gcmServerIntent = new Intent(this, GCMServer.class);
+            startService(gcmServerIntent);
+        }
 
         if (checkPlayServices(false)) {
             if(gcmToken == null) {
                 Intent intent = new Intent(this, RegistrationIntentService.class);
                 startService(intent);
-            } else {
-                gcmTokenReceived();
             }
         }
 
@@ -94,6 +90,16 @@ public class HomeActivity extends AbstractActivity {
         if(!hasSamambaia) initCampusSamambaia();
         if(!hasColemar) initCampusColemar();
 
+    }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
