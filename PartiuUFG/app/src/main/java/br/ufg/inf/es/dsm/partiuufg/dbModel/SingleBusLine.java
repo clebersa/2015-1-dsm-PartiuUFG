@@ -8,13 +8,15 @@ import com.orm.SugarRecord;
 public class SingleBusLine extends SugarRecord<SingleBusLine> {
     protected Integer number;
     protected String name;
+    protected Campus campus;
 
     public SingleBusLine() {
     }
 
-    public SingleBusLine(Integer number, String name) {
+    public SingleBusLine(Integer number, String name, Campus campus) {
         this.number = number;
         this.name = name;
+        this.campus = campus;
     }
 
     public SingleBusLine(Integer number) {
@@ -37,11 +39,20 @@ public class SingleBusLine extends SugarRecord<SingleBusLine> {
         this.name = name;
     }
 
+    public Campus getCampus() {
+        return campus;
+    }
+
+    public void setCampus(Campus campus) {
+        this.campus = campus;
+    }
+
     @Override
     public String toString() {
         return "SingleBusLine{" +
                 "number=" + number +
                 ", name='" + name + '\'' +
+                ", campus=" + campus +
                 '}';
     }
 }

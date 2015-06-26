@@ -2,42 +2,45 @@ package br.ufg.inf.es.dsm.partiuufg.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.assyncTask.DBCampusSelectAsyncTask;
-import br.ufg.inf.es.dsm.partiuufg.fragment.CampusBusLinesFragment;
-import br.ufg.inf.es.dsm.partiuufg.interfaces.DBImplementer;
-import br.ufg.inf.es.dsm.partiuufg.model.Campus;
+import java.util.List;
 
-public class CampusActivity extends AbstractActivity implements DBImplementer<Campus>{
-    Integer campusId;
-    CampusBusLinesFragment fragment;
+import br.ufg.inf.es.dsm.partiuufg.R;
+import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine;
+import br.ufg.inf.es.dsm.partiuufg.fragment.CampusBusLinesFragment;
+import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
+import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
+import br.ufg.inf.es.dsm.partiuufg.dbModel.Campus;
+import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
+/**
+ * Created by Cleber on 25/06/2015.
+ */
+public class CampusActivity extends AbstractActivity{
+    private final String TAG = this.getClass().getName();
+    private Campus campus;
+    private CampusBusLinesFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         if(savedInstanceState == null) {
-            campusId = getIntent().getIntExtra("campusId", 0);
-            DBCampusSelectAsyncTask selectAsyncTask = new DBCampusSelectAsyncTask(this, this);
-            selectAsyncTask.execute();
-
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             fragment = new CampusBusLinesFragment();
+            Bundle b = new Bundle();
+            b.putLong("campusId", getIntent().getLongExtra("campusId", 0));
+            fragment.setArguments(b);
             ft.add(R.id.bus_line_lines, fragment);
             ft.commit();
         }
-    }
-
-    public Integer getCampusId() {
-        return campusId;
-    }
-
-    public void setCampusId(Integer campusId) {
-        this.campusId = campusId;
     }
 
     @Override
@@ -60,15 +63,5 @@ public class CampusActivity extends AbstractActivity implements DBImplementer<Ca
         super.onQueryTextSubmit(query);
         finish();
         return false;
-    }
-
-    @Override
-    public void onSelect(Campus campus) {
-        if(campus != null){
-            fragment.setCampus(campus);
-        } else{
-            Toast toast = Toast.makeText(this, "Campus não encontrado", Toast.LENGTH_SHORT);
-            toast.show();
-        }
     }
 }

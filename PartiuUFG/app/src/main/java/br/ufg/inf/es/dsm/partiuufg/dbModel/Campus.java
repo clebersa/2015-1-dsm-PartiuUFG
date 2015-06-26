@@ -9,14 +9,12 @@ import java.io.Serializable;
  */
 public class Campus extends SugarRecord<Campus> implements Serializable {
     private String name;
-    private SingleBusLine[] singleBusLines;
 
     public Campus() {
     }
 
-    public Campus(String name, SingleBusLine[] singleBusLines) {
+    public Campus(String name) {
         this.name = name;
-        this.singleBusLines = singleBusLines;
     }
 
     public String getName() {
@@ -25,13 +23,5 @@ public class Campus extends SugarRecord<Campus> implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public SingleBusLine[] getSingleBusLines() {
-        return singleBusLines;
-    }
-
-    public void setSingleBusLines(SingleBusLine[] singleBusLines) {
-        this.singleBusLines = singleBusLines;
     }
 }

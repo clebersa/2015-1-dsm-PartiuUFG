@@ -11,40 +11,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
+import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine;
 
 /**
  * Created by Cleber on 21/06/2015.
  */
 public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<CampusSingleBusLinesAdapter.CampusBusLineViewHolder> {
-    private List<BusLine> busLines;
+    private List<SingleBusLine> singleBusLines;
     private Context context;
 
-    public CampusSingleBusLinesAdapter(List<BusLine> busLines, Context context) {
+    public CampusSingleBusLinesAdapter(List<SingleBusLine> singleBusLines, Context context) {
         this.context = context;
 
-        if(busLines == null) {
-            this.busLines = new ArrayList<>();
+        if(singleBusLines == null) {
+            this.singleBusLines = new ArrayList<>();
         } else {
-            this.busLines = busLines;
+            this.singleBusLines = singleBusLines;
         }
     }
 
-    public List<BusLine> getBusLines() {
-        return busLines;
+    public List<SingleBusLine> getSingleBusLines() {
+        return singleBusLines;
     }
 
     @Override
     public int getItemCount() {
-        return busLines.size();
+        return singleBusLines.size();
     }
 
     @Override
     public void onBindViewHolder(CampusBusLineViewHolder busLineViewHolder, int i) {
-        final BusLine busLine = busLines.get(i);
+        final SingleBusLine busLine = singleBusLines.get(i);
 
         busLineViewHolder.vLineNumber.setText(busLine.getNumber().toString());
-        busLineViewHolder.vDestination.setText(busLine.getName());
+        if(busLine.getName() != null) {
+            busLineViewHolder.vDestination.setText(busLine.getName());
+        }
 
         /*busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
             @Override
