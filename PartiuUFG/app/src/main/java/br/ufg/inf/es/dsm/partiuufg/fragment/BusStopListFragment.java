@@ -3,6 +3,8 @@ package br.ufg.inf.es.dsm.partiuufg.fragment;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -107,6 +109,29 @@ public class BusStopListFragment extends ProgressFragment {
         }
         busStopAdapter = new BusStopAdapter(busStopList, getActivity());
         recList.setAdapter(busStopAdapter);
+
+        ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(
+                new ItemTouchHelper.SimpleCallback(
+                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT,
+                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
+                                  RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                List<SingleBusStop> adapterList = ((BusStopAdapter) recList.getAdapter())
+                        .getBusStops();
+                SingleBusStop singleBusRemoved = adapterList.get(viewHolder.getAdapterPosition());
+                singleBusRemoved.delete();
+                adapterList.remove(viewHolder.getAdapterPosition());
+                recList.getAdapter().notifyItemRemoved(viewHolder.getAdapterPosition());
+            }
+        });
+        swipeToDismissTouchHelper.attachToRecyclerView(recList.getRecyclerView());
+
         setContentEmpty(false);
         setContentShown(true);
     }

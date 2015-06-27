@@ -2,6 +2,7 @@ package br.ufg.inf.es.dsm.partiuufg.fragment;
 
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ import retrofit.client.Response;
  * Created by Bruno on 20/06/2015.
  */
 public class NextPointBusTimeFragment extends ProgressFragment {
-    private final String TAG = this.getClass().getName();
+    private static final String TAG = NextPointBusTimeFragment.class.getSimpleName();
 
     private CompleteBusStop completeBusStop;
     private SuperRecyclerView recList;
@@ -36,14 +37,6 @@ public class NextPointBusTimeFragment extends ProgressFragment {
     private Integer busStopNumber;
 
     public NextPointBusTimeFragment() {
-
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        busStopNumber = getArguments().getInt("busStopNumber");
     }
 
     @Override
@@ -51,61 +44,85 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         super.onActivityCreated(savedInstanceState);
         setContentView(R.layout.fragment_next_point_bus_time);
 
+        busStopNumber = getArguments().getInt("busStopNumber");
+
         recList = (SuperRecyclerView) getContentView().findViewById(R.id.rec_list);
         LinearLayoutManager layout = new LinearLayoutManager(getActivity());
         layout.setOrientation(LinearLayoutManager.VERTICAL);
         layout.scrollToPosition(0);
         recList.setLayoutManager(layout);
         recList.getRecyclerView().setHasFixedSize(true);
+        recList.setRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                setContentShown(false);
+                getStopBusDataFromWeb();
+            }
+        });
 
         setContentShown(false);
 
-        getActivity().setTitle("Ponto " + busStopNumber);
+        if(savedInstanceState == null) {
+            getStopBusDataFromWeb();
+        } else {
+            try {
+                completeBusStop = (CompleteBusStop) savedInstanceState
+                        .getSerializable("completeBusStop");
+                busLineAdapter = new BusLineAdapter(completeBusStop, getActivity());
+                createView();
+            } catch(NullPointerException e) {}
+        }
+    }
+
+    public void createView() {
+        recList.setAdapter(busLineAdapter);
+
+        TextView address = (TextView) getView().findViewById(R.id.tvAddress);
+        address.setText(completeBusStop.getAddress());
+
+        TextView searchTime = (TextView) getView().findViewById(R.id.tvSearchTime);
+        searchTime.setText(getString(R.string.last_search_time) + " "
+                + completeBusStop.getSearchDateFormatted());
+
+        setContentShown(true);
+    }
+
+    public void getStopBusDataFromWeb() {
         EasyBusService service = RestBusServiceFactory.getAdapter();
         service.getPoint(busStopNumber.toString(), new Callback<CompleteBusStop>() {
             @Override
             public void success(CompleteBusStop vCompleteBusStop, Response response) {
+                Log.e(TAG, "Complete bus stop " + vCompleteBusStop.getNumber() + " loaded.");
                 completeBusStop = vCompleteBusStop;
-                Log.e(TAG, "Complete bus stop "+completeBusStop.getNumber() +" loaded.");
+                if(busLineAdapter != null) {
+                    busLineAdapter.cancelRefreshTimer();
+                }
                 busLineAdapter = new BusLineAdapter(completeBusStop, getActivity());
-                recList.setAdapter(busLineAdapter);
                 increaseBusStopAccessCounter();
-
-                TextView address = (TextView) getView().findViewById(R.id.tvAddress);
-                address.setText(completeBusStop.getAddress());
-                TextView searchTime = (TextView) getView().findViewById(R.id.tvSearchTime);
-                searchTime.setText(getString(R.string.last_search_time) + " "
-                        + completeBusStop.getSearchDateFormatted());
-                setContentShown(true);
+                createView();
             }
 
             @Override
             public void failure(RetrofitError error) {
                 Toast toast = Toast.makeText(getActivity(),
-                        "Ponto não encontrado", Toast.LENGTH_SHORT);
+                        getString(R.string.bus_stop_not_found), Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("completeBusStop", completeBusStop);
-        super.onSaveInstanceState(outState);
-        Log.d(TAG, "Complete bus stop "+completeBusStop.getNumber() +" saved.");
+    public void onPause() {
+        if(busLineAdapter != null) {
+            busLineAdapter.cancelRefreshTimer();
+        }
+        super.onPause();
     }
 
     @Override
-    public void onViewStateRestored(Bundle savedInstanceState) {
-        super.onViewStateRestored(savedInstanceState);
-
-        if(savedInstanceState != null) {
-            try {
-                completeBusStop = ((CompleteBusStop) savedInstanceState.getSerializable("completeBusStop"));
-                Log.d(TAG, "Complete bus stop "+completeBusStop.getNumber() +" restored.");
-                busLineAdapter.notifyDataSetChanged();
-            } catch( NullPointerException e) {}
-        }
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putSerializable("completeBusStop", completeBusStop);
+        super.onSaveInstanceState(outState);
     }
 
     public void increaseBusStopAccessCounter() {

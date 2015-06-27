@@ -16,6 +16,7 @@ public class BusStopActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Integer busStopNumber = getIntent().getIntExtra("pointId", -1);
+        setTitle("Ponto " + busStopNumber);
 
         if(savedInstanceState == null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

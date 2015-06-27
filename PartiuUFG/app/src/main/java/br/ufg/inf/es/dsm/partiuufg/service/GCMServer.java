@@ -63,8 +63,10 @@ public class GCMServer extends Service {
                                             alertBusStopLine.getBusLineNumber());
                                     GCMMessage GCMMessage = new GCMMessage(deviceToken, data);
 
+                                    Log.d(TAG, "Enviando mensagem...");
                                     GCMHttpService service = RestGCMServiceFactory.getAdapter();
                                     service.send(GCMMessage);
+                                    Log.d(TAG, "mensagem enviada...");
                                 }
                             } catch(Exception e) {}
                         }

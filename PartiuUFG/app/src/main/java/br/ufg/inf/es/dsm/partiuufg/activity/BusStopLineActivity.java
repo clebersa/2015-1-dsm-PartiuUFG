@@ -64,7 +64,7 @@ public class BusStopLineActivity extends AbstractActivity {
         } else {
             Toast toast = Toast.makeText(getBaseContext(),
                     getString(R.string.no_play_service_installed),
-                    Toast.LENGTH_SHORT);
+                    Toast.LENGTH_LONG);
             toast.show();
         }
     }

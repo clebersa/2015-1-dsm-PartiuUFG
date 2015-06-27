@@ -76,12 +76,11 @@ public abstract class AbstractActivity extends ActionBarActivity implements Sear
     protected boolean checkPlayServices(boolean displayInstall) {
         int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
         if (resultCode != ConnectionResult.SUCCESS) {
-            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode) && displayInstall) {
-                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            } else {
-                Log.i(TAG, "This device is not supported.");
-                finish();
+            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+                if( displayInstall ) {
+                    GooglePlayServicesUtil.getErrorDialog(resultCode, this,
+                            PLAY_SERVICES_RESOLUTION_REQUEST).show();
+                }
             }
             return false;
         }

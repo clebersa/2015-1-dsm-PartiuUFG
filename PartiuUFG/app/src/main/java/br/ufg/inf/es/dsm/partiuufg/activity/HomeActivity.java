@@ -28,7 +28,6 @@ import br.ufg.inf.es.dsm.partiuufg.service.RegistrationIntentService;
 
 
 public class HomeActivity extends AbstractActivity {
-    private BroadcastReceiver mRegistrationBroadcastReceiver;
     private final String CAMPUS_SAMAMBAIA_NAME = "Campus Samambaia";
     private final String CAMPUS_COLEMAR_NAME = "Campus Colemar Natal e Silva";
     private HashMap<String, Campus> campi;
@@ -37,25 +36,16 @@ public class HomeActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences sharedPreferences = PreferenceManager.
-                getDefaultSharedPreferences(getBaseContext());
-        String gcmToken = sharedPreferences.getString("gcmToken", null);
-
-        mRegistrationBroadcastReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                SharedPreferences sharedPreferences =
-                        PreferenceManager.getDefaultSharedPreferences(context);
-                String gcmToken = sharedPreferences.getString("gcmToken", null);
-            }
-        };
-
-        if( isMyServiceRunning(GCMServer.class) == false) {
-            Intent gcmServerIntent = new Intent(this, GCMServer.class);
-            startService(gcmServerIntent);
-        }
-
         if (checkPlayServices(false)) {
+            if(!isMyServiceRunning(GCMServer.class)) {
+                Intent gcmServerIntent = new Intent(this, GCMServer.class);
+                startService(gcmServerIntent);
+            }
+
+            SharedPreferences sharedPreferences = PreferenceManager.
+                    getDefaultSharedPreferences(getBaseContext());
+            String gcmToken = sharedPreferences.getString("gcmToken", null);
+
             if(gcmToken == null) {
                 Intent intent = new Intent(this, RegistrationIntentService.class);
                 startService(intent);
@@ -89,7 +79,6 @@ public class HomeActivity extends AbstractActivity {
 
         if(!hasSamambaia) initCampusSamambaia();
         if(!hasColemar) initCampusColemar();
-
     }
 
     private boolean isMyServiceRunning(Class<?> serviceClass) {
@@ -100,19 +89,6 @@ public class HomeActivity extends AbstractActivity {
             }
         }
         return false;
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
-                new IntentFilter(getString(R.string.registrationCompleteIntentName)));
-    }
-
-    @Override
-    protected void onPause() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
-        super.onPause();
     }
 
     @Override
