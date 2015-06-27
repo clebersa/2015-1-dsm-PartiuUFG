@@ -46,6 +46,8 @@ public class MyGcmListenerService extends GcmListenerService {
 
         NotificationManager nManager = (NotificationManager) getSystemService(
                 Context.NOTIFICATION_SERVICE);
-        nManager.notify(0, notification);
+
+        Integer notificationId = Integer.valueOf(busStopNumber.toString() + busLineNumber.toString());
+        nManager.notify(notificationId, notification);
     }
 }

@@ -53,20 +53,36 @@ public class BusStopLineActivity extends AbstractActivity {
     }
 
     public void gcmFavorite(View view) {
-        if( checkGCMFav.isChecked() ) {
-            deleteStopLineFavorite();
-            checkGCMFav.setChecked(false);
+        if (checkPlayServices(true)) {
+            if (checkGCMFav.isChecked()) {
+                deleteStopLineFavorite();
+                checkGCMFav.setChecked(false);
+            } else {
+                addStopLineFavorite();
+                checkGCMFav.setChecked(true);
+            }
         } else {
-            addStopLineFavorite();
-            checkGCMFav.setChecked(true);
+            Toast toast = Toast.makeText(getBaseContext(),
+                    getString(R.string.no_play_service_installed),
+                    Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
     public void loadView() {
+        setTitle("Linha " + busLine.getNumber() + " do ponto " + completeBusStop.getNumber());
         lineNumber.setText(busLine.getNumber().toString());
         lineName.setText(busLine.getName());
-        if( getLineFavorite().size() > 0 ) {
-            checkGCMFav.setChecked(true);
+
+        List<GCMBusPointTime> favorites = getLineFavorite();
+        if (!checkPlayServices(false)) {
+            if(favorites.size() > 0) {
+                GCMBusPointTime.deleteAll(GCMBusPointTime.class);
+            }
+        } else {
+            if (favorites.size() > 0) {
+                checkGCMFav.setChecked(true);
+            }
         }
         setTimer();
     }
@@ -99,7 +115,8 @@ public class BusStopLineActivity extends AbstractActivity {
                 @Override
                 public void failure(RetrofitError error) {
                     Toast toast = Toast.makeText(getBaseContext(),
-                            "Ponto não encontrado", Toast.LENGTH_SHORT);
+                            getString(R.string.bus_stop_not_found),
+                            Toast.LENGTH_SHORT);
                     toast.show();
                 }
             });
@@ -115,9 +132,12 @@ public class BusStopLineActivity extends AbstractActivity {
             nextTime = busTime.getNextTime();
         }
 
-        long totalTime = 60 * nextTime * 1000;
+        long currentTime = System.currentTimeMillis();
+        long searchTime = completeBusStop.getSearchDateTimestamp();
+        long elapsedTime = currentTime - searchTime;
+        long remainingTime = (60 * nextTime * 1000) - elapsedTime;
 
-        startTimer(totalTime);
+        startTimer(remainingTime);
     }
 
     private void startTimer(long totalTime) {

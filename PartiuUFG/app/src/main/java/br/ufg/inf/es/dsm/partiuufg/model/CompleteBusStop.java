@@ -61,16 +61,32 @@ public class CompleteBusStop implements Serializable {
         return searchDate;
     }
 
-    public String getSearchDateFormatted() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        try {
-            Date searchDate = formatter.parse(this.searchDate);
-            return new SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(searchDate);
-        } catch (Exception e) {
-            Log.d(this.getClass().getSimpleName(), e.getMessage());
+    public long getSearchDateTimestamp() {
+        Date searchDate = getDateSearchDate();
+        if( searchDate == null ) {
+            return 0;
         }
 
-        return "Sem informação";
+        return searchDate.getTime();
+    }
+
+    public Date getDateSearchDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        Date searchDate = null;
+        try {
+            searchDate = formatter.parse(this.searchDate);
+        } catch (Exception e) {}
+
+        return searchDate;
+    }
+
+    public String getSearchDateFormatted() {
+        Date searchDate = getDateSearchDate();
+        if( searchDate == null ) {
+            return "";
+        }
+
+        return new SimpleDateFormat("dd/MM/yyyy 'às' HH:mm").format(searchDate);
     }
 
     public BusLine getBusLine(Integer busLineNumber) {

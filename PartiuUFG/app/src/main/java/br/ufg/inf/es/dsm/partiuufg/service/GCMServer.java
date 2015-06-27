@@ -17,11 +17,7 @@ import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
 import br.ufg.inf.es.dsm.partiuufg.http.RestGCMServiceFactory;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
 import br.ufg.inf.es.dsm.partiuufg.model.GCMMessage;
-import br.ufg.inf.es.dsm.partiuufg.model.GCMResult;
 import br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData;
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
 
 public class GCMServer extends Service {
     private static final String TAG = GCMServer.class.getSimpleName();
@@ -67,10 +63,8 @@ public class GCMServer extends Service {
                                             alertBusStopLine.getBusLineNumber());
                                     GCMMessage GCMMessage = new GCMMessage(deviceToken, data);
 
-                                    Log.d("teste", message);
                                     GCMHttpService service = RestGCMServiceFactory.getAdapter();
-                                    GCMResult result = service.send(GCMMessage);
-                                    Log.d("teste", result.toString());
+                                    service.send(GCMMessage);
                                 }
                             } catch(Exception e) {}
                         }
