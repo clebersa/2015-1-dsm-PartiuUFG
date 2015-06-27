@@ -94,7 +94,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
             public void success(CompleteBusStop vCompleteBusStop, Response response) {
                 Log.e(TAG, "Complete bus stop " + vCompleteBusStop.getNumber() + " loaded.");
                 completeBusStop = vCompleteBusStop;
-                if(busLineAdapter != null) {
+                if (busLineAdapter != null) {
                     busLineAdapter.cancelRefreshTimer();
                 }
                 busLineAdapter = new BusLineAdapter(completeBusStop, getActivity());
@@ -112,11 +112,20 @@ public class NextPointBusTimeFragment extends ProgressFragment {
     }
 
     @Override
-    public void onPause() {
+    public void onResume() {
+        super.onResume();
+        if( busLineAdapter != null ) {
+            busLineAdapter.notifyItemInserted(0);
+            busLineAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
         if(busLineAdapter != null) {
             busLineAdapter.cancelRefreshTimer();
         }
-        super.onPause();
+        super.onDestroy();
     }
 
     @Override

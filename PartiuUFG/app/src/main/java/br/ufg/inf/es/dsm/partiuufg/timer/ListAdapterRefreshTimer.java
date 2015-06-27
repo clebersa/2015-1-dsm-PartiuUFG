@@ -27,6 +27,7 @@ public class ListAdapterRefreshTimer extends TimerTask {
                 mHandler.post(new Runnable() {
                     @Override
                     public void run() {
+                        adapter.notifyItemInserted(0);
                         adapter.notifyDataSetChanged();
                     }
                 });

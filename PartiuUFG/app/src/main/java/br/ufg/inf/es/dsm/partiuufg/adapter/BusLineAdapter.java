@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ import br.ufg.inf.es.dsm.partiuufg.timer.ListAdapterRefreshTimer;
 /**
  * Created by Bruno on 21/06/2015.
  */
-public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineViewHolder> implements Serializable {
+public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineViewHolder> {
     private List<BusLine> busLines;
     private CompleteBusStop completeBusStop;
     private Context context;
@@ -74,8 +75,9 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         long currentTime = System.currentTimeMillis();
         long searchTime = completeBusStop.getSearchDateTimestamp();
         long elapsedTime = currentTime - searchTime;
-        long remainingTime = (60 * nextTime * 1000) - elapsedTime;
-        Integer remainingMinutes = (int) (remainingTime / 60000);
+        long remainingTime = (60 * nextTime * 1000) - (elapsedTime + 2000);
+        Double dRemainingMinutes = Math.ceil((Double.valueOf(remainingTime) / 60000));
+        Integer remainingMinutes = dRemainingMinutes.intValue();
 
         busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
         String displayNextTime = context.getString(R.string.no_forecast);
