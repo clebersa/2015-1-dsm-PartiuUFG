@@ -16,6 +16,8 @@
     <string name="title_activity_campus">Campus</string>
     <string name="title_activity_bus_line">Linha de Ônibus</string>
 
+    <string name="top_access">Pontos mais acessados:</string>
+
     <string name="GCMauthorizedEntity">153415196554</string>
     <string name="registrationCompleteIntentName">registrationComplete</string>
     <string name="GCMNotificationMessage">O ônibus %1$d passa em %2$d minutos no ponto %3$d</string>

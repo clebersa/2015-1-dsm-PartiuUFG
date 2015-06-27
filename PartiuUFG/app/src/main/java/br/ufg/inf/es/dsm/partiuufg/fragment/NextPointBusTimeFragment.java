@@ -60,6 +60,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
 
         setContentShown(false);
 
+        getActivity().setTitle("Ponto " + busStopNumber);
         EasyBusService service = RestBusServiceFactory.getAdapter();
         service.getPoint(busStopNumber.toString(), new Callback<CompleteBusStop>() {
             @Override

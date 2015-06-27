@@ -22,6 +22,15 @@
         android:layout_gravity="left|top"
         android:onClick="loadColemarBusLines"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/top_access"
+        android:id="@+id/top_access"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp" />
+
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools" android:id="@+id/most_visited_stop_bus"
         android:layout_width="match_parent" android:layout_height="match_parent"

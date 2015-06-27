@@ -4,6 +4,7 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.devspark.progressfragment.ProgressFragment;
@@ -97,6 +98,13 @@ public class BusStopListFragment extends ProgressFragment {
             busStopList = new ArrayList<>();
         }
 
+        if(busStopList.isEmpty()){
+            getActivity().findViewById(R.id.top_access).setVisibility(View.GONE);
+            recList.setVisibility(View.GONE);
+        }else{
+            getActivity().findViewById(R.id.top_access).setVisibility(View.VISIBLE);
+            recList.setVisibility(View.VISIBLE);
+        }
         busStopAdapter = new BusStopAdapter(busStopList, getActivity());
         recList.setAdapter(busStopAdapter);
         setContentEmpty(false);

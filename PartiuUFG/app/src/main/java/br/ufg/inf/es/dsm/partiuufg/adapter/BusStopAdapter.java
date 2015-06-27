@@ -26,7 +26,7 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
         this.context = context;
 
         if(busStops == null) {
-            this.busStops = new ArrayList<SingleBusStop>();
+            this.busStops = new ArrayList<>();
         } else {
             this.busStops = busStops;
         }
