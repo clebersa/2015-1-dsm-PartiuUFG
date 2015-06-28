@@ -13,6 +13,7 @@ import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.activity.BusStopActivity;
+import br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
 
 /**
@@ -20,6 +21,7 @@ import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
  */
 public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopViewHolder> {
     private List<SingleBusStop> busStops;
+    StopBusOnClickListener onClickListener;
     private Context context;
 
     public BusStopAdapter(List<SingleBusStop> busStops, Context context) {
@@ -36,6 +38,14 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
         return busStops;
     }
 
+    public Context getContext() {
+        return context;
+    }
+
+    public void setOnClickListener(StopBusOnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+    }
+
     @Override
     public int getItemCount() {
         return busStops.size();
@@ -49,18 +59,11 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
         busStopViewHolder.vAddress.setText(ci.getAddress());
         busStopViewHolder.vReference.setText(ci.getReference());
 
-        if("".equals(ci.getReference())) {
+        if ("".equals(ci.getReference())) {
             busStopViewHolder.vReference.setVisibility(View.GONE);
         }
-
-        busStopViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, BusStopActivity.class);
-                intent.putExtra("pointId", ci.getNumber());
-                context.startActivity(intent);
-            }
-        });
+        onClickListener.setIndex(i);
+        busStopViewHolder.vCard.setOnClickListener(onClickListener);
     }
 
     @Override

@@ -17,6 +17,8 @@ import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.adapter.BusStopAdapter;
+import br.ufg.inf.es.dsm.partiuufg.adapter.GeneralStopBusOnClickListener;
+import br.ufg.inf.es.dsm.partiuufg.adapter.StopBusFromLineOnClickListener;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
@@ -108,6 +110,7 @@ public class BusStopListFragment extends ProgressFragment {
             recList.setVisibility(View.VISIBLE);
         }
         busStopAdapter = new BusStopAdapter(busStopList, getActivity());
+        busStopAdapter.setOnClickListener(new GeneralStopBusOnClickListener(busStopAdapter));
         recList.setAdapter(busStopAdapter);
 
         ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(
@@ -151,6 +154,7 @@ public class BusStopListFragment extends ProgressFragment {
                 Log.i(TAG, "List size: " + singleBusStopList.size());
                 getActivity().setTitle(getActivity().getTitle() + ": " + busline.getName());
                 busStopAdapter = new BusStopAdapter(singleBusStopList, getActivity());
+                busStopAdapter.setOnClickListener(new StopBusFromLineOnClickListener(busStopAdapter, lineNumber));
                 recList.setAdapter(busStopAdapter);
                 setContentEmpty(false);
                 setContentShown(true);
