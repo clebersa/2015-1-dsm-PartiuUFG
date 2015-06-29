@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.devspark.progressfragment.ProgressFragment;
@@ -27,12 +28,13 @@ import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+import tr.xip.errorview.ErrorView;
 
 /**
  * Created by Bruno on 20/06/2015.
  */
 public class BusStopListFragment extends ProgressFragment {
-    private final String TAG = this.getClass().getName();
+    private final String TAG = BusStopListFragment.class.getSimpleName();
 
     public static final int DATABASE_MODE = 1;
     public static final int WEB_MODE = 2;
@@ -41,6 +43,8 @@ public class BusStopListFragment extends ProgressFragment {
     private Integer lineNumber;
     private SuperRecyclerView recList;
     private BusStopAdapter busStopAdapter;
+    private ErrorView errorView;
+    private LinearLayout content;
 
     public BusStopListFragment() {
 
@@ -61,6 +65,16 @@ public class BusStopListFragment extends ProgressFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setContentView(R.layout.fragment_list);
+
+        content = (LinearLayout) getContentView().findViewById(R.id.content);
+
+        errorView = (ErrorView) getContentView().findViewById(R.id.error_view);
+        errorView.setOnRetryListener(new ErrorView.RetryListener() {
+            @Override
+            public void onRetry() {
+                refreshWebList();
+            }
+        });
 
         recList = (SuperRecyclerView) getContentView().findViewById(R.id.rec_list);
         LinearLayoutManager layout = new LinearLayoutManager(getActivity());
@@ -84,6 +98,11 @@ public class BusStopListFragment extends ProgressFragment {
                 busStopAdapter = new BusStopAdapter(singleBusStopList, getActivity());
                 Log.e(TAG, "Invalid mode in the BusStopListFragment.");
         }
+    }
+
+    public void refreshWebList() {
+        setContentShown(false);
+        loadByWeb();
     }
 
     @Override
@@ -134,8 +153,12 @@ public class BusStopListFragment extends ProgressFragment {
             }
         });
         swipeToDismissTouchHelper.attachToRecyclerView(recList.getRecyclerView());
+        createView();
+    }
 
-        setContentEmpty(false);
+    public void createView() {
+        content.setVisibility(View.VISIBLE);
+        errorView.setVisibility(View.GONE);
         setContentShown(true);
     }
 
@@ -154,19 +177,24 @@ public class BusStopListFragment extends ProgressFragment {
                 Log.i(TAG, "List size: " + singleBusStopList.size());
                 getActivity().setTitle(getActivity().getTitle() + ": " + busline.getName());
                 busStopAdapter = new BusStopAdapter(singleBusStopList, getActivity());
-                busStopAdapter.setOnClickListener(new StopBusFromLineOnClickListener(busStopAdapter, lineNumber));
+                busStopAdapter.setOnClickListener(new StopBusFromLineOnClickListener(busStopAdapter,
+                        lineNumber));
                 recList.setAdapter(busStopAdapter);
-                setContentEmpty(false);
-                setContentShown(true);
+                createView();
             }
 
             @Override
             public void failure(RetrofitError error) {
-                Toast toast = Toast.makeText(getActivity(),
-                        "Linha não encontrada.", Toast.LENGTH_SHORT);
-                toast.show();
-                Log.i(TAG, "Unable to get bus stop list");
-                setContentEmpty(false);
+                int statusCode;
+                if( error.getResponse() == null ) {
+                    statusCode = 408;
+                } else {
+                    statusCode = error.getResponse().getStatus();
+                }
+
+                errorView.setError(statusCode);
+                content.setVisibility(View.GONE);
+                errorView.setVisibility(View.VISIBLE);
                 setContentShown(true);
             }
         });

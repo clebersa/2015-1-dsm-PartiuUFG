@@ -2,6 +2,7 @@ package br.ufg.inf.es.dsm.partiuufg.activity;
 
 import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -114,6 +115,7 @@ public class BusStopLineActivity extends AbstractActivity {
 
                 @Override
                 public void failure(RetrofitError error) {
+                    Log.d("teste", "erro: " + error.getResponse().getStatus());
                     Toast toast = Toast.makeText(getBaseContext(),
                             getString(R.string.bus_stop_not_found),
                             Toast.LENGTH_SHORT);

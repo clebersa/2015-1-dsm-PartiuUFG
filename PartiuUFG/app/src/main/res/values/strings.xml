@@ -13,6 +13,9 @@
     <string name="reference">Referência:</string>
     <string name="address">Endereço:</string>
 
+    <string name="http_error_try_again">Tentar Novamente</string>
+    <string name="http_error_subtitle">Um problema ocorreu durante esta requisição</string>
+
     <string name="title_activity_campus">Campus</string>
     <string name="title_activity_bus_line">Linha de Ônibus</string>
     <string name="bus_stop_not_found">Ponto de ônibus não encontrado</string>

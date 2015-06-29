@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId "br.ufg.inf.es.dsm.partiuufg"
         minSdkVersion 10
-        targetSdkVersion 21
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -29,6 +29,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
     compile 'com.android.support:cardview-v7:21.0.0'
+    compile 'com.github.xiprox.errorview:library:2.0.0'
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.malinskiy:superrecyclerview:1.1.0'
     compile 'com.github.johnkil.android-progressfragment:progressfragment:1.4.0'

@@ -2,9 +2,12 @@ package br.ufg.inf.es.dsm.partiuufg.fragment;
 
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +27,7 @@ import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+import tr.xip.errorview.ErrorView;
 
 /**
  * Created by Bruno on 20/06/2015.
@@ -35,6 +39,9 @@ public class NextPointBusTimeFragment extends ProgressFragment {
     private SuperRecyclerView recList;
     private BusLineAdapter busLineAdapter;
     private Integer busStopNumber;
+    private ErrorView errorView;
+    private LinearLayout content;
+    private Integer showErrorStatus = 0;
 
     public NextPointBusTimeFragment() {
     }
@@ -46,6 +53,16 @@ public class NextPointBusTimeFragment extends ProgressFragment {
 
         busStopNumber = getArguments().getInt("busStopNumber");
 
+        content = (LinearLayout) getContentView().findViewById(R.id.content);
+
+        errorView = (ErrorView) getContentView().findViewById(R.id.error_view);
+        errorView.setOnRetryListener(new ErrorView.RetryListener() {
+            @Override
+            public void onRetry() {
+                refreshBusStop();
+            }
+        });
+
         recList = (SuperRecyclerView) getContentView().findViewById(R.id.rec_list);
         LinearLayoutManager layout = new LinearLayoutManager(getActivity());
         layout.setOrientation(LinearLayoutManager.VERTICAL);
@@ -55,8 +72,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         recList.setRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                setContentShown(false);
-                getStopBusDataFromWeb();
+                refreshBusStop();
             }
         });
 
@@ -70,8 +86,25 @@ public class NextPointBusTimeFragment extends ProgressFragment {
                         .getSerializable("completeBusStop");
                 busLineAdapter = new BusLineAdapter(completeBusStop, getActivity());
                 createView();
-            } catch(NullPointerException e) {}
+            } catch(NullPointerException e) {
+                try {
+                    showErrorStatus = savedInstanceState.getInt("showError");
+                } catch(Exception e1) {
+                    Log.d(TAG, "Can't load next bus stop fragment: " + e1.getMessage());
+                }
+
+                if(showErrorStatus > 0) {
+                    showErrorView();
+                } else {
+                    getActivity().finish();
+                }
+            }
         }
+    }
+
+    public void refreshBusStop() {
+        setContentShown(false);
+        getStopBusDataFromWeb();
     }
 
     public void createView() {
@@ -84,6 +117,16 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         searchTime.setText(getString(R.string.last_search_time) + " "
                 + completeBusStop.getSearchDateFormatted());
 
+        content.setVisibility(View.VISIBLE);
+        errorView.setVisibility(View.GONE);
+
+        setContentShown(true);
+    }
+
+    public void showErrorView() {
+        errorView.setError(showErrorStatus);
+        content.setVisibility(View.GONE);
+        errorView.setVisibility(View.VISIBLE);
         setContentShown(true);
     }
 
@@ -104,9 +147,13 @@ public class NextPointBusTimeFragment extends ProgressFragment {
 
             @Override
             public void failure(RetrofitError error) {
-                Toast toast = Toast.makeText(getActivity(),
-                        getString(R.string.bus_stop_not_found), Toast.LENGTH_SHORT);
-                toast.show();
+                if( error.getResponse() == null ) {
+                    showErrorStatus = 408;
+                } else {
+                    showErrorStatus = error.getResponse().getStatus();
+                }
+
+                showErrorView();
             }
         });
     }
@@ -131,6 +178,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putSerializable("completeBusStop", completeBusStop);
+        outState.putInt("showError", showErrorStatus);
         super.onSaveInstanceState(outState);
     }
 

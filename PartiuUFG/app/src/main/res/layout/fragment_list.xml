@@ -6,13 +6,22 @@
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true">
 
-    <com.malinskiy.superrecyclerview.SuperRecyclerView
-        android:id="@+id/rec_list"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <include layout="@layout/error_view" />
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:recyclerClipToPadding="false"
-        app:recyclerPadding="5dp"
-        app:scrollbarStyle="insideInset"/>
+        android:id="@+id/content">
+
+        <com.malinskiy.superrecyclerview.SuperRecyclerView
+            android:id="@+id/rec_list"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:recyclerClipToPadding="false"
+            app:recyclerPadding="5dp"
+            app:scrollbarStyle="insideInset"/>
+    </LinearLayout>
 
 </LinearLayout>
