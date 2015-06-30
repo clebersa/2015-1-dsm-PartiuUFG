@@ -85,19 +85,20 @@ public class NextPointBusTimeFragment extends ProgressFragment {
                 completeBusStop = (CompleteBusStop) savedInstanceState
                         .getSerializable("completeBusStop");
                 busLineAdapter = new BusLineAdapter(completeBusStop, getActivity());
-                createView();
             } catch(NullPointerException e) {
-                try {
-                    showErrorStatus = savedInstanceState.getInt("showError");
-                } catch(Exception e1) {
-                    Log.d(TAG, "Can't load next bus stop fragment: " + e1.getMessage());
-                }
+                Log.e(TAG, "Can't load completeBusStop from memory");
+            }
 
-                if(showErrorStatus > 0) {
-                    showErrorView();
-                } else {
-                    getActivity().finish();
-                }
+            try {
+                showErrorStatus = savedInstanceState.getInt("showError");
+            } catch(NullPointerException e) {
+                Log.e(TAG, "Can't load show error status");
+            }
+
+            if(showErrorStatus > 0) {
+                showErrorView();
+            } else {
+                createView();
             }
         }
     }
@@ -108,19 +109,22 @@ public class NextPointBusTimeFragment extends ProgressFragment {
     }
 
     public void createView() {
-        recList.setAdapter(busLineAdapter);
+        try {
+            recList.setAdapter(busLineAdapter);
+            TextView address = (TextView) getView().findViewById(R.id.tvAddress);
+            address.setText(completeBusStop.getAddress());
 
-        TextView address = (TextView) getView().findViewById(R.id.tvAddress);
-        address.setText(completeBusStop.getAddress());
+            TextView searchTime = (TextView) getView().findViewById(R.id.tvSearchTime);
+            searchTime.setText(getString(R.string.last_search_time,
+                    completeBusStop.getSearchDateFormatted()));
 
-        TextView searchTime = (TextView) getView().findViewById(R.id.tvSearchTime);
-        searchTime.setText(getString(R.string.last_search_time) + " "
-                + completeBusStop.getSearchDateFormatted());
-
-        content.setVisibility(View.VISIBLE);
-        errorView.setVisibility(View.GONE);
-
-        setContentShown(true);
+            content.setVisibility(View.VISIBLE);
+            errorView.setVisibility(View.GONE);
+            setContentShown(true);
+        } catch(NullPointerException | IllegalStateException e) {
+            Log.e(TAG, "Can't create nextpoint view: " + e.getMessage());
+            getActivity().finish();
+        }
     }
 
     public void showErrorView() {
@@ -135,7 +139,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         service.getPoint(busStopNumber.toString(), new Callback<CompleteBusStop>() {
             @Override
             public void success(CompleteBusStop vCompleteBusStop, Response response) {
-                Log.e(TAG, "Complete bus stop " + vCompleteBusStop.getNumber() + " loaded.");
+                Log.d(TAG, "Complete bus stop " + vCompleteBusStop.getNumber() + " loaded.");
                 completeBusStop = vCompleteBusStop;
                 if (busLineAdapter != null) {
                     busLineAdapter.cancelRefreshTimer();

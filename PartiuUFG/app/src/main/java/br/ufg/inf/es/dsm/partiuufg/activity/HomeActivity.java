@@ -126,7 +126,8 @@ public class HomeActivity extends AbstractActivity {
         SingleBusLine singleBusLine;
         List<SingleBusLine> singleBusLineList;
         for(Integer lineNumber: lineNumbers){
-            singleBusLineList = SingleBusLine.find(SingleBusLine.class, "number = ?", lineNumber.toString());
+            singleBusLineList = SingleBusLine.find(SingleBusLine.class, "number = ?",
+                    lineNumber.toString());
 
             if(singleBusLineList == null || singleBusLineList.size() == 0){
                 singleBusLine = new SingleBusLine(lineNumber);
@@ -159,7 +160,6 @@ public class HomeActivity extends AbstractActivity {
 
     public void loadBusLines(Campus campus){
         Intent intent = new Intent(this, CampusActivity.class);
-        Campus c2 = Campus.findById(Campus.class, campus.getId());
         intent.putExtra("campusId", campus.getId());
         this.startActivity(intent);
     }

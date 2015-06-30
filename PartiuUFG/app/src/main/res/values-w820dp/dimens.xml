@@ -5,7 +5,8 @@
     <dimen name="activity_horizontal_margin">64dp</dimen>
 
     <dimen name="bus_timer_size">250dp</dimen>
-    <dimen name="bus_timer_text">80dip</dimen>
+    <dimen name="bus_timer_text">80sp</dimen>
+    <dimen name="bus_timer_no_forecast">44sp</dimen>
     <dimen name="bus_timer_shape_border_size">6dp</dimen>
     <dimen name="bus_timer_shape_radius">125dp</dimen>
 </resources>

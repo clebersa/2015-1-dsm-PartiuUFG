@@ -1,7 +1,6 @@
 package br.ufg.inf.es.dsm.partiuufg.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.activity.BusStopActivity;
-import br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
 
 /**
@@ -21,7 +18,7 @@ import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
  */
 public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopViewHolder> {
     private List<SingleBusStop> busStops;
-    StopBusOnClickListener onClickListener;
+    StopBusClickListenerFactory clickListenerFactory;
     private Context context;
 
     public BusStopAdapter(List<SingleBusStop> busStops, Context context) {
@@ -42,8 +39,8 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
         return context;
     }
 
-    public void setOnClickListener(StopBusOnClickListener onClickListener) {
-        this.onClickListener = onClickListener;
+    public void setOnClickListenerFactory(StopBusClickListenerFactory factory) {
+        this.clickListenerFactory = factory;
     }
 
     @Override
@@ -62,8 +59,9 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
         if ("".equals(ci.getReference())) {
             busStopViewHolder.vReference.setVisibility(View.GONE);
         }
-        onClickListener.setIndex(i);
-        busStopViewHolder.vCard.setOnClickListener(onClickListener);
+
+        busStopViewHolder.vCard.setOnClickListener(clickListenerFactory.createClickListener(
+                getContext(), ci));
     }
 
     @Override

@@ -25,7 +25,7 @@ import retrofit.client.Response;
  * Created by Cleber on 25/06/2015.
  */
 public class CampusBusLinesFragment extends ProgressFragment {
-    private final String TAG = this.getClass().getName();
+    private final String TAG = CampusBusLinesFragment.class.getSimpleName();
 
     private List<SingleBusLine> singleBusLineList;
     private SuperRecyclerView recList;
@@ -38,7 +38,6 @@ public class CampusBusLinesFragment extends ProgressFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         campusId = getArguments().getLong("campusId");
     }
 
@@ -59,9 +58,10 @@ public class CampusBusLinesFragment extends ProgressFragment {
         Campus campus = Campus.findById(Campus.class, campusId);
         if(campus == null) {
             Log.e(TAG, "Campus NOT found.");
-            setEmptyText("Campus não encontrado :(");
+            setEmptyText(getString(R.string.campus_not_found));
             setContentEmpty(true);
-            Toast toast = Toast.makeText(getActivity(), "Campus não encontrado", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getActivity(), getString(R.string.campus_not_found),
+                    Toast.LENGTH_SHORT);
             toast.show();
             return;
         }

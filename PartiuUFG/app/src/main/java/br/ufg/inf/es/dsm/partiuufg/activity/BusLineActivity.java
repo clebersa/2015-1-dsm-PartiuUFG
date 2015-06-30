@@ -10,8 +10,6 @@ import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.fragment.BusStopListFragment;
 
 public class BusLineActivity extends AbstractActivity {
-    private final String TAG = this.getClass().getName();
-
     private Integer lineNumber;
     private BusStopListFragment fragment;
 

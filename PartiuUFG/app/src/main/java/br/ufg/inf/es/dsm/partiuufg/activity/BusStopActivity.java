@@ -9,18 +9,15 @@ import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.fragment.NextPointBusTimeFragment;
 
 public class BusStopActivity extends AbstractActivity {
-    private final String TAG = this.getClass().getName();
-    private NextPointBusTimeFragment fragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Integer busStopNumber = getIntent().getIntExtra("pointId", -1);
-        setTitle("Ponto " + busStopNumber);
+        setTitle(getString(R.string.title_activity_bus_stop, busStopNumber));
 
         if(savedInstanceState == null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = new NextPointBusTimeFragment();
+            NextPointBusTimeFragment fragment = new NextPointBusTimeFragment();
             Bundle b = new Bundle();
             b.putInt("busStopNumber", busStopNumber);
             fragment.setArguments(b);

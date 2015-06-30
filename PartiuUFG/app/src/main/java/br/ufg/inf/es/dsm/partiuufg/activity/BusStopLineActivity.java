@@ -2,11 +2,11 @@ package br.ufg.inf.es.dsm.partiuufg.activity;
 
 import android.os.CountDownTimer;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckedTextView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,15 +22,25 @@ import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
+import tr.xip.errorview.ErrorView;
 
 public class BusStopLineActivity extends AbstractActivity {
     private BusLine busLine;
+    private Integer busLineNumber;
     private CompleteBusStop completeBusStop;
+    private Integer busStopNumber;
 
     private TextView tvShowTime;
-    private TextView lineNumber ;
+    private TextView lineNumber;
     private TextView lineName;
+    private TextView aboutNextMinutes;
     private CheckedTextView checkGCMFav;
+
+    private LinearLayout loadingContent;
+    private ErrorView errorView;
+    private LinearLayout content;
+
+    private Integer showErrorStatus = 0;
 
     private List<GCMBusPointTime> getLineFavorite() {
         List<GCMBusPointTime> gcmBusPointTimes = GCMBusPointTime.find(GCMBusPointTime.class,
@@ -70,61 +80,104 @@ public class BusStopLineActivity extends AbstractActivity {
         }
     }
 
-    public void loadView() {
-        setTitle("Linha " + busLine.getNumber() + " do ponto " + completeBusStop.getNumber());
+    public void beforeViewCreated() {
+        loadingContent.setVisibility(View.VISIBLE);
+        errorView.setVisibility(View.GONE);
+        content.setVisibility(View.GONE);
+    }
+
+    public void createView() {
+        setTitle(getString(R.string.title_activity_bus_stop_line,busLine.getNumber(),
+                completeBusStop.getNumber()));
         lineNumber.setText(busLine.getNumber().toString());
         lineName.setText(busLine.getName());
 
         List<GCMBusPointTime> favorites = getLineFavorite();
-        if (!checkPlayServices(false)) {
-            if(favorites.size() > 0) {
+        if (favorites.size() > 0) {
+            if (!checkPlayServices(false)) {
                 GCMBusPointTime.deleteAll(GCMBusPointTime.class);
-            }
-        } else {
-            if (favorites.size() > 0) {
+            } else {
                 checkGCMFav.setChecked(true);
             }
         }
         setTimer();
+        content.setVisibility(View.VISIBLE);
+        errorView.setVisibility(View.GONE);
+        afterViewCreated();
+    }
+
+    public void showErrorView() {
+        errorView.setError(showErrorStatus);
+        content.setVisibility(View.GONE);
+        errorView.setVisibility(View.VISIBLE);
+        afterViewCreated();
+    }
+
+    public void refreshView() {
+        beforeViewCreated();
+        getBusStopLineFromWeb();
+    }
+
+    public void afterViewCreated() {
+        loadingContent.setVisibility(View.GONE);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        loadingContent = (LinearLayout) findViewById(R.id.loading_content);
+        content = (LinearLayout) findViewById(R.id.content);
+        errorView = (ErrorView) findViewById(R.id.error_view);
+        errorView.setOnRetryListener(new ErrorView.RetryListener() {
+            @Override
+            public void onRetry() {
+                refreshView();
+            }
+        });
+
         tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
         checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
         lineNumber = (TextView) findViewById(R.id.lineNumber);
         lineName = (TextView) findViewById(R.id.lineName);
+        aboutNextMinutes = (TextView) findViewById(R.id.about_next_minutes);
 
         busLine = (BusLine) getIntent().getSerializableExtra("busLine");
         completeBusStop = (CompleteBusStop) getIntent().getSerializableExtra("completeBusStop");
 
+        beforeViewCreated();
+
         if(completeBusStop == null || busLine == null) {
-            final Integer busLineNumber = getIntent().getIntExtra("busLineNumber", 0);
-            Integer busStopNumber = getIntent().getIntExtra("busStopNumber", 0);
-
-            EasyBusService service = RestBusServiceFactory.getAdapter();
-            service.getPoint(busStopNumber.toString(), new Callback<CompleteBusStop>() {
-                @Override
-                public void success(CompleteBusStop dCompleteBusStop, Response response) {
-                    completeBusStop = dCompleteBusStop;
-                    busLine = completeBusStop.getBusLine(busLineNumber);
-                    loadView();
-                }
-
-                @Override
-                public void failure(RetrofitError error) {
-                    Log.d("teste", "erro: " + error.getResponse().getStatus());
-                    Toast toast = Toast.makeText(getBaseContext(),
-                            getString(R.string.bus_stop_not_found),
-                            Toast.LENGTH_SHORT);
-                    toast.show();
-                }
-            });
+            busLineNumber = getIntent().getIntExtra("busLineNumber", 0);
+            busStopNumber = getIntent().getIntExtra("busStopNumber", 0);
+            getBusStopLineFromWeb();
         } else {
-            loadView();
+            busLineNumber = busLine.getNumber();
+            busStopNumber = completeBusStop.getNumber();
+            createView();
         }
+    }
+
+    public void getBusStopLineFromWeb() {
+        EasyBusService service = RestBusServiceFactory.getAdapter();
+        service.getPoint(busStopNumber.toString(), new Callback<CompleteBusStop>() {
+            @Override
+            public void success(CompleteBusStop dCompleteBusStop, Response response) {
+                completeBusStop = dCompleteBusStop;
+                busLine = completeBusStop.getBusLine(busLineNumber);
+                createView();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                if( error.getResponse() == null ) {
+                    showErrorStatus = 408;
+                } else {
+                    showErrorStatus = error.getResponse().getStatus();
+                }
+                showErrorView();
+            }
+        });
     }
 
     private void setTimer() {
@@ -150,10 +203,17 @@ public class BusStopLineActivity extends AbstractActivity {
 
                 tvShowTime.setText(String.format("%02d", seconds / 60)
                         + ":" + String.format("%02d", seconds % 60));
+
+                if(aboutNextMinutes.getVisibility() == View.GONE){
+                    aboutNextMinutes.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
             public void onFinish() {
+                tvShowTime.setText(getString(R.string.no_forecast));
+                tvShowTime.setTextSize(getResources().getDimension(R.dimen.bus_timer_no_forecast));
+                aboutNextMinutes.setVisibility(View.GONE);
             }
         };
 

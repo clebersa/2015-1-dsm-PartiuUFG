@@ -13,17 +13,13 @@ import br.ufg.inf.es.dsm.partiuufg.dbModel.Campus;
  * Created by Cleber on 25/06/2015.
  */
 public class CampusActivity extends AbstractActivity{
-    private final String TAG = this.getClass().getName();
-    private Campus campus;
-    private CampusBusLinesFragment fragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         if(savedInstanceState == null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = new CampusBusLinesFragment();
+            CampusBusLinesFragment fragment = new CampusBusLinesFragment();
             Bundle b = new Bundle();
             b.putLong("campusId", getIntent().getLongExtra("campusId", 0));
             fragment.setArguments(b);

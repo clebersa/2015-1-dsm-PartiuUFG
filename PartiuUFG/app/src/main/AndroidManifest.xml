@@ -31,7 +31,7 @@
             android:value="1" />
         <meta-data
             android:name="QUERY_LOG"
-            android:value="true" />
+            android:value="false" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="br.ufg.inf.es.dsm.partiuufg.dbModel" />
@@ -41,7 +41,6 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -50,15 +49,13 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name=".activity.BusStopActivity"
-            android:label="@string/title_activity_point" >
+            android:name=".activity.BusStopActivity" >
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name=".activity.BusStopLineActivity"
-            android:label="@string/title_activity_bus_stop_line" >
+            android:name=".activity.BusStopLineActivity" >
         </activity>
         <activity
             android:name=".activity.CampusActivity"

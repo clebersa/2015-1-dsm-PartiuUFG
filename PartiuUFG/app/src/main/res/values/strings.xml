@@ -4,12 +4,12 @@
     <string name="action_settings">Configurações</string>
     <string name="action_search">Buscar</string>
     <string name="search_hint">Pesquisar ponto de ônibus</string>
-    <string name="title_activity_point">PointActivity</string>
+    <string name="title_activity_bus_stop">Ponto %1$d</string>
     <string name="no_forecast">Sem prev.</string>
     <string name="about_next_minutes">(aprox.)</string>
-    <string name="title_activity_bus_stop_line">BusStopLineActivity</string>
+    <string name="title_activity_bus_stop_line">Linha %1$s do ponto %2$s</string>
 
-    <string name="last_search_time">Atualizado em</string>
+    <string name="last_search_time">Atualizado em %1$s</string>
     <string name="reference">Referência:</string>
     <string name="address">Endereço:</string>
 
@@ -19,6 +19,7 @@
     <string name="title_activity_campus">Campus</string>
     <string name="title_activity_bus_line">Linha de Ônibus</string>
     <string name="bus_stop_not_found">Ponto de ônibus não encontrado</string>
+    <string name="campus_not_found">Campus não encontrado</string>
 
     <string name="top_access">Pontos mais acessados:</string>
 

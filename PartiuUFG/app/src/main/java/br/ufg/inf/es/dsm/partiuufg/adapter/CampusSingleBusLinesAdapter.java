@@ -20,7 +20,7 @@ import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine;
  * Created by Cleber on 21/06/2015.
  */
 public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<CampusSingleBusLinesAdapter.CampusBusLineViewHolder> {
-    private final String TAG = this.getClass().getName();
+    private final String TAG = CampusSingleBusLinesAdapter.class.getSimpleName();
 
     private List<SingleBusLine> singleBusLines;
     private Context context;
@@ -57,7 +57,6 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<CampusSing
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, BusLineActivity.class);
-                Log.d(TAG, "Sending line number " + busLine.getNumber() + " to the activity BusLineActivity.");
                 intent.putExtra("lineNumber", busLine.getNumber());
                 context.startActivity(intent);
             }
