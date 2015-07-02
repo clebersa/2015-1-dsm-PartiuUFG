@@ -8,6 +8,7 @@
     <string name="no_forecast">Sem prev.</string>
     <string name="about_next_minutes">(aprox.)</string>
     <string name="title_activity_bus_stop_line">Linha %1$s do ponto %2$s</string>
+    <string name="title_activity_bus_line_stops">%1$d - %2$s</string>
 
     <string name="last_search_time">Atualizado em %1$s</string>
     <string name="reference">Referência:</string>
@@ -17,7 +18,6 @@
     <string name="http_error_subtitle">Um problema ocorreu durante esta requisição</string>
 
     <string name="title_activity_campus">Campus</string>
-    <string name="title_activity_bus_line">Linha de Ônibus</string>
     <string name="bus_stop_not_found">Ponto de ônibus não encontrado</string>
     <string name="campus_not_found">Campus não encontrado</string>
 

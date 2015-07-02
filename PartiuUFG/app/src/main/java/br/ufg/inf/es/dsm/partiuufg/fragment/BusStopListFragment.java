@@ -88,7 +88,6 @@ public class BusStopListFragment extends ProgressFragment {
                 loadByDatabase();
                 break;
             case WEB_MODE:
-                getActivity().setTitle("Linha " + lineNumber);
                 loadByWeb();
                 break;
             default:
@@ -174,7 +173,8 @@ public class BusStopListFragment extends ProgressFragment {
                     singleBusStopList.add(singleBusStop);
                 }
                 Log.i(TAG, "List size: " + singleBusStopList.size());
-                getActivity().setTitle(getActivity().getTitle() + ": " + busline.getName());
+                getActivity().setTitle(getString(R.string.title_activity_bus_line_stops,
+                        busline.getNumber(), busline.getName()));
                 busStopAdapter = new BusStopAdapter(singleBusStopList, getActivity());
 
                 busStopAdapter.setOnClickListenerFactory(new StopBusFromLineOnClickListenerFactory(

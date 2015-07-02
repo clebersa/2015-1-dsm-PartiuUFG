@@ -1,61 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/bus_time_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
-    card_view:cardElevation="2dp"
-    card_view:cardMaxElevation="0dp"
-    card_view:cardPreventCornerOverlap="false"
-    card_view:cardCornerRadius="5dp"
-    android:foreground="@drawable/item_background_cards" >
+    android:minHeight="70dp"
+    android:maxHeight="70dp"
+    android:background="@drawable/item_background_cards"
+    android:paddingTop="10dp"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp"
+    android:paddingBottom="10dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:minHeight="70dp"
-        android:maxHeight="70dp"
-        android:padding="5dp" >
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/layout_bus_line_number"
+        android:background="@drawable/number_shape"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical|center" >
 
         <TextView
-            android:layout_width="70dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="----"
+            android:textSize="20sp"
+            android:textColor="@color/number_shape_text"
             android:id="@+id/bus_line_number"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:gravity="center_vertical|center" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Endereço"
-            android:id="@+id/bus_line_name"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/bus_line_number"
-            android:textStyle="bold"
-            android:minLines="2"
-            android:maxLines="2"
-            android:gravity="center_vertical"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/reference"
-            android:layout_below="@+id/bus_line_name"
-            android:layout_alignLeft="@+id/bus_line_name"
-            android:layout_alignStart="@+id/bus_line_name"
-            android:text="Referência"
-
-            android:singleLine="false"
-            android:lines="1" />
-
+            android:layout_centerInParent="true" />
     </RelativeLayout>
-</android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Endereço"
+        android:id="@+id/bus_line_name"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/layout_bus_line_number"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/reference"
+        android:layout_below="@+id/bus_line_name"
+        android:layout_alignLeft="@+id/bus_line_name"
+        android:layout_alignStart="@+id/bus_line_name"
+        android:text="Referência"
+
+        android:singleLine="false"
+        android:lines="1" />
+
+</RelativeLayout>

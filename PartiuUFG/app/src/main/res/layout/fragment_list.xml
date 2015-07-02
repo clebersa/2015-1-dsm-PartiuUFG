@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:recyclerClipToPadding="false"
-            app:recyclerPadding="5dp"
+            app:recyclerPadding="0dp"
             app:scrollbarStyle="insideInset"/>
     </LinearLayout>
 
