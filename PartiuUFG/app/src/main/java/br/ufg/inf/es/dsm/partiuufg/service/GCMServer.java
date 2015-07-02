@@ -68,7 +68,9 @@ public class GCMServer extends Service {
                                     service.send(GCMMessage);
                                     Log.d(TAG, "mensagem enviada...");
                                 }
-                            } catch(Exception e) {}
+                            } catch(Exception e) {
+                                Log.e(TAG, "erro: " + e.getMessage());
+                            }
                         }
                     }
 

@@ -33,7 +33,9 @@ public class MyGcmListenerService extends GcmListenerService {
         targetIntent.putExtra("busStopNumber", busStopNumber);
         targetIntent.putExtra("busLineNumber", busLineNumber);
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, targetIntent,
+        Integer notificationId = Integer.valueOf(busStopNumber.toString() + busLineNumber.toString());
+
+        PendingIntent contentIntent = PendingIntent.getActivity(this, notificationId, targetIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
         Notification notification = new NotificationCompat.Builder(this)
@@ -47,7 +49,6 @@ public class MyGcmListenerService extends GcmListenerService {
         NotificationManager nManager = (NotificationManager) getSystemService(
                 Context.NOTIFICATION_SERVICE);
 
-        Integer notificationId = Integer.valueOf(busStopNumber.toString() + busLineNumber.toString());
         nManager.notify(notificationId, notification);
     }
 }
