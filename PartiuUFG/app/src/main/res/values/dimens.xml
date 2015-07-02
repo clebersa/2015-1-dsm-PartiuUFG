@@ -5,7 +5,7 @@
 
    <dimen name="bus_timer_size">150dp</dimen>
     <dimen name="bus_timer_text">45sp</dimen>
-    <dimen name="bus_timer_no_forecast">25sp</dimen>
+    <dimen name="bus_timer_no_forecast">15sp</dimen>
     <dimen name="bus_timer_shape_border_size">3dp</dimen>
     <dimen name="bus_timer_shape_radius">75dp</dimen>
 </resources>

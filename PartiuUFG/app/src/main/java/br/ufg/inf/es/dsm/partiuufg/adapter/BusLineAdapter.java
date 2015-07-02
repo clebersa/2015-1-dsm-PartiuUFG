@@ -78,6 +78,9 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         long remainingTime = (60 * nextTime * 1000) - (elapsedTime + 2000);
         Double dRemainingMinutes = Math.ceil((Double.valueOf(remainingTime) / 60000));
         Integer remainingMinutes = dRemainingMinutes.intValue();
+        if(remainingMinutes > nextTime) {
+            remainingMinutes = nextTime;
+        }
 
         busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
         String displayNextTime = context.getString(R.string.no_forecast);

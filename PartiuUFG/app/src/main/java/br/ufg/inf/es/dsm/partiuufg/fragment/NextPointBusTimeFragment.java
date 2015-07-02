@@ -139,6 +139,10 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         service.getPoint(busStopNumber.toString(), new Callback<CompleteBusStop>() {
             @Override
             public void success(CompleteBusStop vCompleteBusStop, Response response) {
+                if (getActivity() == null) {
+                    return;
+                }
+
                 Log.d(TAG, "Complete bus stop " + vCompleteBusStop.getNumber() + " loaded.");
                 completeBusStop = vCompleteBusStop;
                 if (busLineAdapter != null) {
@@ -151,7 +155,11 @@ public class NextPointBusTimeFragment extends ProgressFragment {
 
             @Override
             public void failure(RetrofitError error) {
-                if( error.getResponse() == null ) {
+                if (getActivity() == null) {
+                    return;
+                }
+
+                if (error.getResponse() == null) {
                     showErrorStatus = 408;
                 } else {
                     showErrorStatus = error.getResponse().getStatus();
