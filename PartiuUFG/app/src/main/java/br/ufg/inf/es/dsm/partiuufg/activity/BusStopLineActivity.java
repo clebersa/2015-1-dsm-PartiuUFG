@@ -1,7 +1,12 @@
 package br.ufg.inf.es.dsm.partiuufg.activity;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.SearchView;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,12 +46,14 @@ public class BusStopLineActivity extends AbstractActivity {
     private LinearLayout content;
 
     private Integer showErrorStatus = 0;
+    private Boolean isFavorite = false;
+    private Boolean isLoadedFromWeb;
 
     private List<SingleGCMBusStopLine> getLineFavorite() {
         List<SingleGCMBusStopLine> singleGcmBusStopLines = SingleGCMBusStopLine.find(SingleGCMBusStopLine.class,
                 "point_number = ? and bus_line_number = ?",
-                completeBusStop.getNumber().toString(),
-                busLine.getNumber().toString());
+                busStopNumber.toString(),
+                busLineNumber.toString());
 
         return singleGcmBusStopLines;
     }
@@ -58,26 +65,9 @@ public class BusStopLineActivity extends AbstractActivity {
     }
 
     private void addStopLineFavorite() {
-        SingleGCMBusStopLine singleGcmBusStopLine = new SingleGCMBusStopLine(completeBusStop.getNumber(),
-                busLine.getNumber());
+        SingleGCMBusStopLine singleGcmBusStopLine = new SingleGCMBusStopLine(busStopNumber,
+                busLineNumber);
         singleGcmBusStopLine.save();
-    }
-
-    public void gcmFavorite(View view) {
-        if (checkPlayServices(true)) {
-            if (checkGCMFav.isChecked()) {
-                deleteStopLineFavorite();
-                checkGCMFav.setChecked(false);
-            } else {
-                addStopLineFavorite();
-                checkGCMFav.setChecked(true);
-            }
-        } else {
-            Toast toast = Toast.makeText(getBaseContext(),
-                    getString(R.string.no_play_service_installed),
-                    Toast.LENGTH_LONG);
-            toast.show();
-        }
     }
 
     public void beforeViewCreated() {
@@ -92,14 +82,6 @@ public class BusStopLineActivity extends AbstractActivity {
         lineNumber.setText(busLine.getNumber().toString());
         lineName.setText(busLine.getName());
 
-        List<SingleGCMBusStopLine> favorites = getLineFavorite();
-        if (favorites.size() > 0) {
-            if (!checkPlayServices(false)) {
-                SingleGCMBusStopLine.deleteAll(SingleGCMBusStopLine.class);
-            } else {
-                checkGCMFav.setChecked(true);
-            }
-        }
         setTimer();
         content.setVisibility(View.VISIBLE);
         errorView.setVisibility(View.GONE);
@@ -122,6 +104,21 @@ public class BusStopLineActivity extends AbstractActivity {
         loadingContent.setVisibility(View.GONE);
     }
 
+    private void getIntentObjects() {
+        isLoadedFromWeb = false;
+        busLine = (BusLine) getIntent().getSerializableExtra("busLine");
+        completeBusStop = (CompleteBusStop) getIntent().getSerializableExtra("completeBusStop");
+
+        if(completeBusStop == null || busLine == null) {
+            busLineNumber = getIntent().getIntExtra("busLineNumber", 0);
+            busStopNumber = getIntent().getIntExtra("busStopNumber", 0);
+            isLoadedFromWeb = true;
+        } else {
+            busLineNumber = busLine.getNumber();
+            busStopNumber = completeBusStop.getNumber();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,18 +139,12 @@ public class BusStopLineActivity extends AbstractActivity {
         lineName = (TextView) findViewById(R.id.lineName);
         aboutNextMinutes = (TextView) findViewById(R.id.about_next_minutes);
 
-        busLine = (BusLine) getIntent().getSerializableExtra("busLine");
-        completeBusStop = (CompleteBusStop) getIntent().getSerializableExtra("completeBusStop");
-
+        getIntentObjects();
         beforeViewCreated();
 
-        if(completeBusStop == null || busLine == null) {
-            busLineNumber = getIntent().getIntExtra("busLineNumber", 0);
-            busStopNumber = getIntent().getIntExtra("busStopNumber", 0);
+        if(isLoadedFromWeb) {
             getBusStopLineFromWeb();
         } else {
-            busLineNumber = busLine.getNumber();
-            busStopNumber = completeBusStop.getNumber();
             createView();
         }
     }
@@ -227,12 +218,48 @@ public class BusStopLineActivity extends AbstractActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_bus_stop_line, menu);
+
+        List<SingleGCMBusStopLine> favorites = getLineFavorite();
+        if (favorites.size() > 0) {
+            if (!checkPlayServices(false)) {
+                SingleGCMBusStopLine.deleteAll(SingleGCMBusStopLine.class);
+            } else {
+                MenuItem favItem = menu.findItem(R.id.action_favorite);
+                favItem.setIcon(R.drawable.ic_action_action_alarm_on);
+                isFavorite = true;
+            }
+        }
+
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        super.onOptionsItemSelected(item);
+
+        switch(item.getItemId()){
+            case R.id.action_favorite:
+                if (checkPlayServices(true)) {
+                    if (isFavorite) {
+                        deleteStopLineFavorite();
+                        item.setIcon(R.drawable.ic_action_action_alarm_off);
+                        isFavorite = false;
+                    } else {
+                        addStopLineFavorite();
+                        item.setIcon(R.drawable.ic_action_action_alarm_on);
+                        isFavorite = true;
+                    }
+                } else {
+                    Toast toast = Toast.makeText(getBaseContext(),
+                            getString(R.string.no_play_service_installed),
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                break;
+        }
+        return true;
     }
 
     @Override

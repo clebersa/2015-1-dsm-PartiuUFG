@@ -5,20 +5,19 @@
     android:layout_height="wrap_content"
     android:minHeight="70dp"
     android:maxHeight="70dp"
-    android:background="@drawable/item_background_cards"
-    android:paddingTop="10dp"
-    android:paddingRight="5dp"
-    android:paddingLeft="5dp"
-    android:paddingBottom="10dp">
+    android:background="@drawable/item_background_cards">
 
     <RelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:id="@+id/layout_bus_line_number"
-        android:background="@drawable/number_shape"
+        android:id="@+id/layout_number"
+        android:background="@drawable/bus_line_shape"
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
-        android:gravity="center_vertical|center" >
+        android:gravity="center_vertical|center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,14 +30,36 @@
             android:layout_centerInParent="true" />
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="match_parent"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Desconhecido"
-        android:id="@+id/bus_line_name"
+        android:id="@+id/bus_stop_details"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_toRightOf="@+id/layout_number"
         android:layout_centerVertical="true"
-        android:gravity="center"
-        android:layout_toRightOf="@+id/layout_bus_line_number"
-        android:layout_toEndOf="@+id/layout_bus_line_number"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Desconhecido"
+            android:id="@+id/bus_line_name"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:ellipsize="marquee"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/list_item_border"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layout_number"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignLeft="@+id/bus_stop_details"
+        android:layout_alignStart="@+id/bus_stop_details"
+        android:layout_alignRight="@+id/bus_stop_details" />
 </RelativeLayout>

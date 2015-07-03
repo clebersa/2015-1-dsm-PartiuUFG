@@ -3,6 +3,9 @@ apply plugin: 'com.google.gms.google-services'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
 }
 
 android {
@@ -32,6 +35,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.malinskiy:superrecyclerview:1.1.0'
     compile 'com.github.johnkil.android-progressfragment:progressfragment:1.4.0'
+    compile 'com.github.kanytu:android-parallax-recyclerview:v1.2'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
     compile 'com.squareup.okhttp:okhttp:2.0.0'

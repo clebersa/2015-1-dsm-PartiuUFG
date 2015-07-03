@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.poliveira.parallaxrecycleradapter.ParallaxRecyclerAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -23,44 +25,49 @@ import br.ufg.inf.es.dsm.partiuufg.timer.ListAdapterRefreshTimer;
 /**
  * Created by Bruno on 21/06/2015.
  */
-public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineViewHolder> {
-    private List<BusLine> busLines;
+public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMethods {
     private CompleteBusStop completeBusStop;
+    private ParallaxRecyclerAdapter adapter;
     private Context context;
     private Timer timer;
 
-    public BusLineAdapter(CompleteBusStop completeBusStop, Context context) {
+    public BusLineAdapter(ParallaxRecyclerAdapter<BusLine> adapter, CompleteBusStop completeBusStop,
+                          Context context) {
+        this.adapter = adapter;
         this.completeBusStop = completeBusStop;
         this.context = context;
 
-        this.busLines = new ArrayList<>();
+        timer = new Timer();
+        TimerTask updateData = new ListAdapterRefreshTimer(adapter);
+        timer.scheduleAtFixedRate(updateData, 60000, 60000);
+
+        this.completeBusStop = completeBusStop;
+        this.context = context;
+    }
+
+    public static List<BusLine> getCreatedData(CompleteBusStop completeBusStop) {
+        List<BusLine> busLines = new ArrayList<>();
         if(completeBusStop != null) {
             for( BusLine busLine : completeBusStop.getAvailableLines()) {
-                this.busLines.add(busLine);
+                busLines.add(busLine);
             }
         }
-
-        timer = new Timer();
-        TimerTask updateData = new ListAdapterRefreshTimer(this);
-        timer.scheduleAtFixedRate(updateData, 60000, 60000);
+        return busLines;
     }
 
     public void cancelRefreshTimer() {
         timer.cancel();
     }
 
-    public List<BusLine> getBusLines() {
-        return busLines;
-    }
-
     @Override
     public int getItemCount() {
-        return busLines.size();
+        return adapter.getData().size();
     }
 
     @Override
-    public void onBindViewHolder(BusLineViewHolder busLineViewHolder, int i) {
-        final BusLine ci = busLines.get(i);
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+        final BusLine ci = (BusLine) adapter.getData().get(i);
+        BusLineViewHolder busLineViewHolder = (BusLineViewHolder) viewHolder;
 
         BusTime busTime = completeBusStop.getBusTime(ci.getNumber());
         Integer nextTime = 0;
@@ -94,16 +101,16 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent intent = new Intent(context, BusStopLineActivity.class);
-            intent.putExtra("busLine", ci);
-            intent.putExtra("completeBusStop", completeBusStop);
-            context.startActivity(intent);
+                Intent intent = new Intent(context, BusStopLineActivity.class);
+                intent.putExtra("busLine", ci);
+                intent.putExtra("completeBusStop", completeBusStop);
+                context.startActivity(intent);
             }
         });
     }
 
     @Override
-    public BusLineViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         Context context = viewGroup.getContext();
         View itemView = LayoutInflater.
                 from(context).

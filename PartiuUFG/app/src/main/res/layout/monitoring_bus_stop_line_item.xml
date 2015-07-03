@@ -5,20 +5,19 @@
     android:layout_height="wrap_content"
     android:minHeight="70dp"
     android:maxHeight="70dp"
-    android:background="@drawable/item_background_cards"
-    android:paddingTop="10dp"
-    android:paddingRight="5dp"
-    android:paddingLeft="5dp"
-    android:paddingBottom="10dp">
+    android:background="@drawable/item_background_cards">
 
     <RelativeLayout
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:id="@+id/layout_bus_line_number"
-        android:background="@drawable/number_shape"
+        android:id="@+id/layout_number"
+        android:background="@drawable/bus_line_shape"
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
-        android:gravity="center_vertical|center" >
+        android:gravity="center_vertical|center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/layout_description"
-        android:layout_toRightOf="@+id/layout_bus_line_number"
+        android:layout_toRightOf="@+id/layout_number"
         android:layout_toLeftOf="@+id/nextTimeLayout"
         android:layout_centerVertical="true">
 
@@ -58,21 +57,27 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Nome"
             android:id="@+id/name"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="marquee"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/address"
-            android:text="Endereço" />
+            android:text="Endereço"
+            android:maxLines="1"
+            android:ellipsize="marquee"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/item_before_time_to_alert"
-            android:id="@+id/before_minutes_to_alert"/>
+            android:id="@+id/before_minutes_to_alert"
+            android:maxLines="1"
+            android:ellipsize="marquee"/>
     </LinearLayout>
 
     <LinearLayout
@@ -82,7 +87,8 @@
         android:id="@+id/nextTimeLayout"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
 
         <TextView
             android:layout_width="match_parent"
@@ -90,7 +96,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="11 min"
             android:id="@+id/next_time"
-            android:gravity="center" />
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="marquee"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -99,6 +107,19 @@
             android:textSize="10sp"
             android:text="@string/about_next_minutes"
             android:id="@+id/next_time_aprox_label"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="marquee"/>
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/list_item_border"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layout_number"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignLeft="@+id/layout_description"
+        android:layout_alignStart="@+id/layout_description"
+        android:layout_alignRight="@+id/nextTimeLayout" />
 </RelativeLayout>

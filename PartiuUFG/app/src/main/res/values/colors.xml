@@ -5,7 +5,6 @@
     <color name="tabsScrollColor">#0068b1</color>
     <color name="tabsTextColor">#FFF</color>
 
-
     <color name="accent">#FFC107</color>
     <color name="textHint">#DDDDDD</color>
     <color name="text">#000</color>
@@ -13,11 +12,13 @@
     <color name="list_header_text">#FFF</color>
     <color name="list_background">#FFF</color>
     <color name="list_background_selected">#B303A9F4</color>
-    <color name="list_item_border">#ababb2</color>
+    <color name="list_item_border">#EEE</color>
 
     <color name="bus_timer_shape_background">#FFF</color>
     <color name="bus_timer_shape_border">#03A9F4</color>
     <color name="bus_timer_text">#000</color>
 
+    <color name="bus_line_shape_background">@color/primary</color>
+    <color name="bus_stop_shape_background">@color/accent</color>
     <color name="number_shape_text">#FFF</color>
 </resources>

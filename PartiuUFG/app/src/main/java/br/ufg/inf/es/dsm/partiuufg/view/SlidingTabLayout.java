@@ -212,7 +212,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 lp.weight = 1;
             }
 
-            tabTitleView.setText(adapter.getPageTitle(i));
+            String newTabTitle = (String) adapter.getPageTitle(i);
+            tabTitleView.setText(newTabTitle.toUpperCase());
             tabView.setOnClickListener(tabClickListener);
             String desc = mContentDescriptions.get(i, null);
             if (desc != null) {
@@ -224,6 +225,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 tabView.setSelected(true);
             }
             tabTitleView.setTextColor(getResources().getColor(R.color.tabsTextColor));
+            tabTitleView.setMaxLines(1);
         }
     }
 

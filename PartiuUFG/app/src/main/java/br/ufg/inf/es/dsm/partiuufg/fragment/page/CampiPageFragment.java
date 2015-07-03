@@ -73,6 +73,9 @@ public class CampiPageFragment extends Fragment {
                     ebs.getBusLine(singleBusLine.getNumber().toString(), new Callback<BusLine>() {
                         @Override
                         public void success(BusLine busLine, Response response) {
+                            if(getActivity() == null) {
+                                return;
+                            }
                             singleBusLine.setName(busLine.getName());
                             adapter.notifyDataSetChanged();
                             singleBusLine.save();
