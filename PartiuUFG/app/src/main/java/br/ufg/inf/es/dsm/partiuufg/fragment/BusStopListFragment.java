@@ -16,9 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.adapter.BusStopAdapter;
-import br.ufg.inf.es.dsm.partiuufg.adapter.GeneralStopBusOnClickListenerFactory;
-import br.ufg.inf.es.dsm.partiuufg.adapter.StopBusFromLineOnClickListenerFactory;
+import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter;
+import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.GeneralStopBusOnClickListenerFactory;
+import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.StopBusFromLineOnClickListenerFactory;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
@@ -116,14 +116,6 @@ public class BusStopListFragment extends ProgressFragment {
                     "access_count DESC", "10" );
         } catch(SQLiteException e) {
             busStopList = new ArrayList<>();
-        }
-
-        if(busStopList.isEmpty()){
-            getActivity().findViewById(R.id.top_access).setVisibility(View.GONE);
-            recList.setVisibility(View.GONE);
-        }else{
-            getActivity().findViewById(R.id.top_access).setVisibility(View.VISIBLE);
-            recList.setVisibility(View.VISIBLE);
         }
 
         busStopAdapter = new BusStopAdapter(busStopList, getActivity());

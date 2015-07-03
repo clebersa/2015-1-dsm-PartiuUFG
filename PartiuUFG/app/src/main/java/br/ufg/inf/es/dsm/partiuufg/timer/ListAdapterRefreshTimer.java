@@ -2,11 +2,8 @@ package br.ufg.inf.es.dsm.partiuufg.timer;
 
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import java.util.TimerTask;
-
-import br.ufg.inf.es.dsm.partiuufg.adapter.BusLineAdapter;
 
 /**
  * Created by Bruno on 27/06/2015.

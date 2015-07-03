@@ -11,5 +11,6 @@
         android:state_enabled="false"
         android:drawable="@drawable/item_normal"/>
 
-    <item android:drawable="@drawable/item_normal" />
+    <item
+        android:drawable="@drawable/item_normal"/>
 </selector>

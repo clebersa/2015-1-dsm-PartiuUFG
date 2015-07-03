@@ -33,14 +33,24 @@ public abstract class AbstractActivity extends ActionBarActivity implements Sear
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
+        if(haveBackButton()) {
+            try {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setHomeButtonEnabled(true);
+                toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onBackPressed();
+                    }
+                });
+            } catch( NullPointerException e ) {
+                Log.e(TAG, "Can't add back button to the activity");
             }
-        });
+        }
+    }
+
+    protected Boolean haveBackButton() {
+        return true;
     }
 
     protected abstract void setActivityContentView();

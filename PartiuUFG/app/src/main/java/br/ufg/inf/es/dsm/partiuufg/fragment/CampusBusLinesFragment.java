@@ -11,7 +11,7 @@ import com.malinskiy.superrecyclerview.SuperRecyclerView;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.adapter.CampusSingleBusLinesAdapter;
+import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.Campus;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;

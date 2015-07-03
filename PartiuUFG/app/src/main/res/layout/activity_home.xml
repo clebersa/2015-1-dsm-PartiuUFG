@@ -6,35 +6,16 @@
 
     <include layout="@layout/toolbar"/>
 
-    <Button
+    <br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout
+        android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Campus Samambaia"
-        android:id="@+id/campus_samambaia_button"
-        android:layout_gravity="left|top"
-        android:onClick="loadSamambaiaBusLines"/>
+        android:elevation="2dp"
+        android:background="@color/primary" />
 
-    <Button
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Campus Colemar Natal e Silva"
-        android:id="@+id/campus_colemar_button"
-        android:layout_gravity="left|top"
-        android:onClick="loadColemarBusLines"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/top_access"
-        android:id="@+id/top_access"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp" />
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/most_visited_stop_bus"
-        android:layout_width="match_parent" android:layout_height="match_parent"
-        tools:ignore="MergeRootFrame"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_weight="1" />
 </LinearLayout>

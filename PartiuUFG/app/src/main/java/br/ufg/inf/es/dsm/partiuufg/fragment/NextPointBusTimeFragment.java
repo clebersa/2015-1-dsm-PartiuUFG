@@ -2,14 +2,12 @@ package br.ufg.inf.es.dsm.partiuufg.fragment;
 
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.devspark.progressfragment.ProgressFragment;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
@@ -18,8 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.activity.BusStopActivity;
-import br.ufg.inf.es.dsm.partiuufg.adapter.BusLineAdapter;
+import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
