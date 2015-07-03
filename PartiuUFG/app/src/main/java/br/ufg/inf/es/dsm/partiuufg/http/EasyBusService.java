@@ -19,5 +19,10 @@ public interface EasyBusService {
 
     @GET("/point/{pointNumber}/bus/{lineNumber}")
     BusTime getBusNextTimeInPoint(@Path("pointNumber") String pointNumber,
-                               @Path("lineNumber") String lineNumber);
+                                  @Path("lineNumber") String lineNumber);
+
+    @GET("/point/{pointNumber}/bus/{lineNumber}")
+    void getBusNextTimeInPoint(@Path("pointNumber") String pointNumber,
+                               @Path("lineNumber") String lineNumber,
+                               Callback<BusTime> callback);
 }

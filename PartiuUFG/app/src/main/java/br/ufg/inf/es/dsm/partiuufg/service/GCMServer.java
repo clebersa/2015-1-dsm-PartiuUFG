@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.dbModel.GCMBusPointTime;
+import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.GCMHttpService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
@@ -45,9 +45,9 @@ public class GCMServer extends Service {
             public void run() {
                 while(true) {
                     if (isRunning) {
-                        List<GCMBusPointTime> alertBusStopLines = GCMBusPointTime.listAll(GCMBusPointTime.class);
+                        List<SingleGCMBusStopLine> alertBusStopLines = SingleGCMBusStopLine.listAll(SingleGCMBusStopLine.class);
                         EasyBusService easyBusService = RestBusServiceFactory.getAdapter();
-                        for (final GCMBusPointTime alertBusStopLine : alertBusStopLines) {
+                        for (final SingleGCMBusStopLine alertBusStopLine : alertBusStopLines) {
                             try {
                                 BusTime busTime = easyBusService.getBusNextTimeInPoint(
                                         alertBusStopLine.getPointNumber().toString(),

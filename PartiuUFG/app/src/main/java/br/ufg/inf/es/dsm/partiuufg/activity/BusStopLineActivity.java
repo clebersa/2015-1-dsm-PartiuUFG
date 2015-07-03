@@ -13,11 +13,11 @@ import android.widget.Toast;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
+import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
-import br.ufg.inf.es.dsm.partiuufg.dbModel.GCMBusPointTime;
 import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -42,25 +42,25 @@ public class BusStopLineActivity extends AbstractActivity {
 
     private Integer showErrorStatus = 0;
 
-    private List<GCMBusPointTime> getLineFavorite() {
-        List<GCMBusPointTime> gcmBusPointTimes = GCMBusPointTime.find(GCMBusPointTime.class,
+    private List<SingleGCMBusStopLine> getLineFavorite() {
+        List<SingleGCMBusStopLine> singleGcmBusStopLines = SingleGCMBusStopLine.find(SingleGCMBusStopLine.class,
                 "point_number = ? and bus_line_number = ?",
                 completeBusStop.getNumber().toString(),
                 busLine.getNumber().toString());
 
-        return gcmBusPointTimes;
+        return singleGcmBusStopLines;
     }
 
     private void deleteStopLineFavorite() {
-        for( GCMBusPointTime gcmBusPointTime : getLineFavorite() ) {
-            gcmBusPointTime.delete();
+        for( SingleGCMBusStopLine singleGcmBusStopLine : getLineFavorite() ) {
+            singleGcmBusStopLine.delete();
         }
     }
 
     private void addStopLineFavorite() {
-        GCMBusPointTime gcmBusPointTime = new GCMBusPointTime(completeBusStop.getNumber(),
+        SingleGCMBusStopLine singleGcmBusStopLine = new SingleGCMBusStopLine(completeBusStop.getNumber(),
                 busLine.getNumber());
-        gcmBusPointTime.save();
+        singleGcmBusStopLine.save();
     }
 
     public void gcmFavorite(View view) {
@@ -92,10 +92,10 @@ public class BusStopLineActivity extends AbstractActivity {
         lineNumber.setText(busLine.getNumber().toString());
         lineName.setText(busLine.getName());
 
-        List<GCMBusPointTime> favorites = getLineFavorite();
+        List<SingleGCMBusStopLine> favorites = getLineFavorite();
         if (favorites.size() > 0) {
             if (!checkPlayServices(false)) {
-                GCMBusPointTime.deleteAll(GCMBusPointTime.class);
+                SingleGCMBusStopLine.deleteAll(SingleGCMBusStopLine.class);
             } else {
                 checkGCMFav.setChecked(true);
             }

@@ -13,18 +13,21 @@ import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.activity.BusLineActivity;
+import br.ufg.inf.es.dsm.partiuufg.dbModel.Campus;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine;
 
 /**
  * Created by Cleber on 21/06/2015.
  */
-public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<CampusSingleBusLinesAdapter.CampusBusLineViewHolder> {
+public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final String TAG = CampusSingleBusLinesAdapter.class.getSimpleName();
+    private static final int TYPE_HEADER = 0;
+    private static final int TYPE_ITEM = 1;
 
-    private List<SingleBusLine> singleBusLines;
+    private List<Object> singleBusLines;
     private Context context;
 
-    public CampusSingleBusLinesAdapter(List<SingleBusLine> singleBusLines, Context context) {
+    public CampusSingleBusLinesAdapter(List<Object> singleBusLines, Context context) {
         this.context = context;
 
         if(singleBusLines == null) {
@@ -34,7 +37,7 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<CampusSing
         }
     }
 
-    public List<SingleBusLine> getSingleBusLines() {
+    public List<Object> getSingleBusLines() {
         return singleBusLines;
     }
 
@@ -44,43 +47,83 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<CampusSing
     }
 
     @Override
-    public void onBindViewHolder(CampusBusLineViewHolder busLineViewHolder, int i) {
-        final SingleBusLine busLine = singleBusLines.get(i);
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
+        if (viewHolder instanceof CampusBusLineItemViewHolder) {
+            final SingleBusLine busLine = (SingleBusLine) singleBusLines.get(i);
+            CampusBusLineItemViewHolder busLineViewHolder = (CampusBusLineItemViewHolder) viewHolder;
 
-        busLineViewHolder.vLineNumber.setText(busLine.getNumber().toString());
-        if(busLine.getName() != null) {
-            busLineViewHolder.vDestination.setText(busLine.getName());
-        }
-
-        busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, BusLineActivity.class);
-                intent.putExtra("lineNumber", busLine.getNumber());
-                context.startActivity(intent);
+            busLineViewHolder.vLineNumber.setText(busLine.getNumber().toString());
+            if(busLine.getName() != null) {
+                busLineViewHolder.vDestination.setText(busLine.getName());
             }
-        });
+            busLineViewHolder.vItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, BusLineActivity.class);
+                    intent.putExtra("lineNumber", busLine.getNumber());
+                    context.startActivity(intent);
+                }
+            });
+        } else if (viewHolder instanceof CampusBusLineHeaderViewHolder) {
+            Campus campus = (Campus) singleBusLines.get(i);
+            CampusBusLineHeaderViewHolder campusVH = (CampusBusLineHeaderViewHolder) viewHolder;
+            campusVH.vName.setText(campus.getName());
+        }
     }
 
     @Override
-    public CampusBusLineViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        Context context = viewGroup.getContext();
-        View itemView = LayoutInflater.
-                from(context).
-                inflate(R.layout.bus_line_card, viewGroup, false);
-        return new CampusBusLineViewHolder(itemView);
+    public int getItemViewType(int position) {
+        if (isPositionHeader(position)) {
+            return TYPE_HEADER;
+        }
+        return TYPE_ITEM;
     }
 
-    public static class CampusBusLineViewHolder extends RecyclerView.ViewHolder {
-        public View vCard;
+    private boolean isPositionHeader(int position) {
+        if(singleBusLines.get(position) instanceof Campus) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        Context context = viewGroup.getContext();
+        if(viewType == TYPE_ITEM) {
+            View itemView = LayoutInflater.from(context).inflate(R.layout.bus_line_card,
+                    viewGroup, false);
+            return new CampusBusLineItemViewHolder(itemView);
+        } else if (viewType == TYPE_HEADER) {
+            View itemView = LayoutInflater.from(context).inflate(R.layout.campus_bus_line_header,
+                    viewGroup, false);
+            return new CampusBusLineHeaderViewHolder(itemView);
+        }
+
+        throw new RuntimeException("there is no type that matches the type " + viewType +
+                " make sure your using types correctly");
+    }
+
+    public static class CampusBusLineItemViewHolder extends RecyclerView.ViewHolder {
+        public View vItem;
         public TextView vLineNumber;
         public TextView vDestination;
 
-        public CampusBusLineViewHolder(View v) {
+        public CampusBusLineItemViewHolder(View v) {
             super(v);
-            vCard = v;
+            vItem = v;
             vLineNumber = (TextView) v.findViewById(R.id.bus_line_number);
             vDestination = (TextView) v.findViewById(R.id.bus_line_name);
+        }
+    }
+
+    public static class CampusBusLineHeaderViewHolder extends RecyclerView.ViewHolder {
+        public View vItem;
+        public TextView vName;
+
+        public CampusBusLineHeaderViewHolder(View v) {
+            super(v);
+            vItem = v;
+            vName = (TextView) v.findViewById(R.id.name);
         }
     }
 }

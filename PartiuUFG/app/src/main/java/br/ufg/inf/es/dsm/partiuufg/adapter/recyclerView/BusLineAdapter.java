@@ -63,7 +63,6 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         final BusLine ci = busLines.get(i);
 
         BusTime busTime = completeBusStop.getBusTime(ci.getNumber());
-        String destination = ci.getName();
         Integer nextTime = 0;
         if( busTime != null ) {
             nextTime = busTime.getNextTime();
@@ -82,14 +81,14 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
         busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
         String displayNextTime = context.getString(R.string.no_forecast);
         if( remainingMinutes > 0 ) {
-            displayNextTime = remainingMinutes.toString() + " min";
+            displayNextTime = context.getString(R.string.item_display_next_time, remainingMinutes);
             if(!remainingMinutes.equals(nextTime)) {
                 busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.VISIBLE);
             }
         }
 
         busLineViewHolder.vLineNumber.setText(ci.getNumber().toString());
-        busLineViewHolder.vDestination.setText(destination);
+        busLineViewHolder.vName.setText(ci.getName());
         busLineViewHolder.vNextTime.setText(displayNextTime);
 
         busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +114,7 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
     public static class BusLineViewHolder extends RecyclerView.ViewHolder {
         public View vCard;
         public TextView vLineNumber;
-        public TextView vDestination;
+        public TextView vName;
         public TextView vNextTime;
         public TextView vNextTimeAproxLabel;
 
@@ -124,7 +123,7 @@ public class BusLineAdapter extends RecyclerView.Adapter<BusLineAdapter.BusLineV
 
             vCard = v;
             vLineNumber = (TextView) v.findViewById(R.id.lineNumber);
-            vDestination = (TextView) v.findViewById(R.id.destination);
+            vName = (TextView) v.findViewById(R.id.name);
             vNextTime = (TextView) v.findViewById(R.id.nextTime);
             vNextTimeAproxLabel = (TextView) v.findViewById(R.id.nextTimeAproxLabel);
         }

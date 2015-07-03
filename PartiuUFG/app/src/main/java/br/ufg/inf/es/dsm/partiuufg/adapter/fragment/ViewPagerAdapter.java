@@ -3,31 +3,29 @@ package br.ufg.inf.es.dsm.partiuufg.adapter.fragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.fragment.page.CampiPageFragment;
+import br.ufg.inf.es.dsm.partiuufg.fragment.page.MonBusStopLinesPageFragment;
 import br.ufg.inf.es.dsm.partiuufg.fragment.page.MostVisitedPageFragment;
 
 /**
  * Created by hp1 on 21-01-2015.
  */
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
-    CharSequence Titles[];
-    int NumbOfTabs;
-    HashMap<Integer, Fragment> pages = new HashMap<>();
+    private ArrayList<String> titles;
+    private HashMap<Integer, Fragment> pages = new HashMap<>();
 
-    public ViewPagerAdapter(FragmentManager fm,CharSequence mTitles[], int mNumbOfTabsumb) {
+    public ViewPagerAdapter(FragmentManager fm, ArrayList<String> titles) {
         super(fm);
-        this.Titles = mTitles;
-        this.NumbOfTabs = mNumbOfTabsumb;
+        this.titles = titles;
     }
 
-    //This method return the fragment for the every position in the View Pager
     @Override
-    public Fragment getItem(int position) {
+    public synchronized Fragment getItem(int position) {
         if(pages.containsKey(position)) {
             return pages.get(position);
         }
@@ -41,6 +39,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             default:
                 page = new CampiPageFragment();
                 break;
+            case 2:
+                page = new MonBusStopLinesPageFragment();
+                break;
         }
 
         pages.put(position, page);
@@ -49,11 +50,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return Titles[position];
+        return titles.get(position);
     }
 
     @Override
     public int getCount() {
-        return NumbOfTabs;
+        return titles.size();
     }
 }

@@ -1,71 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/bus_time_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="5dp"
-    card_view:cardElevation="2dp"
-    card_view:cardMaxElevation="0dp"
-    card_view:cardPreventCornerOverlap="false"
-    card_view:cardCornerRadius="5dp"
-    android:foreground="@drawable/item_background_cards">
+    android:minHeight="70dp"
+    android:maxHeight="70dp"
+    android:background="@drawable/item_background_cards"
+    android:paddingTop="10dp"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp"
+    android:paddingBottom="10dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:minHeight="48dp"
-        android:maxHeight="48dp"
-        android:padding="5dp" >
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/layout_number"
+        android:background="@drawable/number_shape"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical|center" >
 
         <TextView
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="---"
+            android:text="----"
+            android:textSize="20sp"
+            android:textColor="@color/number_shape_text"
             android:id="@+id/lineNumber"
-            android:gravity="center"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5dp" />
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Desconhecido"
+        android:id="@+id/name"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_toRightOf="@+id/layout_number"
+        android:layout_toEndOf="@+id/layout_number"
+        android:layout_toLeftOf="@+id/nextTimeLayout" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextTimeLayout"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Desconhecido"
-            android:id="@+id/destination"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:layout_toRightOf="@+id/lineNumber"
-            android:layout_toEndOf="@+id/lineNumber"
-            android:layout_toLeftOf="@+id/nextTimeLayout" />
+            android:text="Sem prev."
+            android:id="@+id/nextTime"
+            android:gravity="center" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/nextTimeLayout"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp">
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="11 min"
-                android:id="@+id/nextTime"
-                android:gravity="center" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="10sp"
-                android:text="@string/about_next_minutes"
-                android:id="@+id/nextTimeAproxLabel"
-                android:gravity="center"/>
-        </LinearLayout>
-    </RelativeLayout>
-</android.support.v7.widget.CardView>
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="10sp"
+            android:text="@string/about_next_minutes"
+            android:id="@+id/nextTimeAproxLabel"
+            android:gravity="center"/>
+    </LinearLayout>
+</RelativeLayout>

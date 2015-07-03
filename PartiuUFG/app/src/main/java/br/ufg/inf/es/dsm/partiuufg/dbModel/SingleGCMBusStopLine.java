@@ -5,28 +5,28 @@ import com.orm.SugarRecord;
 /**
  * Created by bruno on 6/25/15.
  */
-public class GCMBusPointTime extends SugarRecord<GCMBusPointTime> {
-    private static final Integer DEFAULT_BEFORE_MINUTES_TO_ALERT = 5;
-    Integer pointNumber;
-    Integer busLineNumber;
-    Integer beforeMinutesToAlert;
+public class SingleGCMBusStopLine extends SugarRecord<SingleGCMBusStopLine>  {
+    protected static final Integer DEFAULT_BEFORE_MINUTES_TO_ALERT = 5;
+    protected Integer pointNumber;
+    protected Integer busLineNumber;
+    protected Integer beforeMinutesToAlert;
 
-    public GCMBusPointTime() {
+    public SingleGCMBusStopLine() {
     }
 
-    public GCMBusPointTime(Integer pointNumber, Integer busLineNumber, Integer beforeMinutesToAlert){
+    public SingleGCMBusStopLine(Integer pointNumber, Integer busLineNumber, Integer beforeMinutesToAlert){
         this.pointNumber = pointNumber;
         this.busLineNumber = busLineNumber;
         this.beforeMinutesToAlert = beforeMinutesToAlert;
     }
 
-    public GCMBusPointTime(Integer pointNumber, Integer busLineNumber){
+    public SingleGCMBusStopLine(Integer pointNumber, Integer busLineNumber){
         this(pointNumber, busLineNumber, DEFAULT_BEFORE_MINUTES_TO_ALERT);
     }
 
     @Override
     public String toString() {
-        return "GCMBusPointTime{Bus stop number: " + pointNumber +
+        return "SingleGCMBusStopLine{Bus stop number: " + pointNumber +
                 ", Bus line: " + busLineNumber +
                 ", Alert in: " + beforeMinutesToAlert + "}";
     }

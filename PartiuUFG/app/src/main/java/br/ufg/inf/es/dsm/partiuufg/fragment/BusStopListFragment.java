@@ -8,6 +8,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.devspark.progressfragment.ProgressFragment;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
@@ -102,10 +103,18 @@ public class BusStopListFragment extends ProgressFragment {
         loadByWeb();
     }
 
+    public void refreshDatabaseList() {
+        setContentShown(false);
+        loadByDatabase();
+    }
+
     @Override
-    public void onStart() {
-        super.onStart();
-        if(mode == DATABASE_MODE) loadByDatabase();
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, "RESUME" + this);
+        if(mode == DATABASE_MODE) {
+            refreshDatabaseList();
+        }
     }
 
     public void loadByDatabase(){
@@ -122,7 +131,18 @@ public class BusStopListFragment extends ProgressFragment {
         busStopAdapter.setOnClickListenerFactory(new GeneralStopBusOnClickListenerFactory());
         recList.setAdapter(busStopAdapter);
 
-        ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(
+        TextView noItens = (TextView) getContentView().findViewById(R.id.no_itens);
+        noItens.setText(getString(R.string.no_top_access));
+
+        if(busStopAdapter.getBusStops().size() == 0){
+            noItens.setVisibility(View.VISIBLE);
+            recList.setVisibility(View.GONE);
+        } else {
+            noItens.setVisibility(View.GONE);
+            recList.setVisibility(View.VISIBLE);
+        }
+
+        /*ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(
                 new ItemTouchHelper.SimpleCallback(
                     ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT,
                     ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -135,14 +155,14 @@ public class BusStopListFragment extends ProgressFragment {
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 List<SingleBusStop> adapterList = ((BusStopAdapter) recList.getAdapter())
-                        .getBusStops();
+                        .getMonBusStopLines();
                 SingleBusStop singleBusRemoved = adapterList.get(viewHolder.getAdapterPosition());
                 singleBusRemoved.delete();
                 adapterList.remove(viewHolder.getAdapterPosition());
                 recList.getAdapter().notifyItemRemoved(viewHolder.getAdapterPosition());
             }
         });
-        swipeToDismissTouchHelper.attachToRecyclerView(recList.getRecyclerView());
+        swipeToDismissTouchHelper.attachToRecyclerView(recList.getRecyclerView());*/
         createView();
     }
 

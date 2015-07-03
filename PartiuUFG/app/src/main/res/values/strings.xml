@@ -9,6 +9,8 @@
     <string name="about_next_minutes">(aprox.)</string>
     <string name="title_activity_bus_stop_line">Linha %1$s do ponto %2$s</string>
     <string name="title_activity_bus_line_stops">%1$d - %2$s</string>
+    <string name="item_display_next_time">%1$d min</string>
+    <string name="item_before_time_to_alert">Alertar quando faltar %1$d minutos</string>
 
     <string name="last_search_time">Atualizado em %1$s</string>
     <string name="reference">Referência:</string>
@@ -20,6 +22,8 @@
     <string name="title_activity_campus">Campus</string>
     <string name="bus_stop_not_found">Ponto de ônibus não encontrado</string>
     <string name="campus_not_found">Campus não encontrado</string>
+    <string name="no_top_access">Nenhum ponto foi acessado ou a lista foi limpa</string>
+    <string name="no_monitoring_bus_stop_lines">Nenhum ônibus cadastrado para monitoramento</string>
 
     <string name="top_access">Pontos mais acessados:</string>
 

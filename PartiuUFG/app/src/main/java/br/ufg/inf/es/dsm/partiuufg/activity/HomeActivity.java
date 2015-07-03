@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -35,14 +36,17 @@ public class HomeActivity extends AbstractActivity {
     private ViewPager pager;
     private ViewPagerAdapter adapter;
     private SlidingTabLayout tabs;
-    private CharSequence Titles[]={"Mais utilizados","Campi"};
-    private int Numboftabs =2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        adapter =  new ViewPagerAdapter(getSupportFragmentManager(), Titles, Numboftabs);
+        ArrayList<String> titles = new ArrayList<>();
+        titles.add("MAIS ACESSADOS");
+        titles.add("CAMPI");
+        titles.add("MONITORADOS");
+
+        adapter =  new ViewPagerAdapter(getSupportFragmentManager(), titles);
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
         pager.setCurrentItem(1);
@@ -104,15 +108,5 @@ public class HomeActivity extends AbstractActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
-    }
-
-    public void loadSamambaiaBusLines(View v){
-        CampiPageFragment fragment = (CampiPageFragment)adapter.getItem(1);
-        fragment.loadBusLines(fragment.getCampi().get(CampiPageFragment.CAMPUS_SAMAMBAIA_NAME));
-    }
-
-    public void loadColemarBusLines(View v){
-        CampiPageFragment fragment = (CampiPageFragment)adapter.getItem(1);
-        fragment.loadBusLines(fragment.getCampi().get(CampiPageFragment.CAMPUS_COLEMAR_NAME));
     }
 }

@@ -8,6 +8,15 @@
 
     <include layout="@layout/error_view" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/no_itens"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"

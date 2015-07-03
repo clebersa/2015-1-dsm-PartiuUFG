@@ -58,10 +58,6 @@
             android:name=".activity.BusStopLineActivity" >
         </activity>
         <activity
-            android:name=".activity.CampusActivity"
-            android:label="@string/title_activity_campus" >
-        </activity>
-        <activity
             android:name=".activity.BusLineActivity" >
         </activity>
         <receiver
