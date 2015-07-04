@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="70dp"
+    android:maxHeight="70dp"
+    android:background="@drawable/item_background_cards">
+
+    <RelativeLayout
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/layout_number"
+        android:background="@drawable/bus_line_shape"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical|center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="----"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/number_shape_text"
+            android:id="@+id/bus_line_number"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="------"
+            android:textSize="12sp"
+            android:textColor="@color/number_shape_text"
+            android:id="@+id/bus_stop_number"
+            android:layout_below="@+id/bus_line_number"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/loading_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_toRightOf="@+id/layout_number"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/loading_progress_bar" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_content"
+        android:layout_toRightOf="@+id/layout_number"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout_description"
+            android:layout_toLeftOf="@+id/next_time_layout"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Nome"
+                android:id="@+id/name"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="marquee"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/address"
+                android:text="Endereço"
+                android:maxLines="1"
+                android:ellipsize="marquee"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/item_before_time_to_alert"
+                android:id="@+id/before_minutes_to_alert"
+                android:maxLines="1"
+                android:ellipsize="marquee"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/next_time_layout"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:id="@+id/no_prevision"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_action_image_timer_off"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="11 min"
+                android:id="@+id/next_time"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="10sp"
+                android:text="@string/about_next_minutes"
+                android:id="@+id/next_time_aprox_label"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/list_item_border"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layout_number"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignLeft="@+id/data_content"
+        android:layout_alignStart="@+id/bus_stop_details"
+        android:layout_alignRight="@+id/data_content" />
+
+</RelativeLayout>

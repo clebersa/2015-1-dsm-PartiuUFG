@@ -90,7 +90,7 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<RecyclerVi
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         Context context = viewGroup.getContext();
         if(viewType == TYPE_ITEM) {
-            View itemView = LayoutInflater.from(context).inflate(R.layout.bus_line_card,
+            View itemView = LayoutInflater.from(context).inflate(R.layout.item_bus_line_without_bus_stop,
                     viewGroup, false);
             return new CampusBusLineItemViewHolder(itemView);
         } else if (viewType == TYPE_HEADER) {
@@ -112,7 +112,7 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<RecyclerVi
             super(v);
             vItem = v;
             vLineNumber = (TextView) v.findViewById(R.id.bus_line_number);
-            vDestination = (TextView) v.findViewById(R.id.bus_line_name);
+            vDestination = (TextView) v.findViewById(R.id.name);
         }
     }
 

@@ -1,12 +1,7 @@
 package br.ufg.inf.es.dsm.partiuufg.activity;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.os.CountDownTimer;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.widget.SearchView;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -135,7 +130,7 @@ public class BusStopLineActivity extends AbstractActivity {
 
         tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
         checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
-        lineNumber = (TextView) findViewById(R.id.lineNumber);
+        lineNumber = (TextView) findViewById(R.id.bus_line_number);
         lineName = (TextView) findViewById(R.id.lineName);
         aboutNextMinutes = (TextView) findViewById(R.id.about_next_minutes);
 

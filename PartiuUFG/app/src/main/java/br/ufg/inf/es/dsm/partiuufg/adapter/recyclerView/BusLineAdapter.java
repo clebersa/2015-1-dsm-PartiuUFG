@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.poliveira.parallaxrecycleradapter.ParallaxRecyclerAdapter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -40,9 +41,6 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
         timer = new Timer();
         TimerTask updateData = new ListAdapterRefreshTimer(adapter);
         timer.scheduleAtFixedRate(updateData, 60000, 60000);
-
-        this.completeBusStop = completeBusStop;
-        this.context = context;
     }
 
     public static List<BusLine> getCreatedData(CompleteBusStop completeBusStop) {
@@ -86,9 +84,8 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
         }
 
         busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
-        String displayNextTime = context.getString(R.string.no_forecast);
+        String displayNextTime = context.getString(R.string.item_display_next_time, remainingMinutes);
         if( remainingMinutes > 0 ) {
-            displayNextTime = context.getString(R.string.item_display_next_time, remainingMinutes);
             if(!remainingMinutes.equals(nextTime)) {
                 busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.VISIBLE);
             }
@@ -102,8 +99,8 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, BusStopLineActivity.class);
-                intent.putExtra("busLine", ci);
-                intent.putExtra("completeBusStop", completeBusStop);
+                intent.putExtra("busLine", (Serializable) ci);
+                intent.putExtra("completeBusStop", (Serializable) completeBusStop);
                 context.startActivity(intent);
             }
         });
@@ -114,7 +111,7 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
         Context context = viewGroup.getContext();
         View itemView = LayoutInflater.
                 from(context).
-                inflate(R.layout.bus_time_card, viewGroup, false);
+                inflate(R.layout.item_bus_line_with_bus_stop, viewGroup, false);
         return new BusLineViewHolder(itemView);
     }
 
@@ -129,10 +126,10 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
             super(v);
 
             vCard = v;
-            vLineNumber = (TextView) v.findViewById(R.id.lineNumber);
+            vLineNumber = (TextView) v.findViewById(R.id.bus_line_number);
             vName = (TextView) v.findViewById(R.id.name);
-            vNextTime = (TextView) v.findViewById(R.id.nextTime);
-            vNextTimeAproxLabel = (TextView) v.findViewById(R.id.nextTimeAproxLabel);
+            vNextTime = (TextView) v.findViewById(R.id.next_time);
+            vNextTimeAproxLabel = (TextView) v.findViewById(R.id.next_time_aprox_label);
         }
     }
 }

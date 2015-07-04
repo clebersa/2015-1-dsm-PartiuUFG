@@ -52,7 +52,7 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
     public void onBindViewHolder(BusStopViewHolder busStopViewHolder, int i) {
         final SingleBusStop ci = busStops.get(i);
 
-        busStopViewHolder.vLineNumber.setText(ci.getNumber().toString());
+        busStopViewHolder.vBusStopNumber.setText(ci.getNumber().toString());
         busStopViewHolder.vAddress.setText(ci.getAddress());
         busStopViewHolder.vReference.setText(ci.getReference());
 
@@ -69,13 +69,13 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
         Context context = viewGroup.getContext();
         View itemView = LayoutInflater.
                 from(context).
-                inflate(R.layout.bus_stop_card, viewGroup, false);
+                inflate(R.layout.item_bus_stop_without_bus_line, viewGroup, false);
         return new BusStopViewHolder(itemView);
     }
 
     public static class BusStopViewHolder extends RecyclerView.ViewHolder {
         public View vCard;
-        public TextView vLineNumber;
+        public TextView vBusStopNumber;
         public TextView vAddress;
         public TextView vReference;
 
@@ -83,8 +83,8 @@ public class BusStopAdapter extends RecyclerView.Adapter<BusStopAdapter.BusStopV
             super(v);
 
             vCard = v;
-            vLineNumber = (TextView) v.findViewById(R.id.bus_line_number);
-            vAddress = (TextView) v.findViewById(R.id.bus_line_name);
+            vBusStopNumber = (TextView) v.findViewById(R.id.bus_stop_number);
+            vAddress = (TextView) v.findViewById(R.id.address);
             vReference = (TextView) v.findViewById(R.id.reference);
         }
     }

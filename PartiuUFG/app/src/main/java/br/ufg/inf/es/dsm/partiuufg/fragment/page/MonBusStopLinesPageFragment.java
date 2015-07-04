@@ -3,6 +3,7 @@ package br.ufg.inf.es.dsm.partiuufg.fragment.page;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusLineStopAdapter;
+import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine;
 import br.ufg.inf.es.dsm.partiuufg.model.CompleteGCMBusStopLine;
 
@@ -25,7 +26,7 @@ import br.ufg.inf.es.dsm.partiuufg.model.CompleteGCMBusStopLine;
 public class MonBusStopLinesPageFragment extends Fragment {
     private static final String TAG = MonBusStopLinesPageFragment.class.getSimpleName();
     private SuperRecyclerView recList;
-    private MonitoringBusLineStopAdapter adapter;
+    private MonitoringBusStopLineAdapter adapter;
     private ArrayList<CompleteGCMBusStopLine> monBusStopLines;
     private TextView noItens;
 
@@ -43,6 +44,12 @@ public class MonBusStopLinesPageFragment extends Fragment {
         layout.scrollToPosition(0);
         recList.setLayoutManager(layout);
         recList.getRecyclerView().setHasFixedSize(true);
+        recList.setRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshList();
+            }
+        });
 
         if(savedInstanceState == null || !savedInstanceState.containsKey("monBusStopLines")) {
             monBusStopLines = new ArrayList<>();
@@ -50,19 +57,32 @@ public class MonBusStopLinesPageFragment extends Fragment {
             monBusStopLines = savedInstanceState.getParcelableArrayList("monBusStopLines");
         }
 
-        adapter = new MonitoringBusLineStopAdapter(monBusStopLines, getActivity());
+        adapter = new MonitoringBusStopLineAdapter(monBusStopLines, getActivity());
         recList.setAdapter(adapter);
         return v;
     }
 
+    public void refreshList() {
+        for(CompleteGCMBusStopLine monBusStopLine : monBusStopLines) {
+            monBusStopLine.setLoaded(false);
+        }
+        adapter.notifyDataSetChanged();
+    }
+
     public void updateList() {
         List<SingleGCMBusStopLine> sMonList =  SingleGCMBusStopLine.listAll(SingleGCMBusStopLine.class);
-        for( SingleGCMBusStopLine sMon : sMonList ) {
-            if(!adapter.itemExists(sMon)) {
-                monBusStopLines.add(CompleteGCMBusStopLine.createBySingle(sMon));
-                adapter.notifyDataSetChanged();
+        ArrayList<CompleteGCMBusStopLine> newMonBusStopLines = new ArrayList<>();
+        for(SingleGCMBusStopLine sMon : sMonList) {
+            CompleteGCMBusStopLine tmpItem = adapter.itemExists(sMon);
+            if(tmpItem != null) {
+                newMonBusStopLines.add(tmpItem);
+            } else {
+                newMonBusStopLines.add(CompleteGCMBusStopLine.createBySingle(sMon));
             }
         }
+
+        monBusStopLines = newMonBusStopLines;
+        adapter.setMonBusStopLines(monBusStopLines);
     }
 
     @Override
@@ -76,6 +96,19 @@ public class MonBusStopLinesPageFragment extends Fragment {
             noItens.setVisibility(View.GONE);
             recList.setVisibility(View.VISIBLE);
         }
+
+        if(adapter != null) {
+            adapter.notifyItemInserted(0);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if(adapter != null) {
+            adapter.cancelRefreshTimer();
+        }
+        super.onDestroy();
     }
 
     @Override

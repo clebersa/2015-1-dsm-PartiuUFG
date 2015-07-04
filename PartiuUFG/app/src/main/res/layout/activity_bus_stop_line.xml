@@ -22,7 +22,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/loading_progress_bar" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="105"
-                android:id="@+id/lineNumber"
+                android:id="@+id/bus_line_number"
                 android:layout_marginRight="5dp"
                 android:layout_alignParentBottom="false"
                 android:layout_alignParentTop="false"
@@ -55,8 +54,8 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="PC Campus \/ T. Pra\u00e7a A - Via B. Say\u00e3o"
                 android:id="@+id/lineName"
-                android:layout_toRightOf="@+id/lineNumber"
-                android:layout_toEndOf="@+id/lineNumber"
+                android:layout_toRightOf="@+id/bus_line_number"
+                android:layout_toEndOf="@+id/bus_line_number"
                 android:layout_toLeftOf="@+id/gcmFavorite"
                 android:layout_alignParentBottom="false"
                 android:layout_centerVertical="true" />

@@ -26,42 +26,58 @@
             android:text="----"
             android:textSize="20sp"
             android:textColor="@color/number_shape_text"
-            android:id="@+id/lineNumber"
+            android:id="@+id/bus_line_number"
             android:layout_centerInParent="true" />
     </RelativeLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Desconhecido"
-        android:id="@+id/name"
-        android:layout_centerVertical="true"
+        android:id="@+id/bus_line_details"
         android:layout_toRightOf="@+id/layout_number"
         android:layout_toEndOf="@+id/layout_number"
-        android:layout_toLeftOf="@+id/nextTimeLayout"
-        android:maxLines="2"
-        android:ellipsize="marquee"/>
+        android:layout_toLeftOf="@+id/next_time_layout"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Desconhecido"
+            android:id="@+id/name"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:ellipsize="marquee"/>
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:id="@+id/nextTimeLayout"
+        android:id="@+id/next_time_layout"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="@dimen/activity_horizontal_margin">
 
+        <ImageView
+            android:id="@+id/no_prevision"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_action_image_timer_off"
+            android:layout_gravity="center" />
+
         <TextView
-            android:layout_width="65dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Sem prev."
-            android:id="@+id/nextTime"
+            android:text="59 min"
+            android:id="@+id/next_time"
             android:gravity="center"
             android:maxLines="1"
-            android:ellipsize="marquee"/>
+            android:ellipsize="marquee"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="match_parent"
@@ -69,10 +85,11 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textSize="10sp"
             android:text="@string/about_next_minutes"
-            android:id="@+id/nextTimeAproxLabel"
+            android:id="@+id/next_time_aprox_label"
             android:gravity="center"
             android:maxLines="1"
-            android:ellipsize="marquee"/>
+            android:ellipsize="marquee"
+            android:visibility="gone" />
     </LinearLayout>
 
     <View
@@ -82,8 +99,8 @@
         android:layout_below="@+id/layout_number"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
-        android:layout_alignLeft="@+id/name"
-        android:layout_alignStart="@+id/name"
-        android:layout_alignRight="@+id/nextTimeLayout" />
+        android:layout_alignLeft="@+id/bus_line_details"
+        android:layout_alignStart="@+id/bus_line_details"
+        android:layout_alignRight="@+id/next_time_layout" />
 
 </RelativeLayout>
