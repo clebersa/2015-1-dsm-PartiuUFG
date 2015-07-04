@@ -4,13 +4,17 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.devspark.progressfragment.ProgressFragment;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
+import com.poliveira.parallaxrecycleradapter.ParallaxRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +24,7 @@ import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
+import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
 import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -34,7 +39,8 @@ public class NextPointBusTimeFragment extends ProgressFragment {
 
     private CompleteBusStop completeBusStop;
     private SuperRecyclerView recList;
-    private BusLineAdapter busLineAdapter;
+    private ParallaxRecyclerAdapter<BusLine> busLineAdapter;
+    private BusLineAdapter busLineAdapterMethods;
     private Integer busStopNumber;
     private ErrorView errorView;
     private LinearLayout content;
@@ -56,7 +62,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         errorView.setOnRetryListener(new ErrorView.RetryListener() {
             @Override
             public void onRetry() {
-                refreshBusStop();
+                refreshBusStop(true);
             }
         });
 
@@ -69,7 +75,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         recList.setRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                refreshBusStop();
+                refreshBusStop(false);
             }
         });
 
@@ -81,7 +87,7 @@ public class NextPointBusTimeFragment extends ProgressFragment {
             try {
                 completeBusStop = (CompleteBusStop) savedInstanceState
                         .getSerializable("completeBusStop");
-                busLineAdapter = new BusLineAdapter(completeBusStop, getActivity());
+                buildAdapter();
             } catch(NullPointerException e) {
                 Log.e(TAG, "Can't load completeBusStop from memory");
             }
@@ -100,21 +106,35 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         }
     }
 
-    public void refreshBusStop() {
-        setContentShown(false);
+    public void buildAdapter() {
+        List<BusLine> data = BusLineAdapter.getCreatedData(completeBusStop);
+        busLineAdapter = new ParallaxRecyclerAdapter<>(data);
+        busLineAdapterMethods = new BusLineAdapter(busLineAdapter, completeBusStop, getActivity());
+        busLineAdapter.implementRecyclerAdapterMethods(busLineAdapterMethods);
+
+        View v = LayoutInflater.from(getActivity()).inflate(
+                R.layout.bus_stop_list_header, recList.getRecyclerView(), false);
+
+        TextView address = (TextView) v.findViewById(R.id.tvAddress);
+        address.setText(completeBusStop.getAddress());
+
+        TextView searchTime = (TextView) v.findViewById(R.id.tvSearchTime);
+        searchTime.setText(getString(R.string.last_search_time,
+                completeBusStop.getSearchDateFormatted()));
+
+        busLineAdapter.setParallaxHeader(v, recList.getRecyclerView());
+    }
+
+    public void refreshBusStop(Boolean reloadContent) {
+        if(reloadContent) {
+            setContentShown(false);
+        }
         getStopBusDataFromWeb();
     }
 
     public void createView() {
         try {
             recList.setAdapter(busLineAdapter);
-            TextView address = (TextView) getView().findViewById(R.id.tvAddress);
-            address.setText(completeBusStop.getAddress());
-
-            TextView searchTime = (TextView) getView().findViewById(R.id.tvSearchTime);
-            searchTime.setText(getString(R.string.last_search_time,
-                    completeBusStop.getSearchDateFormatted()));
-
             content.setVisibility(View.VISIBLE);
             errorView.setVisibility(View.GONE);
             setContentShown(true);
@@ -142,10 +162,11 @@ public class NextPointBusTimeFragment extends ProgressFragment {
 
                 Log.d(TAG, "Complete bus stop " + vCompleteBusStop.getNumber() + " loaded.");
                 completeBusStop = vCompleteBusStop;
-                if (busLineAdapter != null) {
-                    busLineAdapter.cancelRefreshTimer();
+                if (busLineAdapterMethods != null) {
+                    busLineAdapterMethods.cancelRefreshTimer();
                 }
-                busLineAdapter = new BusLineAdapter(completeBusStop, getActivity());
+
+                buildAdapter();
                 increaseBusStopAccessCounter();
                 createView();
             }
@@ -178,8 +199,8 @@ public class NextPointBusTimeFragment extends ProgressFragment {
 
     @Override
     public void onDestroy() {
-        if(busLineAdapter != null) {
-            busLineAdapter.cancelRefreshTimer();
+        if(busLineAdapterMethods != null) {
+            busLineAdapterMethods.cancelRefreshTimer();
         }
         super.onDestroy();
     }

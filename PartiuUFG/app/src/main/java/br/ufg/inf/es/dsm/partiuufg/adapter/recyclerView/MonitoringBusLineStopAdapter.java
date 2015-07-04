@@ -3,6 +3,7 @@ package br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ import retrofit.client.Response;
  * Created by Bruno on 02/07/2015.
  */
 public class MonitoringBusLineStopAdapter extends RecyclerView.Adapter<MonitoringBusLineStopAdapter.MonBusStopLineViewHolder> {
+    private static final String TAG = MonitoringBusLineStopAdapter.class.getSimpleName();
     private List<CompleteGCMBusStopLine> monBusStopLines;
     private Context context;
 
@@ -117,7 +119,7 @@ public class MonitoringBusLineStopAdapter extends RecyclerView.Adapter<Monitorin
             public void onClick(View v) {
                 Intent intent = new Intent(context, BusStopLineActivity.class);
                 intent.putExtra("busLineNumber", ci.getBusLineNumber());
-                intent.putExtra("completeBusStopNumber", ci.getPointNumber());
+                intent.putExtra("busStopNumber", ci.getPointNumber());
                 context.startActivity(intent);
             }
         });

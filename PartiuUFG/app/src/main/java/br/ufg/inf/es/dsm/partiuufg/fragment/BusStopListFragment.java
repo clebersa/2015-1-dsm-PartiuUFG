@@ -111,7 +111,6 @@ public class BusStopListFragment extends ProgressFragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.d(TAG, "RESUME" + this);
         if(mode == DATABASE_MODE) {
             refreshDatabaseList();
         }
@@ -142,27 +141,6 @@ public class BusStopListFragment extends ProgressFragment {
             recList.setVisibility(View.VISIBLE);
         }
 
-        /*ItemTouchHelper swipeToDismissTouchHelper = new ItemTouchHelper(
-                new ItemTouchHelper.SimpleCallback(
-                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT,
-                    ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-            @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
-                                  RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                List<SingleBusStop> adapterList = ((BusStopAdapter) recList.getAdapter())
-                        .getMonBusStopLines();
-                SingleBusStop singleBusRemoved = adapterList.get(viewHolder.getAdapterPosition());
-                singleBusRemoved.delete();
-                adapterList.remove(viewHolder.getAdapterPosition());
-                recList.getAdapter().notifyItemRemoved(viewHolder.getAdapterPosition());
-            }
-        });
-        swipeToDismissTouchHelper.attachToRecyclerView(recList.getRecyclerView());*/
         createView();
     }
 
@@ -178,6 +156,10 @@ public class BusStopListFragment extends ProgressFragment {
         service.getBusLine(lineNumber.toString(), new Callback<BusLine>() {
             @Override
             public void success(BusLine busline, Response response) {
+                if(getActivity() == null) {
+                    return;
+                }
+
                 List<SingleBusStop> singleBusStopList = new ArrayList<>();
                 SingleBusStop singleBusStop;
                 for (CompleteBusStop completeBusStop : busline.getCompleteBusStops()) {
@@ -197,6 +179,10 @@ public class BusStopListFragment extends ProgressFragment {
 
             @Override
             public void failure(RetrofitError error) {
+                if(getActivity() == null) {
+                    return;
+                }
+
                 int statusCode;
                 if( error.getResponse() == null ) {
                     statusCode = 408;

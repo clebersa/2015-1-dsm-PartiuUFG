@@ -42,7 +42,7 @@ public class HomeActivity extends AbstractActivity {
         super.onCreate(savedInstanceState);
 
         ArrayList<String> titles = new ArrayList<>();
-        titles.add("MAIS ACESSADOS");
+        titles.add("TOP 10");
         titles.add("CAMPI");
         titles.add("MONITORADOS");
 
