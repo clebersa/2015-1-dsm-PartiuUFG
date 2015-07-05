@@ -2,6 +2,7 @@ package br.ufg.inf.es.dsm.partiuufg.service;
 
 import android.app.Notification;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.gms.gcm.GcmListenerService;
@@ -38,13 +39,18 @@ public class MyGcmListenerService extends GcmListenerService {
         PendingIntent contentIntent = PendingIntent.getActivity(this, notificationId, targetIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Notification notification = new NotificationCompat.Builder(this)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
                 .setContentTitle(getString(R.string.app_name))
                 .setContentText(message)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentIntent(contentIntent)
-                .setAutoCancel(true)
-                .build();
+                .setAutoCancel(true);
+
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder.setColor(android.R.color.transparent);
+        }
+
+        Notification notification = builder.build();
 
         NotificationManager nManager = (NotificationManager) getSystemService(
                 Context.NOTIFICATION_SERVICE);

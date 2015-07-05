@@ -9,25 +9,18 @@ import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine;
  * Created by Bruno on 03/07/2015.
  */
 public class CompleteGCMBusStopLine extends SingleGCMBusStopLine implements Parcelable {
-    private String name;
-    private String address;
-    private Integer nextTime;
-    private String searchDate;
+    private CompleteBusStop busStop;
     private Boolean loaded = false;
 
     public CompleteGCMBusStopLine(Integer pointNumber, Integer busLineNumber,
-                                  Integer beforeMinutesToAlert, String name,
-                                  String address, Integer nextTime, String searchDate) {
+                                  Integer beforeMinutesToAlert, CompleteBusStop busStop) {
         super(pointNumber, busLineNumber, beforeMinutesToAlert);
-        this.name = name;
-        this.address = address;
-        this.nextTime = nextTime;
-        this.searchDate = searchDate;
+        this.busStop = busStop;
     }
 
     public CompleteGCMBusStopLine(Integer pointNumber, Integer busLineNumber,
                                   Integer beforeMinutesToAlert) {
-        this(pointNumber, busLineNumber, beforeMinutesToAlert,  "", "",  -1,  "");
+        this(pointNumber, busLineNumber, beforeMinutesToAlert,  null);
     }
 
     public boolean compareSingle(SingleGCMBusStopLine o) {
@@ -38,40 +31,17 @@ public class CompleteGCMBusStopLine extends SingleGCMBusStopLine implements Parc
         return false;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public Integer getNextTime() {
-        return nextTime;
-    }
-
-    public String getSearchDate() {
-        return searchDate;
+    public CompleteBusStop getBusStop() {
+        return busStop;
     }
 
     public Boolean isLoaded() {
         return loaded;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setNextTime(Integer nextTime) {
-        this.nextTime = nextTime;
-    }
-
-    public void setSearchDate(String searchDate) {
-        this.searchDate = searchDate;
+    public void setBusStop(CompleteBusStop busStop) {
+        this.busStop = busStop;
     }
 
     public void setLoaded(Boolean loaded) {
@@ -82,10 +52,7 @@ public class CompleteGCMBusStopLine extends SingleGCMBusStopLine implements Parc
         this.pointNumber = in.readInt();
         this.busLineNumber = in.readInt();
         this.beforeMinutesToAlert = in.readInt();
-        this.name = in.readString();
-        this.address = in.readString();
-        this.nextTime = in.readInt();
-        this.searchDate = in.readString();
+        this.busStop = in.readParcelable(CompleteBusStop.class.getClassLoader());
         this.loaded = (in.readByte() != 0);
     }
 
@@ -99,10 +66,7 @@ public class CompleteGCMBusStopLine extends SingleGCMBusStopLine implements Parc
         dest.writeInt(pointNumber);
         dest.writeInt(busLineNumber);
         dest.writeInt(beforeMinutesToAlert);
-        dest.writeString(name);
-        dest.writeString(address);
-        dest.writeInt(nextTime);
-        dest.writeString(searchDate);
+        dest.writeParcelable(busStop, flags);
         dest.writeByte((byte) (loaded ? 1 : 0));
     }
 

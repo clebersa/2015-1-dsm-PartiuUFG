@@ -30,11 +30,10 @@
             android:layout_centerInParent="true" />
     </RelativeLayout>
 
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bus_stop_details"
+        android:id="@+id/bus_line_details"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_toRightOf="@+id/layout_number"
@@ -46,7 +45,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Desconhecido"
-            android:id="@+id/bus_line_name"
+            android:id="@+id/name"
             android:gravity="center_vertical"
             android:maxLines="2"
             android:ellipsize="marquee"/>
@@ -59,7 +58,7 @@
         android:layout_below="@+id/layout_number"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
-        android:layout_alignLeft="@+id/bus_stop_details"
-        android:layout_alignStart="@+id/bus_stop_details"
-        android:layout_alignRight="@+id/bus_stop_details" />
+        android:layout_alignLeft="@+id/bus_line_details"
+        android:layout_alignStart="@+id/bus_line_details"
+        android:layout_alignRight="@+id/bus_line_details" />
 </RelativeLayout>

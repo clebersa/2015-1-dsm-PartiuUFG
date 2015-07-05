@@ -21,6 +21,7 @@ import br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData;
 
 public class GCMServer extends Service {
     private static final String TAG = GCMServer.class.getSimpleName();
+    private static final Long SLEEP_TIME = (long) 55000;
     private boolean isRunning  = false;
     private String deviceToken;
 
@@ -45,7 +46,16 @@ public class GCMServer extends Service {
             public void run() {
                 while(true) {
                     if (isRunning) {
-                        List<SingleGCMBusStopLine> alertBusStopLines = SingleGCMBusStopLine.listAll(SingleGCMBusStopLine.class);
+                        List<SingleGCMBusStopLine> alertBusStopLines = null;
+                        try {
+                            alertBusStopLines = SingleGCMBusStopLine.listAll(SingleGCMBusStopLine.class);
+                        } catch(Exception e) {
+                            Log.e(TAG, "Can't read alert bus stop lines...");
+                            try {
+                                Thread.sleep(SLEEP_TIME);
+                            } catch (InterruptedException e1) {}
+                            continue;
+                        }
                         EasyBusService easyBusService = RestBusServiceFactory.getAdapter();
                         for (final SingleGCMBusStopLine alertBusStopLine : alertBusStopLines) {
                             try {
@@ -75,7 +85,7 @@ public class GCMServer extends Service {
                     }
 
                     try {
-                        Thread.sleep(50000);
+                        Thread.sleep(SLEEP_TIME);
                     } catch (InterruptedException e) {}
                 }
             }

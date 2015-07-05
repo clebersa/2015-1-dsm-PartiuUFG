@@ -160,7 +160,6 @@ public class NextPointBusTimeFragment extends ProgressFragment {
                     return;
                 }
 
-                Log.d(TAG, "Complete bus stop " + vCompleteBusStop.getNumber() + " loaded.");
                 completeBusStop = vCompleteBusStop;
                 if (busLineAdapterMethods != null) {
                     busLineAdapterMethods.cancelRefreshTimer();

@@ -3,10 +3,4 @@
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). -->
     <dimen name="activity_horizontal_margin">64dp</dimen>
-
-    <dimen name="bus_timer_size">250dp</dimen>
-    <dimen name="bus_timer_text">80sp</dimen>
-    <dimen name="bus_timer_no_forecast">20sp</dimen>
-    <dimen name="bus_timer_shape_border_size">6dp</dimen>
-    <dimen name="bus_timer_shape_radius">125dp</dimen>
 </resources>

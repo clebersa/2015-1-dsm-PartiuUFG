@@ -26,7 +26,7 @@
             android:text="----"
             android:textSize="20sp"
             android:textColor="@color/number_shape_text"
-            android:id="@+id/bus_line_number"
+            android:id="@+id/bus_stop_number"
             android:layout_centerInParent="true" />
     </RelativeLayout>
 
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Endereço"
-            android:id="@+id/bus_line_name"
+            android:id="@+id/address"
             android:textStyle="bold"
             android:gravity="center_vertical"
             android:maxLines="2"
