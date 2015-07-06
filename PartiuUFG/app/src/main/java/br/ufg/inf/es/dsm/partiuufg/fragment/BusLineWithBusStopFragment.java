@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.devspark.progressfragment.ProgressFragment;
 import com.malinskiy.superrecyclerview.SuperRecyclerView;
@@ -190,6 +191,14 @@ public class BusLineWithBusStopFragment extends ProgressFragment {
                     errorStatus = 408;
                 } else {
                     errorStatus = error.getResponse().getStatus();
+                    if(errorStatus == 400) {
+                        Toast toast = Toast.makeText(getActivity(),
+                                getString(R.string.bus_stop_not_found),
+                                Toast.LENGTH_LONG);
+                        toast.show();
+                        getActivity().finish();
+                        return;
+                    }
                 }
                 createView();
             }

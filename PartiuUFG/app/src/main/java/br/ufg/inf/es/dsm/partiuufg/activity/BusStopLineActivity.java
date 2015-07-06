@@ -42,6 +42,7 @@ public class BusStopLineActivity extends AbstractActivity {
     private BusTimeAdapter adapter;
     private ArrayList<String> busTimeTable;
     private TextView name;
+    private TextView noPrevision;
     private TextView tvShowTime;
     private TextView aboutNextMinutes;
 
@@ -136,6 +137,7 @@ public class BusStopLineActivity extends AbstractActivity {
         });
 
         name = (TextView) findViewById(R.id.name);
+        noPrevision = (TextView) findViewById(R.id.no_prevision);
         tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
         aboutNextMinutes = (TextView) findViewById(R.id.about_next_minutes);
 
@@ -207,16 +209,16 @@ public class BusStopLineActivity extends AbstractActivity {
                 tvShowTime.setText(String.format("%02d", seconds / 60)
                         + ":" + String.format("%02d", seconds % 60));
 
-                if(aboutNextMinutes.getVisibility() == View.GONE){
-                    aboutNextMinutes.setVisibility(View.VISIBLE);
-                }
+                tvShowTime.setVisibility(View.VISIBLE);
+                aboutNextMinutes.setVisibility(View.VISIBLE);
+                noPrevision.setVisibility(View.GONE);
             }
 
             @Override
             public void onFinish() {
-                tvShowTime.setText(getString(R.string.no_forecast));
-                tvShowTime.setTextSize(getResources().getDimension(R.dimen.bus_timer_no_forecast));
+                tvShowTime.setVisibility(View.GONE);
                 aboutNextMinutes.setVisibility(View.GONE);
+                noPrevision.setVisibility(View.VISIBLE);
             }
         };
 
