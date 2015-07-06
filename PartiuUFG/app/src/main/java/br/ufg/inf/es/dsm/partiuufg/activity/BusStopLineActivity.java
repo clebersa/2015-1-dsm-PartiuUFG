@@ -240,6 +240,7 @@ public class BusStopLineActivity extends AbstractActivity {
             } else {
                 MenuItem favItem = menu.findItem(R.id.action_favorite);
                 favItem.setIcon(R.drawable.ic_action_action_alarm_on);
+                favItem.setTitle(getString(R.string.favorite_on));
                 isFavorite = true;
             }
         }
@@ -257,10 +258,12 @@ public class BusStopLineActivity extends AbstractActivity {
                     if (isFavorite) {
                         deleteStopLineFavorite();
                         item.setIcon(R.drawable.ic_action_action_alarm_off);
+                        item.setTitle(getString(R.string.favorite_off));
                         isFavorite = false;
                     } else {
                         addStopLineFavorite();
                         item.setIcon(R.drawable.ic_action_action_alarm_on);
+                        item.setTitle(getString(R.string.favorite_on));
                         isFavorite = true;
                     }
                 } else {

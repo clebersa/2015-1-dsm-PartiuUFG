@@ -33,4 +33,7 @@
     <string name="registrationCompleteIntentName">registrationComplete</string>
     <string name="GCMNotificationMessage">O ônibus %1$d passa em %2$d minuto(s) no ponto %3$d</string>
     <string name="no_play_service_installed">Para utilizar esta funcionalidade você precisa do Google Play Services instalado</string>
+
+    <string name="favorite_off">Monitoramento desativado</string>
+    <string name="favorite_on">Monitoramento ativado</string>
 </resources>
