@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml</file>
+    <line>18</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Inefficient layout weight</problem_class>
+    <hints />
+    <description>Use a &lt;code&gt;layout_height&lt;/code&gt; of &lt;code&gt;0dp&lt;/code&gt; instead of &lt;code&gt;match_parent&lt;/code&gt; for better performance</description>
+  </problem>
+</problems>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>133</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Text size is too small</problem_class>
+    <hints />
+    <description>Avoid using sizes smaller than &lt;code&gt;12sp&lt;/code&gt;: &lt;code&gt;10sp&lt;/code&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>86</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Text size is too small</problem_class>
+    <hints />
+    <description>Avoid using sizes smaller than &lt;code&gt;12sp&lt;/code&gt;: &lt;code&gt;10sp&lt;/code&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>154</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Text size is too small</problem_class>
+    <hints />
+    <description>Avoid using sizes smaller than &lt;code&gt;12sp&lt;/code&gt;: &lt;code&gt;10sp&lt;/code&gt;</description>
+  </problem>
+</problems>
+

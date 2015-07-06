@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml</file>
+    <line>53</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml</file>
+    <line>99</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentStart=&quot;false&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml</file>
+    <line>53</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml</file>
+    <line>75</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml</file>
+    <line>104</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentStart=&quot;false&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>16</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>18</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginStart=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>37</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toEndOf=&quot;@+id/layout_number&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>39</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>40</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>48</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentStart=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>52</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>60</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>68</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toEndOf=&quot;@+id/layout_number&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>70</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>77</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toStartOf=&quot;@+id/next_time_layout&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>79</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentStart=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>107</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>109</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginStart=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>150</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignStart=&quot;@+id/data_content&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>151</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignEnd=&quot;@+id/data_content&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml</file>
+    <line>16</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml</file>
+    <line>18</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginStart=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml</file>
+    <line>37</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml</file>
+    <line>38</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml</file>
+    <line>39</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toEndOf=&quot;@+id/layout_number&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml</file>
+    <line>63</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignEnd=&quot;@+id/bus_line_details&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>16</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>18</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginStart=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>39</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toStartOf=&quot;@+id/next_time_layout&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>59</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>61</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginStart=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>62</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>104</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignEnd=&quot;@+id/next_time_layout&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>16</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>18</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginStart=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>49</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toEndOf=&quot;@+id/layout_number&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>51</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>52</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>61</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentStart=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>65</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>73</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>81</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toEndOf=&quot;@+id/layout_number&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>83</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>90</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toStartOf=&quot;@+id/next_time_layout&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>92</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentStart=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>128</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>130</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginStart=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>171</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignStart=&quot;@+id/data_content&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>172</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignEnd=&quot;@+id/data_content&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>16</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;10dp&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>18</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginStart=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>37</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignParentEnd=&quot;true&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>38</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_marginEnd=&quot;@dimen/activity_horizontal_margin&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>39</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_toEndOf=&quot;@+id/layout_number&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>73</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Using left/right instead of start/end attributes</problem_class>
+    <hints />
+    <description>Consider adding &lt;code&gt;android:layout_alignEnd=&quot;@+id/bus_stop_details&quot;&lt;/code&gt; to better support right-to-left layouts</description>
+  </problem>
+</problems>
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml</file>
+    <line>5</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete layout params</problem_class>
+    <hints />
+    <description>Invalid layout param '&lt;code&gt;layout_alignParentTop&lt;/code&gt;' (included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/fragment_next_point_bus_time.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_campi.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_monitoring.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_most_visited.xml&lt;/code&gt;)</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml</file>
+    <line>6</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete layout params</problem_class>
+    <hints />
+    <description>Invalid layout param '&lt;code&gt;layout_alignParentLeft&lt;/code&gt;' (included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/fragment_next_point_bus_time.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_campi.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_monitoring.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_most_visited.xml&lt;/code&gt;)</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml</file>
+    <line>7</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete layout params</problem_class>
+    <hints />
+    <description>Invalid layout param '&lt;code&gt;layout_alignParentStart&lt;/code&gt;' (included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/fragment_next_point_bus_time.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_campi.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_monitoring.xml&lt;/code&gt;, included from within a &lt;code&gt;LinearLayout&lt;/code&gt; in &lt;code&gt;layout/home_page_most_visited.xml&lt;/code&gt;)</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/bus_stop_list_header.xml</file>
+    <line>34</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/bus_stop_list_header.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete layout params</problem_class>
+    <hints />
+    <description>Invalid layout param in a &lt;code&gt;LinearLayout&lt;/code&gt;: &lt;code&gt;layout_below&lt;/code&gt;</description>
+  </problem>
+</problems>
+

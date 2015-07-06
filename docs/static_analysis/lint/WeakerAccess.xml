@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopLineActivity.java</file>
+    <line>84</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity void createView()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopLineActivity.java</file>
+    <line>101</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity void refreshView()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopLineActivity.java</file>
+    <line>78</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity void beforeViewCreated()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopLineActivity.java</file>
+    <line>166</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity void getBusStopLineFromWeb()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopLineActivity.java</file>
+    <line>106</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity void afterViewCreated()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/AbstractActivity.java</file>
+    <line>52</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.AbstractActivity java.lang.Boolean haveBackButton()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="packageLocal" />
+    </hints>
+    <description>Can be package local</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/AbstractActivity.java</file>
+    <line>26</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.AbstractActivity TAG" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="packageLocal" />
+    </hints>
+    <description>Can be package local</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/AbstractActivity.java</file>
+    <line>96</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.AbstractActivity boolean checkPlayServices(boolean displayInstall)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="packageLocal" />
+    </hints>
+    <description>Can be package local</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/MostVisitedPageFragment.java</file>
+    <line>56</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.MostVisitedPageFragment void loadByDatabase()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/MonBusStopLinesPageFragment.java</file>
+    <line>72</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.MonBusStopLinesPageFragment void updateList()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/MonBusStopLinesPageFragment.java</file>
+    <line>65</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.MonBusStopLinesPageFragment void refreshList()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/CampiPageFragment.java</file>
+    <line>60</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.CampiPageFragment void pupulateList()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/CampiPageFragment.java</file>
+    <line>92</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.CampiPageFragment void createCampi()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/CampiPageFragment.java</file>
+    <line>33</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.CampiPageFragment CAMPUS_COLEMAR_NAME" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/CampiPageFragment.java</file>
+    <line>32</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.CampiPageFragment CAMPUS_SAMAMBAIA_NAME" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>76</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter void setPosition(int position)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabStrip.java</file>
+    <line>54</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabStrip SlidingTabStrip(android.content.Context context, android.util.AttributeSet attrs)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>167</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout android.widget.TextView createDefaultTabView(android.content.Context context)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteGCMBusStopLine.java</file>
+    <line>21</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.CompleteGCMBusStopLine CompleteGCMBusStopLine(java.lang.Integer pointNumber, java.lang.Integer busLineNumber, java.lang.Integer beforeMinutesToAlert)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteGCMBusStopLine.java</file>
+    <line>15</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.CompleteGCMBusStopLine CompleteGCMBusStopLine(java.lang.Integer pointNumber, java.lang.Integer busLineNumber, java.lang.Integer beforeMinutesToAlert, br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop busStop)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteBusStop.java</file>
+    <line>78</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop java.util.Date getDateSearchDate()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>8</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData bus_stop" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>9</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData bus_line" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>7</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData message" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleBusLine.java</file>
+    <line>11</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine campus" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleBusLine.java</file>
+    <line>10</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine name" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleBusLine.java</file>
+    <line>9</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine number" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>155</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter void loadCompleteGCMBusStopLine(br.ufg.inf.es.dsm.partiuufg.model.CompleteGCMBusStopLine ci, int position, br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder monBusStopLineViewHolder)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusStopWithLine.java</file>
+    <line>22</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusStopWithLine BusStopWithLine(java.lang.Integer number, java.lang.String address, java.lang.String reference, java.lang.String lastSearchDate, java.lang.Long accessCount)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusStopWithLine.java</file>
+    <line>15</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusStopWithLine BusStopWithLine(java.lang.Integer number, java.lang.String address, java.lang.String reference, java.lang.String lastSearchDate, java.lang.Long accessCount, br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop completeBusStop)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusStopWithBusLineFragment.java</file>
+    <line>151</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusStopWithBusLineFragment void loadListByWeb()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusStopWithBusLineFragment.java</file>
+    <line>138</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusStopWithBusLineFragment void createView()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusStopWithBusLineFragment.java</file>
+    <line>101</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusStopWithBusLineFragment void refreshList(java.lang.Boolean fullRefresh)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusStopWithBusLineFragment.java</file>
+    <line>92</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusStopWithBusLineFragment void updateTitle()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusLineWithBusStopFragment.java</file>
+    <line>106</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusLineWithBusStopFragment void updateParallax()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusLineWithBusStopFragment.java</file>
+    <line>153</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusLineWithBusStopFragment void createView()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusLineWithBusStopFragment.java</file>
+    <line>213</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusLineWithBusStopFragment void increaseBusStopAccessCounter()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusLineWithBusStopFragment.java</file>
+    <line>122</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusLineWithBusStopFragment void refreshList(java.lang.Boolean reloadContent)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusLineWithBusStopFragment.java</file>
+    <line>165</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusLineWithBusStopFragment void getStopBusDataFromWeb()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleBusStop.java</file>
+    <line>67</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop java.lang.String getLastSearchDate()" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="protected" />
+    </hints>
+    <description>Can be protected</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleGCMBusStopLine.java</file>
+    <line>9</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine DEFAULT_BEFORE_MINUTES_TO_ALERT" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="private" />
+    </hints>
+    <description>Can be private</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleGCMBusStopLine.java</file>
+    <line>54</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine void setBeforeMinutesToAlert(java.lang.Integer beforeMinutesToAlert)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration access can be weaker</problem_class>
+    <hints>
+      <hint value="protected" />
+    </hints>
+    <description>Can be protected</description>
+  </problem>
+</problems>
+

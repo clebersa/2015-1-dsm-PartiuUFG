@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/AbstractActivity.java</file>
+    <line>26</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.AbstractActivity TAG" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>155</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithoutBusLine vReference" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>45</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter timer" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>199</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vBusStopNumber" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>203</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vNextTime" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>201</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vReference" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>153</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithoutBusLine vBusStopNumber" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>197</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vDataContent" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>196</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vItem" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>44</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter busLineNumber" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>200</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vAddress" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>152</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithoutBusLine vItem" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>198</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vLoadingContent" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>154</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithoutBusLine vAddress" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>202</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vNoPrevision" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusStopAdapter.java</file>
+    <line>204</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter.VHBusStopWithBusLine vNextTimeAproxLabel" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>105</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter.CampusBusLineItemViewHolder vDestination" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>117</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter.CampusBusLineHeaderViewHolder vName" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>116</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter.CampusBusLineHeaderViewHolder vItem" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>104</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter.CampusBusLineItemViewHolder vLineNumber" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>28</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter context" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>103</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter.CampusBusLineItemViewHolder vItem" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>27</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter singleBusLines" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusLineAdapter.java</file>
+    <line>146</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter.BusLineViewHolder vName" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusLineAdapter.java</file>
+    <line>148</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter.BusLineViewHolder vNextTime" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusLineAdapter.java</file>
+    <line>145</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter.BusLineViewHolder vBusLineNumber" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusLineAdapter.java</file>
+    <line>34</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter timer" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusLineAdapter.java</file>
+    <line>147</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter.BusLineViewHolder vNoPrevision" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusLineAdapter.java</file>
+    <line>149</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter.BusLineViewHolder vNextTimeAproxLabel" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusLineAdapter.java</file>
+    <line>144</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter.BusLineViewHolder vItem" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusLineAdapter.java</file>
+    <line>33</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusLineAdapter context" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/fragment/ViewPagerAdapter.java</file>
+    <line>20</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.fragment</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.fragment.ViewPagerAdapter pages" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/fragment/ViewPagerAdapter.java</file>
+    <line>19</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.fragment</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.fragment.ViewPagerAdapter titles" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>70</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout mTitleOffset" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>77</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout mContentDescriptions" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/http/RestBusServiceFactory.java</file>
+    <line>9</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.http</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory API_BASE_URL" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/timer/ListAdapterRefreshTimer.java</file>
+    <line>12</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.timer</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.timer.ListAdapterRefreshTimer adapter" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/timer/ListAdapterRefreshTimer.java</file>
+    <line>13</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.timer</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.timer.ListAdapterRefreshTimer mHandler" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/http/RestGCMServiceFactory.java</file>
+    <line>10</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.http</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.http.RestGCMServiceFactory API_BASE_URL" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>183</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vItem" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>189</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vAddress" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>187</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vBusStopNumber" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>37</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter context" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>192</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vNextTime" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>185</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vLoadingContent" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>186</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vBusLineNumber" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>191</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vNoPrevision" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>188</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vName" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>190</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vBeforeMinutesToAlert" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>38</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter timer" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>184</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vDataContent" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/MonitoringBusStopLineAdapter.java</file>
+    <line>193</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.MonitoringBusStopLineAdapter.MonBusStopLineViewHolder vNextTimeAproxLabel" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusTimeAdapter.java</file>
+    <line>19</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusTimeAdapter busTimeTable" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusTimeAdapter.java</file>
+    <line>50</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusTimeAdapter.BusTimeVH vItem" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusTimeAdapter.java</file>
+    <line>51</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusTimeAdapter.BusTimeVH vTime" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Declaration can have final modifier</problem_class>
+    <hints />
+    <description>Declaration can have final modifier</description>
+  </problem>
+</problems>
+

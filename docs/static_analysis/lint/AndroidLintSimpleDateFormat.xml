@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteBusStop.java</file>
+    <line>79</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteBusStop.java" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Implied locale in date format</problem_class>
+    <hints />
+    <description>To get local formatting use &lt;code&gt;getDateInstance()&lt;/code&gt;, &lt;code&gt;getDateTimeInstance()&lt;/code&gt;, or &lt;code&gt;getTimeInstance()&lt;/code&gt;, or use &lt;code&gt;new SimpleDateFormat(String template, Locale locale)&lt;/code&gt; with for example &lt;code&gt;Locale.US&lt;/code&gt; for ASCII dates.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteBusStop.java</file>
+    <line>96</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteBusStop.java" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Implied locale in date format</problem_class>
+    <hints />
+    <description>To get local formatting use &lt;code&gt;getDateInstance()&lt;/code&gt;, &lt;code&gt;getDateTimeInstance()&lt;/code&gt;, or &lt;code&gt;getTimeInstance()&lt;/code&gt;, or use &lt;code&gt;new SimpleDateFormat(String template, Locale locale)&lt;/code&gt; with for example &lt;code&gt;Locale.US&lt;/code&gt; for ASCII dates.</description>
+  </problem>
+</problems>
+

@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusTime.java</file>
+    <line>33</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusTime java.lang.String getDestination()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusTime.java</file>
+    <line>41</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusTime java.lang.Integer getFollowingTime()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusLine.java</file>
+    <line>40</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusLine br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop getPoint(java.lang.Integer pointNumber)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/MonBusStopLinesPageFragment.java</file>
+    <line>27</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.MonBusStopLinesPageFragment TAG" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/page/CampiPageFragment.java</file>
+    <line>31</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment.page</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.page.CampiPageFragment TAG" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>116</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter.CampusBusLineHeaderViewHolder vItem" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field is assigned but never accessed.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/CampusSingleBusLinesAdapter.java</file>
+    <line>23</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.CampusSingleBusLinesAdapter TAG" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>144</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout void setCustomTabView(int layoutResId, int textViewId)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>134</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout void setOnPageChangeListener(android.support.v4.view.ViewPager.OnPageChangeListener listener)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>123</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout void setSelectedIndicatorColors(int... colors)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>232</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout void setContentDescription(int i, java.lang.String desc)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/interfaces/DBImplementer.java</file>
+    <line>6</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.interfaces</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.interfaces.DBImplementer" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>&amp;nbsp;Interface is not implemented.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/http/EasyBusService.java</file>
+    <line>25</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.http</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.http.EasyBusService void getBusNextTimeInPoint(java.lang.String pointNumber, java.lang.String lineNumber, retrofit.Callback&lt;br.ufg.inf.es.dsm.partiuufg.model.BusTime&gt; callback)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteBusStop.java</file>
+    <line>61</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop java.lang.Boolean isTerminal()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteBusStop.java</file>
+    <line>49</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop java.util.List&lt;br.ufg.inf.es.dsm.partiuufg.model.BusTime&gt; getBusTimes()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMResult.java</file>
+    <line>39</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMResult GCMResult()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMResult.java</file>
+    <line>26</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMResult.SendedMessage SendedMessage()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>38</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData void setBus_stop(java.lang.Integer bus_stop)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>42</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData java.lang.Integer getBus_line()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>26</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData java.lang.String getMessage()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>34</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData java.lang.Integer getBus_stop()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>46</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData void setBus_line(java.lang.Integer bus_line)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessageData.java</file>
+    <line>30</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData void setMessage(java.lang.String message)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessage.java</file>
+    <line>27</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessage void setData(br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData data)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessage.java</file>
+    <line>19</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessage void setTo(java.lang.String to)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessage.java</file>
+    <line>15</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessage java.lang.String getTo()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/GCMMessage.java</file>
+    <line>23</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.GCMMessage br.ufg.inf.es.dsm.partiuufg.model.GCMMessageData getData()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/MyGcmListenerService.java</file>
+    <line>21</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.MyGcmListenerService TAG" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/Campus.java</file>
+    <line>24</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.Campus void setName(java.lang.String name)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleBusLine.java</file>
+    <line>30</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine void setNumber(java.lang.Integer number)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/adapter/recyclerView/BusTimeAdapter.java</file>
+    <line>50</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusTimeAdapter.BusTimeVH vItem" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field is assigned but never accessed.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusStopWithLine.java</file>
+    <line>84</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusStopWithLine br.ufg.inf.es.dsm.partiuufg.model.BusStopWithLine createBySingle(br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop single)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleBusStop.java</file>
+    <line>47</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusStop void setNumber(java.lang.Integer number)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleGCMBusStopLine.java</file>
+    <line>46</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine void setBusLineNumber(java.lang.Integer busLineNumber)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/dbModel/SingleGCMBusStopLine.java</file>
+    <line>38</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.dbModel</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine void setPointNumber(java.lang.Integer pointNumber)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Method is never used.</description>
+  </problem>
+</problems>
+

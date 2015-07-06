@@ -17,6 +17,8 @@ import java.util.List;
  * Created by Bruno on 19/06/2015.
  */
 public class CompleteBusStop implements Serializable, Parcelable {
+    public static final String TAG = CompleteBusStop.class.getSimpleName();
+
     @SerializedName("number")
     private Integer number;
     @SerializedName("lines-available")
@@ -78,7 +80,9 @@ public class CompleteBusStop implements Serializable, Parcelable {
         Date searchDate = null;
         try {
             searchDate = formatter.parse(this.searchDate);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e(TAG, "Could not parser the date " + searchDate);
+        }
 
         return searchDate;
     }

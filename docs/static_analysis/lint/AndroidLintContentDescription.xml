@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>111</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image without contentDescription</problem_class>
+    <hints />
+    <description>[Accessibility] Missing &lt;code&gt;contentDescription&lt;/code&gt; attribute on image</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>64</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image without contentDescription</problem_class>
+    <hints />
+    <description>[Accessibility] Missing &lt;code&gt;contentDescription&lt;/code&gt; attribute on image</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>132</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Image without contentDescription</problem_class>
+    <hints />
+    <description>[Accessibility] Missing &lt;code&gt;contentDescription&lt;/code&gt; attribute on image</description>
+  </problem>
+</problems>
+

@@ -53,7 +53,9 @@ public class GCMServer extends Service {
                             Log.e(TAG, "Can't read alert bus stop lines...");
                             try {
                                 Thread.sleep(SLEEP_TIME);
-                            } catch (InterruptedException e1) {}
+                            } catch (InterruptedException e1) {
+                                Log.d(TAG, "Service interrupted");
+                            }
                             continue;
                         }
                         EasyBusService easyBusService = RestBusServiceFactory.getAdapter();
@@ -86,7 +88,9 @@ public class GCMServer extends Service {
 
                     try {
                         Thread.sleep(SLEEP_TIME);
-                    } catch (InterruptedException e) {}
+                    } catch (InterruptedException e) {
+                        Log.d(TAG, "Service interrupted");
+                    }
                 }
             }
         }).start();

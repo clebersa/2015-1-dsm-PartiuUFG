@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml</file>
+    <line>8</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Overdraw: Painting regions more than once</problem_class>
+    <hints />
+    <description>Possible overdraw: Root element paints background &lt;code&gt;?attr/colorPrimary&lt;/code&gt; with a theme that also paints a background (inferred theme is &lt;code&gt;@style/AppTheme&lt;/code&gt;)</description>
+  </problem>
+</problems>
+

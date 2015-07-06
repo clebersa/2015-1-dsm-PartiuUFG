@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/http/GCMHttpService.java</file>
+    <line>13</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.http</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.http.GCMHttpService br.ufg.inf.es.dsm.partiuufg.model.GCMResult send(br.ufg.inf.es.dsm.partiuufg.model.GCMMessage GCMMessage)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Method can be void</problem_class>
+    <hints />
+    <description>Return value of the method is never used</description>
+  </problem>
+</problems>
+

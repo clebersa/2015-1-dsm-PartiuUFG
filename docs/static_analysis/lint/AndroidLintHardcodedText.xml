@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml</file>
+    <line>48</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Desconhecido&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml</file>
+    <line>87</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;00:00&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml</file>
+    <line>110</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Tabela de horários do ônibus:&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/campus_bus_line_header.xml</file>
+    <line>19</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/campus_bus_line_header.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Campus&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml</file>
+    <line>48</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Desconhecido&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml</file>
+    <line>92</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;00:00&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml</file>
+    <line>118</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Tabela de horários do ônibus:&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>26</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;----&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>85</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Endereço&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>97</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Referência&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml</file>
+    <line>122</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_with_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;59 min&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml</file>
+    <line>26</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;----&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml</file>
+    <line>47</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_without_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Desconhecido&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>26</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;----&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>47</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Desconhecido&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml</file>
+    <line>75</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_line_with_bus_stop.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;59 min&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>26</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;----&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>37</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;------&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>98</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Nome&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>109</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Endereço&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml</file>
+    <line>143</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_monitoring_bus_stop_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;11 min&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>26</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;----&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>47</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Endereço&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml</file>
+    <line>59</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_stop_without_bus_line.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Referência&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_time.xml</file>
+    <line>18</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/item_bus_time.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;23:59&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/res/layout/bus_stop_list_header.xml</file>
+    <line>22</line>
+    <module>app</module>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/layout/bus_stop_list_header.xml" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Hardcoded text</problem_class>
+    <hints />
+    <description>[I18N] Hardcoded string &quot;Interna Do Campus, Area Ufg - Goiania&quot;, should use &lt;code&gt;@string&lt;/code&gt; resource</description>
+  </problem>
+</problems>
+

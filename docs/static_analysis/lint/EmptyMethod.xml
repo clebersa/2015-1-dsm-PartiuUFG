@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/HomeActivity.java</file>
+    <line>95</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.HomeActivity boolean onOptionsItemSelected(android.view.MenuItem item)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty method</problem_class>
+    <hints>
+      <hint value="false" />
+    </hints>
+    <description>Method only calls its super</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/HomeActivity.java</file>
+    <line>90</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.HomeActivity boolean onCreateOptionsMenu(android.view.Menu menu)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty method</problem_class>
+    <hints>
+      <hint value="false" />
+    </hints>
+    <description>Method only calls its super</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopActivity.java</file>
+    <line>39</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopActivity boolean onOptionsItemSelected(android.view.MenuItem item)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty method</problem_class>
+    <hints>
+      <hint value="false" />
+    </hints>
+    <description>Method only calls its super</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopActivity.java</file>
+    <line>34</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopActivity boolean onCreateOptionsMenu(android.view.Menu menu)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty method</problem_class>
+    <hints>
+      <hint value="false" />
+    </hints>
+    <description>Method only calls its super</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusLineActivity.java</file>
+    <line>42</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusLineActivity boolean onOptionsItemSelected(android.view.MenuItem item)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty method</problem_class>
+    <hints>
+      <hint value="false" />
+    </hints>
+    <description>Method only calls its super</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusLineActivity.java</file>
+    <line>37</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusLineActivity boolean onCreateOptionsMenu(android.view.Menu menu)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Empty method</problem_class>
+    <hints>
+      <hint value="false" />
+    </hints>
+    <description>Method only calls its super</description>
+  </problem>
+</problems>
+

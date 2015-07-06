@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopLineActivity.java</file>
+    <line>35</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusTime.java</file>
+    <line>65</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusTime CREATOR" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusLine.java</file>
+    <line>75</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusLine CREATOR" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/AbstractActivity.java</file>
+    <line>24</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.AbstractActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>&amp;nbsp;Abstract&amp;nbsp;class has 4 direct or indirect implementations but &lt;ul&gt;&lt;li&gt;they are never instantiated OR&lt;/li&gt;&lt;li&gt;no instantiations are reachable from entry points.&lt;/li&gt;&lt;/ul&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/HomeActivity.java</file>
+    <line>22</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.HomeActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>90</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout SlidingTabLayout(android.content.Context context, android.util.AttributeSet attrs, int defStyle)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor has one usage but it is not reachable from entry points.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>86</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout SlidingTabLayout(android.content.Context context, android.util.AttributeSet attrs)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor has one usage but it is not reachable from entry points.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>82</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout SlidingTabLayout(android.content.Context context)" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor is never used.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteGCMBusStopLine.java</file>
+    <line>73</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.CompleteGCMBusStopLine CREATOR" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopActivity.java</file>
+    <line>11</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/broadcastReceiver/GCMServerStarter.java</file>
+    <line>13</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.broadcastReceiver</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.broadcastReceiver.GCMServerStarter" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusLineActivity.java</file>
+    <line>12</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusLineActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteBusStop.java</file>
+    <line>161</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop CREATOR" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/MyGcmListenerService.java</file>
+    <line>20</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.MyGcmListenerService" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/MyInstanceIDListenerService.java</file>
+    <line>18</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.MyInstanceIDListenerService" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/RegistrationIntentService.java</file>
+    <line>18</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.RegistrationIntentService" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class has 2 instantiations but they are not reachable from entry points.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/RegistrationIntentService.java</file>
+    <line>21</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.RegistrationIntentService RegistrationIntentService()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor has 2 usages but they are not reachable from entry points.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusStopWithLine.java</file>
+    <line>75</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="field" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusStopWithLine CREATOR" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Field has no usages.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusStopWithBusLineFragment.java</file>
+    <line>42</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusStopWithBusLineFragment BusStopWithBusLineFragment()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor has 3 usages but they are not reachable from entry points.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/fragment/BusLineWithBusStopFragment.java</file>
+    <line>48</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.fragment</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.fragment.BusLineWithBusStopFragment BusLineWithBusStopFragment()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor has 3 usages but they are not reachable from entry points.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/GCMServer.java</file>
+    <line>22</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.GCMServer" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class has 4 instantiations but they are not reachable from entry points.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/GCMServer.java</file>
+    <line>28</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.GCMServer GCMServer()" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Constructor has 4 usages but they are not reachable from entry points.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopLineActivity.java</file>
+    <line>35</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopLineActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/AbstractActivity.java</file>
+    <line>24</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.AbstractActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>&amp;nbsp;Abstract&amp;nbsp;class has 4 direct or indirect implementations but &lt;ul&gt;&lt;li&gt;they are never instantiated OR&lt;/li&gt;&lt;li&gt;no instantiations are reachable from entry points.&lt;/li&gt;&lt;/ul&gt;</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/HomeActivity.java</file>
+    <line>22</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.HomeActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusStopActivity.java</file>
+    <line>11</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusStopActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/broadcastReceiver/GCMServerStarter.java</file>
+    <line>13</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.broadcastReceiver</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.broadcastReceiver.GCMServerStarter" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/activity/BusLineActivity.java</file>
+    <line>12</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.activity</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.activity.BusLineActivity" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/MyGcmListenerService.java</file>
+    <line>20</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.MyGcmListenerService" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/service/MyInstanceIDListenerService.java</file>
+    <line>18</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.service</package>
+    <entry_point TYPE="class" FQNAME="br.ufg.inf.es.dsm.partiuufg.service.MyInstanceIDListenerService" />
+    <problem_class severity="WARNING" attribute_key="NOT_USED_ELEMENT_ATTRIBUTES">unused declaration</problem_class>
+    <hints>
+      <hint value="comment" />
+      <hint value="delete" />
+    </hints>
+    <description>Class is not instantiated.</description>
+  </problem>
+</problems>
+

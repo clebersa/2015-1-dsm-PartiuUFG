@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabStrip.java</file>
+    <line>19</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabStrip.java" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'import android.R' statement</problem_class>
+    <hints />
+    <description>Don't include &lt;code&gt;android.R&lt;/code&gt; here; use a fully qualified name for each usage instead</description>
+  </problem>
+</problems>
+

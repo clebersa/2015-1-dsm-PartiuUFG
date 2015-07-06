@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problems>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabStrip.java</file>
+    <line>54</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabStrip SlidingTabStrip(android.content.Context context, android.util.AttributeSet attrs)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Actual method parameter is the same constant</problem_class>
+    <hints>
+      <hint value="attrs null" />
+    </hints>
+    <description>Actual value of parameter '&lt;code&gt;attrs&lt;/code&gt;' is always '&lt;code&gt;null&lt;/code&gt;'</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabStrip.java</file>
+    <line>138</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabStrip int setColorAlpha(int color, byte alpha)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Actual method parameter is the same constant</problem_class>
+    <hints>
+      <hint value="alpha br.ufg.inf.es.dsm.partiuufg.view.SlidingTabStrip.DEFAULT_BOTTOM_BORDER_COLOR_ALPHA" />
+    </hints>
+    <description>Actual value of parameter '&lt;code&gt;alpha&lt;/code&gt;' is always '&lt;code&gt;br.ufg.inf.es.dsm.partiuufg.view.SlidingTabStrip.DEFAULT_BOTTOM_BORDER_COLOR_ALPHA&lt;/code&gt;'</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/view/SlidingTabLayout.java</file>
+    <line>115</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.view</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout void setDistributeEvenly(boolean distributeEvenly)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Actual method parameter is the same constant</problem_class>
+    <hints>
+      <hint value="distributeEvenly true" />
+    </hints>
+    <description>Actual value of parameter '&lt;code&gt;distributeEvenly&lt;/code&gt;' is always '&lt;code&gt;true&lt;/code&gt;'</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/CompleteGCMBusStopLine.java</file>
+    <line>16</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.CompleteGCMBusStopLine CompleteGCMBusStopLine(java.lang.Integer pointNumber, java.lang.Integer busLineNumber, java.lang.Integer beforeMinutesToAlert, br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop busStop)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Actual method parameter is the same constant</problem_class>
+    <hints>
+      <hint value="busStop null" />
+    </hints>
+    <description>Actual value of parameter '&lt;code&gt;busStop&lt;/code&gt;' is always '&lt;code&gt;null&lt;/code&gt;'</description>
+  </problem>
+  <problem>
+    <file>file://$PROJECT_DIR$/app/src/main/java/br/ufg/inf/es/dsm/partiuufg/model/BusStopWithLine.java</file>
+    <line>17</line>
+    <module>app</module>
+    <package>br.ufg.inf.es.dsm.partiuufg.model</package>
+    <entry_point TYPE="method" FQNAME="br.ufg.inf.es.dsm.partiuufg.model.BusStopWithLine BusStopWithLine(java.lang.Integer number, java.lang.String address, java.lang.String reference, java.lang.String lastSearchDate, java.lang.Long accessCount, br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop completeBusStop)" />
+    <problem_class severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Actual method parameter is the same constant</problem_class>
+    <hints>
+      <hint value="completeBusStop null" />
+    </hints>
+    <description>Actual value of parameter '&lt;code&gt;completeBusStop&lt;/code&gt;' is always '&lt;code&gt;null&lt;/code&gt;'</description>
+  </problem>
+</problems>
+
