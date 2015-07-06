@@ -111,6 +111,15 @@ public class BusStopWithBusLineFragment extends ProgressFragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        if(adapter != null) {
+            adapter.notifyItemInserted(0);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
     public void onDestroy() {
         if(adapter != null) {
             adapter.cancelRefreshTimer();
@@ -165,7 +174,7 @@ public class BusStopWithBusLineFragment extends ProgressFragment {
                     return;
                 }
 
-                if( error.getResponse() == null ) {
+                if(error.getResponse() == null) {
                     errorStatus = 408;
                 } else {
                     errorStatus = error.getResponse().getStatus();

@@ -11,6 +11,7 @@
     <string name="title_activity_bus_line_stops">%1$d - %2$s</string>
     <string name="item_display_next_time">%1$d min</string>
     <string name="item_before_time_to_alert">Alertar %1$d minutos antes</string>
+    <string name="context_menu_favorite_bus_stop">Selecione uma ação</string>
 
     <string name="last_search_time">Atualizado em %1$s</string>
     <string name="reference">Referência:</string>

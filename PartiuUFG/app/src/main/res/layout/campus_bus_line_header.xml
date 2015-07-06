@@ -7,8 +7,8 @@
     android:maxHeight="70dp"
     android:background="@drawable/background_list_header"
     android:paddingTop="10dp"
-    android:paddingRight="5dp"
-    android:paddingLeft="5dp"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingBottom="10dp">
 
 

@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.poliveira.parallaxrecycleradapter.ParallaxRecyclerAdapter;
@@ -41,6 +42,8 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
         timer = new Timer();
         TimerTask updateData = new ListAdapterRefreshTimer(adapter);
         timer.scheduleAtFixedRate(updateData, 60000, 60000);
+
+        adapter.implementRecyclerAdapterMethods(this);
     }
 
     public static List<BusLine> getCreatedData(CompleteBusStop completeBusStop) {
@@ -57,6 +60,15 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
         timer.cancel();
     }
 
+    public void setCompleteBusStop(CompleteBusStop completeBusStop) {
+        this.completeBusStop = completeBusStop;
+    }
+
+    public void setAdapter(ParallaxRecyclerAdapter adapter) {
+        this.adapter = adapter;
+        this.adapter.implementRecyclerAdapterMethods(this);
+    }
+
     @Override
     public int getItemCount() {
         return adapter.getData().size();
@@ -64,42 +76,55 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
-        final BusLine ci = (BusLine) adapter.getData().get(i);
-        BusLineViewHolder busLineViewHolder = (BusLineViewHolder) viewHolder;
+        if(completeBusStop == null) {
+            return;
+        }
 
-        BusTime busTime = completeBusStop.getBusTime(ci.getNumber());
+        BusLineViewHolder busLineViewHolder = (BusLineViewHolder) viewHolder;
+        final BusLine busLine = (BusLine) adapter.getData().get(i);
+        BusTime busTime = completeBusStop.getBusTime(busLine.getNumber());
+
         Integer nextTime = 0;
-        if( busTime != null ) {
+        if (busTime != null) {
             nextTime = busTime.getNextTime();
         }
 
         long currentTime = System.currentTimeMillis();
         long searchTime = completeBusStop.getSearchDateTimestamp();
         long elapsedTime = currentTime - searchTime;
-        long remainingTime = (60 * nextTime * 1000) - (elapsedTime + 2000);
+        long remainingTime = (60 * nextTime * 1000) - (elapsedTime + 1000);
         Double dRemainingMinutes = Math.ceil((Double.valueOf(remainingTime) / 60000));
         Integer remainingMinutes = dRemainingMinutes.intValue();
-        if(remainingMinutes > nextTime) {
+        if (remainingMinutes > nextTime) {
             remainingMinutes = nextTime;
         }
 
-        busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
-        String displayNextTime = context.getString(R.string.item_display_next_time, remainingMinutes);
-        if( remainingMinutes > 0 ) {
-            if(!remainingMinutes.equals(nextTime)) {
+        if (remainingMinutes > 0) {
+            busLineViewHolder.vNoPrevision.setVisibility(View.GONE);
+            busLineViewHolder.vNextTime.setVisibility(View.VISIBLE);
+            if (!remainingMinutes.equals(nextTime)) {
                 busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.VISIBLE);
+            } else {
+                busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
             }
+        } else {
+            busLineViewHolder.vNoPrevision.setVisibility(View.VISIBLE);
+            busLineViewHolder.vNextTime.setVisibility(View.GONE);
+            busLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
         }
 
-        busLineViewHolder.vLineNumber.setText(ci.getNumber().toString());
-        busLineViewHolder.vName.setText(ci.getName());
+        String displayNextTime = context.getString(R.string.item_display_next_time,
+                remainingMinutes);
+
+        busLineViewHolder.vBusLineNumber.setText(busLine.getNumber().toString());
+        busLineViewHolder.vName.setText(busLine.getName().trim());
         busLineViewHolder.vNextTime.setText(displayNextTime);
 
-        busLineViewHolder.vCard.setOnClickListener(new View.OnClickListener() {
+        busLineViewHolder.vItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, BusStopLineActivity.class);
-                intent.putExtra("busLine", (Serializable) ci);
+                intent.putExtra("busLine", (Serializable) busLine);
                 intent.putExtra("completeBusStop", (Serializable) completeBusStop);
                 context.startActivity(intent);
             }
@@ -116,18 +141,20 @@ public class BusLineAdapter implements ParallaxRecyclerAdapter.RecyclerAdapterMe
     }
 
     public static class BusLineViewHolder extends RecyclerView.ViewHolder {
-        public View vCard;
-        public TextView vLineNumber;
+        public View vItem;
+        public TextView vBusLineNumber;
         public TextView vName;
+        public ImageView vNoPrevision;
         public TextView vNextTime;
         public TextView vNextTimeAproxLabel;
 
         public BusLineViewHolder(View v) {
             super(v);
 
-            vCard = v;
-            vLineNumber = (TextView) v.findViewById(R.id.bus_line_number);
+            vItem = v;
+            vBusLineNumber = (TextView) v.findViewById(R.id.bus_line_number);
             vName = (TextView) v.findViewById(R.id.name);
+            vNoPrevision = (ImageView) v.findViewById(R.id.no_prevision);
             vNextTime = (TextView) v.findViewById(R.id.next_time);
             vNextTimeAproxLabel = (TextView) v.findViewById(R.id.next_time_aprox_label);
         }

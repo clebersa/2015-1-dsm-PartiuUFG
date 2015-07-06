@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -41,6 +43,7 @@ public class BusStopAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHol
     private List<T> busStops;
     private Integer busLineNumber;
     private Timer timer;
+    private int position;
 
     public BusStopAdapter(List<T> busStops, Integer busLineNumber) {
         this.busLineNumber = busLineNumber;
@@ -66,6 +69,14 @@ public class BusStopAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHol
         return busStops;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
     public void cancelRefreshTimer() {
         timer.cancel();
     }
@@ -85,8 +96,16 @@ public class BusStopAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHol
             }
             vhBusStopWithBusLine.createView(busStop, busLineNumber);
         } else if(viewHolder instanceof VHBusStopWithoutBusLine) {
-            VHBusStopWithoutBusLine vhBusStopWithoutBusLine = (VHBusStopWithoutBusLine) viewHolder;
-            vhBusStopWithoutBusLine.createView((SingleBusStop)busStops.get(i));
+            final VHBusStopWithoutBusLine vhBusStopWithoutBusLine = (VHBusStopWithoutBusLine) viewHolder;
+            SingleBusStop busStop = (SingleBusStop) busStops.get(i);
+            vhBusStopWithoutBusLine.createView(busStop);
+            vhBusStopWithoutBusLine.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    setPosition(vhBusStopWithoutBusLine.getAdapterPosition());
+                    return false;
+                }
+            });
         } else {
             throw new RuntimeException("there is no support to the requested view holder");
         }
@@ -122,7 +141,13 @@ public class BusStopAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHol
         throw new RuntimeException("there is no type that matches the item: " + position);
     }
 
-    public static class VHBusStopWithoutBusLine extends RecyclerView.ViewHolder {
+    @Override
+    public void onViewRecycled(RecyclerView.ViewHolder holder) {
+        holder.itemView.setOnLongClickListener(null);
+        super.onViewRecycled(holder);
+    }
+
+    public static class VHBusStopWithoutBusLine extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
         public final Context context;
         public View vItem;
         public TextView vBusStopNumber;
@@ -137,12 +162,13 @@ public class BusStopAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHol
             vBusStopNumber = (TextView) v.findViewById(R.id.bus_stop_number);
             vAddress = (TextView) v.findViewById(R.id.address);
             vReference = (TextView) v.findViewById(R.id.reference);
+            vItem.setOnCreateContextMenuListener(this);
         }
 
         public void createView(final SingleBusStop busStop) {
             vBusStopNumber.setText(busStop.getNumber().toString());
-            vAddress.setText(busStop.getAddress());
-            vReference.setText(busStop.getReference());
+            vAddress.setText(busStop.getAddress().trim());
+            vReference.setText(busStop.getReference().trim());
 
             if (busStop.getReference().equals("")) {
                 vReference.setVisibility(View.GONE);
@@ -156,6 +182,12 @@ public class BusStopAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHol
                     context.startActivity(intent);
                 }
             });
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+            menu.setHeaderTitle(context.getString(R.string.context_menu_favorite_bus_stop));
+            menu.add(Menu.NONE, 1, Menu.NONE, "Remover");
         }
     }
 
@@ -188,8 +220,8 @@ public class BusStopAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         public void createView(final BusStopWithLine busStop, final Integer busLineNumber) {
             vBusStopNumber.setText(busStop.getNumber().toString());
-            vAddress.setText(busStop.getAddress());
-            vReference.setText(busStop.getReference());
+            vAddress.setText(busStop.getAddress().trim());
+            vReference.setText(busStop.getReference().trim());
 
             if (busStop.getReference().equals("")) {
                 vReference.setVisibility(View.GONE);

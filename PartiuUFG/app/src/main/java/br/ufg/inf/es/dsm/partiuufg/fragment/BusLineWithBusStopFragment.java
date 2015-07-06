@@ -4,11 +4,9 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -34,19 +32,25 @@ import tr.xip.errorview.ErrorView;
 /**
  * Created by Bruno on 20/06/2015.
  */
-public class NextPointBusTimeFragment extends ProgressFragment {
-    private static final String TAG = NextPointBusTimeFragment.class.getSimpleName();
+public class BusLineWithBusStopFragment extends ProgressFragment {
+    private static final String TAG = BusLineWithBusStopFragment.class.getSimpleName();
 
+    private Integer busStopNumber;
     private CompleteBusStop completeBusStop;
     private SuperRecyclerView recList;
     private ParallaxRecyclerAdapter<BusLine> busLineAdapter;
     private BusLineAdapter busLineAdapterMethods;
-    private Integer busStopNumber;
     private ErrorView errorView;
     private LinearLayout content;
-    private Integer showErrorStatus = 0;
+    private Integer errorStatus = 0;
 
-    public NextPointBusTimeFragment() {
+    public BusLineWithBusStopFragment() {
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        busStopNumber = getArguments().getInt("busStopNumber");
     }
 
     @Override
@@ -54,15 +58,13 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         super.onActivityCreated(savedInstanceState);
         setContentView(R.layout.fragment_next_point_bus_time);
 
-        busStopNumber = getArguments().getInt("busStopNumber");
 
         content = (LinearLayout) getContentView().findViewById(R.id.content);
-
         errorView = (ErrorView) getContentView().findViewById(R.id.error_view);
         errorView.setOnRetryListener(new ErrorView.RetryListener() {
             @Override
             public void onRetry() {
-                refreshBusStop(true);
+                refreshList(true);
             }
         });
 
@@ -75,116 +77,47 @@ public class NextPointBusTimeFragment extends ProgressFragment {
         recList.setRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                refreshBusStop(false);
+                refreshList(false);
             }
         });
 
-        setContentShown(false);
-
         if(savedInstanceState == null) {
+            setContentShown(false);
             getStopBusDataFromWeb();
         } else {
-            try {
-                completeBusStop = (CompleteBusStop) savedInstanceState
-                        .getSerializable("completeBusStop");
-                buildAdapter();
-            } catch(NullPointerException e) {
-                Log.e(TAG, "Can't load completeBusStop from memory");
-            }
-
-            try {
-                showErrorStatus = savedInstanceState.getInt("showError");
-            } catch(NullPointerException e) {
-                Log.e(TAG, "Can't load show error status");
-            }
-
-            if(showErrorStatus > 0) {
-                showErrorView();
-            } else {
-                createView();
-            }
+            completeBusStop = (CompleteBusStop) savedInstanceState.getSerializable("completeBusStop");
+            errorStatus = savedInstanceState.getInt("errorStatus");
+            createView();
         }
-    }
 
-    public void buildAdapter() {
         List<BusLine> data = BusLineAdapter.getCreatedData(completeBusStop);
         busLineAdapter = new ParallaxRecyclerAdapter<>(data);
         busLineAdapterMethods = new BusLineAdapter(busLineAdapter, completeBusStop, getActivity());
-        busLineAdapter.implementRecyclerAdapterMethods(busLineAdapterMethods);
-
-        View v = LayoutInflater.from(getActivity()).inflate(
-                R.layout.bus_stop_list_header, recList.getRecyclerView(), false);
-
-        TextView address = (TextView) v.findViewById(R.id.tvAddress);
-        address.setText(completeBusStop.getAddress());
-
-        TextView searchTime = (TextView) v.findViewById(R.id.tvSearchTime);
-        searchTime.setText(getString(R.string.last_search_time,
-                completeBusStop.getSearchDateFormatted()));
-
-        busLineAdapter.setParallaxHeader(v, recList.getRecyclerView());
+        updateParallax();
+        recList.setAdapter(busLineAdapter);
     }
 
-    public void refreshBusStop(Boolean reloadContent) {
+    public void updateParallax() {
+        if(completeBusStop != null) {
+            View v = LayoutInflater.from(getActivity()).inflate(
+                    R.layout.bus_stop_list_header, recList.getRecyclerView(), false);
+
+            TextView address = (TextView) v.findViewById(R.id.tvAddress);
+            address.setText(completeBusStop.getAddress().trim());
+
+            TextView searchTime = (TextView) v.findViewById(R.id.tvSearchTime);
+            searchTime.setText(getString(R.string.last_search_time,
+                    completeBusStop.getSearchDateFormatted()));
+
+            busLineAdapter.setParallaxHeader(v, recList.getRecyclerView());
+        }
+    }
+
+    public void refreshList(Boolean reloadContent) {
         if(reloadContent) {
             setContentShown(false);
         }
         getStopBusDataFromWeb();
-    }
-
-    public void createView() {
-        try {
-            recList.setAdapter(busLineAdapter);
-            content.setVisibility(View.VISIBLE);
-            errorView.setVisibility(View.GONE);
-            setContentShown(true);
-        } catch(NullPointerException | IllegalStateException e) {
-            Log.e(TAG, "Can't create nextpoint view: " + e.getMessage());
-            getActivity().finish();
-        }
-    }
-
-    public void showErrorView() {
-        errorView.setError(showErrorStatus);
-        content.setVisibility(View.GONE);
-        errorView.setVisibility(View.VISIBLE);
-        setContentShown(true);
-    }
-
-    public void getStopBusDataFromWeb() {
-        EasyBusService service = RestBusServiceFactory.getAdapter();
-        service.getPoint(busStopNumber.toString(), new Callback<CompleteBusStop>() {
-            @Override
-            public void success(CompleteBusStop vCompleteBusStop, Response response) {
-                if (getActivity() == null) {
-                    return;
-                }
-
-                completeBusStop = vCompleteBusStop;
-                if (busLineAdapterMethods != null) {
-                    busLineAdapterMethods.cancelRefreshTimer();
-                }
-
-                buildAdapter();
-                increaseBusStopAccessCounter();
-                createView();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                if (getActivity() == null) {
-                    return;
-                }
-
-                if (error.getResponse() == null) {
-                    showErrorStatus = 408;
-                } else {
-                    showErrorStatus = error.getResponse().getStatus();
-                }
-
-                showErrorView();
-            }
-        });
     }
 
     @Override
@@ -207,8 +140,60 @@ public class NextPointBusTimeFragment extends ProgressFragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putSerializable("completeBusStop", completeBusStop);
-        outState.putInt("showError", showErrorStatus);
+        outState.putInt("errorStatus", errorStatus);
         super.onSaveInstanceState(outState);
+    }
+
+    public void createView() {
+        if(errorStatus > 0) {
+            content.setVisibility(View.GONE);
+            errorView.setError(errorStatus);
+            errorView.setVisibility(View.VISIBLE);
+        } else {
+            content.setVisibility(View.VISIBLE);
+            errorView.setVisibility(View.GONE);
+        }
+        setContentShown(true);
+    }
+
+    public void getStopBusDataFromWeb() {
+        EasyBusService service = RestBusServiceFactory.getAdapter();
+        service.getPoint(busStopNumber.toString(), new Callback<CompleteBusStop>() {
+            @Override
+            public void success(CompleteBusStop vCompleteBusStop, Response response) {
+                if (getActivity() == null) {
+                    return;
+                }
+
+                errorStatus = 0;
+                completeBusStop = vCompleteBusStop;
+
+                increaseBusStopAccessCounter();
+
+                List<BusLine> data = BusLineAdapter.getCreatedData(completeBusStop);
+                busLineAdapter = new ParallaxRecyclerAdapter<>(data);
+                busLineAdapterMethods.setCompleteBusStop(completeBusStop);
+                busLineAdapterMethods.setAdapter(busLineAdapter);
+                updateParallax();
+                recList.setAdapter(busLineAdapter);
+
+                createView();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                if (getActivity() == null) {
+                    return;
+                }
+
+                if (error.getResponse() == null) {
+                    errorStatus = 408;
+                } else {
+                    errorStatus = error.getResponse().getStatus();
+                }
+                createView();
+            }
+        });
     }
 
     public void increaseBusStopAccessCounter() {

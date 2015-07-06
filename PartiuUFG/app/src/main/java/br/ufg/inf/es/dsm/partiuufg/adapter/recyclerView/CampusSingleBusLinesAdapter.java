@@ -37,10 +37,6 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<RecyclerVi
         }
     }
 
-    public List<Object> getSingleBusLines() {
-        return singleBusLines;
-    }
-
     @Override
     public int getItemCount() {
         return singleBusLines.size();
@@ -54,7 +50,7 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<RecyclerVi
 
             busLineViewHolder.vLineNumber.setText(busLine.getNumber().toString());
             if(busLine.getName() != null) {
-                busLineViewHolder.vDestination.setText(busLine.getName());
+                busLineViewHolder.vDestination.setText(busLine.getName().trim());
             }
             busLineViewHolder.vItem.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,7 +63,7 @@ public class CampusSingleBusLinesAdapter extends RecyclerView.Adapter<RecyclerVi
         } else if (viewHolder instanceof CampusBusLineHeaderViewHolder) {
             Campus campus = (Campus) singleBusLines.get(i);
             CampusBusLineHeaderViewHolder campusVH = (CampusBusLineHeaderViewHolder) viewHolder;
-            campusVH.vName.setText(campus.getName());
+            campusVH.vName.setText(campus.getName().trim());
         }
     }
 

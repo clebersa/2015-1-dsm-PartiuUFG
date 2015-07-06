@@ -2,21 +2,29 @@ package br.ufg.inf.es.dsm.partiuufg.activity;
 
 import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.malinskiy.superrecyclerview.SuperRecyclerView;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
+import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusStopAdapter;
+import br.ufg.inf.es.dsm.partiuufg.adapter.recyclerView.BusTimeAdapter;
 import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleGCMBusStopLine;
 import br.ufg.inf.es.dsm.partiuufg.http.EasyBusService;
 import br.ufg.inf.es.dsm.partiuufg.http.RestBusServiceFactory;
 import br.ufg.inf.es.dsm.partiuufg.model.BusLine;
+import br.ufg.inf.es.dsm.partiuufg.model.BusStopWithLine;
 import br.ufg.inf.es.dsm.partiuufg.model.BusTime;
 import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
 import retrofit.Callback;
@@ -30,17 +38,18 @@ public class BusStopLineActivity extends AbstractActivity {
     private CompleteBusStop completeBusStop;
     private Integer busStopNumber;
 
+    private SuperRecyclerView recList;
+    private BusTimeAdapter adapter;
+    private ArrayList<String> busTimeTable;
+    private TextView name;
     private TextView tvShowTime;
-    private TextView lineNumber;
-    private TextView lineName;
     private TextView aboutNextMinutes;
-    private CheckedTextView checkGCMFav;
 
     private LinearLayout loadingContent;
     private ErrorView errorView;
     private LinearLayout content;
 
-    private Integer showErrorStatus = 0;
+    private Integer errorStatus = 0;
     private Boolean isFavorite = false;
     private Boolean isLoadedFromWeb;
 
@@ -72,21 +81,19 @@ public class BusStopLineActivity extends AbstractActivity {
     }
 
     public void createView() {
-        setTitle(getString(R.string.title_activity_bus_stop_line,busLine.getNumber(),
-                completeBusStop.getNumber()));
-        lineNumber.setText(busLine.getNumber().toString());
-        lineName.setText(busLine.getName());
+        if(errorStatus > 0) {
+            content.setVisibility(View.GONE);
+            errorView.setError(errorStatus);
+            errorView.setVisibility(View.VISIBLE);
+        } else {
+            setTitle(getString(R.string.title_activity_bus_stop, busStopNumber));
+            name.setText(getString(R.string.title_activity_bus_line_stops, busLineNumber,
+                    busLine.getName().trim()));
+            setTimer();
 
-        setTimer();
-        content.setVisibility(View.VISIBLE);
-        errorView.setVisibility(View.GONE);
-        afterViewCreated();
-    }
-
-    public void showErrorView() {
-        errorView.setError(showErrorStatus);
-        content.setVisibility(View.GONE);
-        errorView.setVisibility(View.VISIBLE);
+            content.setVisibility(View.VISIBLE);
+            errorView.setVisibility(View.GONE);
+        }
         afterViewCreated();
     }
 
@@ -128,11 +135,21 @@ public class BusStopLineActivity extends AbstractActivity {
             }
         });
 
+        name = (TextView) findViewById(R.id.name);
         tvShowTime = (TextView) findViewById(R.id.tvTimeCount);
-        checkGCMFav = (CheckedTextView) findViewById(R.id.gcmFavorite);
-        lineNumber = (TextView) findViewById(R.id.bus_line_number);
-        lineName = (TextView) findViewById(R.id.lineName);
         aboutNextMinutes = (TextView) findViewById(R.id.about_next_minutes);
+
+        recList = (SuperRecyclerView) findViewById(R.id.rec_list);
+        GridLayoutManager layout = new GridLayoutManager(this, 3);
+        recList.setLayoutManager(layout);
+        recList.getRecyclerView().setHasFixedSize(true);
+
+        busTimeTable = new ArrayList<>();
+        for( int i = 0; i < 6; i++ ) {
+            busTimeTable.add(i + ":00");
+        }
+        adapter = new BusTimeAdapter(busTimeTable);
+        recList.setAdapter(adapter);
 
         getIntentObjects();
         beforeViewCreated();
@@ -157,11 +174,11 @@ public class BusStopLineActivity extends AbstractActivity {
             @Override
             public void failure(RetrofitError error) {
                 if( error.getResponse() == null ) {
-                    showErrorStatus = 408;
+                    errorStatus = 408;
                 } else {
-                    showErrorStatus = error.getResponse().getStatus();
+                    errorStatus = error.getResponse().getStatus();
                 }
-                showErrorView();
+                createView();
             }
         });
     }
@@ -252,6 +269,8 @@ public class BusStopLineActivity extends AbstractActivity {
                             Toast.LENGTH_LONG);
                     toast.show();
                 }
+                break;
+            default:
                 break;
         }
         return true;

@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.fragment.NextPointBusTimeFragment;
+import br.ufg.inf.es.dsm.partiuufg.fragment.BusLineWithBusStopFragment;
 
 public class BusStopActivity extends AbstractActivity {
     @Override
@@ -17,7 +17,7 @@ public class BusStopActivity extends AbstractActivity {
 
         if(savedInstanceState == null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            NextPointBusTimeFragment fragment = new NextPointBusTimeFragment();
+            BusLineWithBusStopFragment fragment = new BusLineWithBusStopFragment();
             Bundle b = new Bundle();
             b.putInt("busStopNumber", busStopNumber);
             fragment.setArguments(b);

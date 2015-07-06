@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -43,6 +44,7 @@ public class MostVisitedPageFragment extends Fragment {
         layout.scrollToPosition(0);
         recList.setLayoutManager(layout);
         recList.getRecyclerView().setHasFixedSize(true);
+        registerForContextMenu(recList);
 
         adapter = new BusStopAdapter<>(null, null);
         recList.setAdapter(adapter);
@@ -76,5 +78,25 @@ public class MostVisitedPageFragment extends Fragment {
     public void onResume() {
         super.onResume();
         loadByDatabase();
+    }
+
+    public boolean onContextItemSelected(MenuItem item) {
+        int position = -1;
+        try {
+            position = adapter.getPosition();
+        } catch (Exception e) {
+            Log.d(TAG, e.getLocalizedMessage(), e);
+            return super.onContextItemSelected(item);
+        }
+        switch (item.getItemId()) {
+            case 1:
+                SingleBusStop busStop = adapter.getBusStops().get(position);
+                busStop.delete();
+                loadByDatabase();
+                break;
+            default:
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 }

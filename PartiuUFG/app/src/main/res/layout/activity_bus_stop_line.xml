@@ -29,50 +29,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/content">
+
         <RelativeLayout
-            android:layout_width="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/primary"
+            android:paddingTop="10dp"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp">
+            android:paddingBottom="10dp"
+            android:gravity="center">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="105"
-                android:id="@+id/bus_line_number"
-                android:layout_marginRight="5dp"
-                android:layout_alignParentBottom="false"
-                android:layout_alignParentTop="false"
-                android:layout_centerVertical="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="PC Campus \/ T. Pra\u00e7a A - Via B. Say\u00e3o"
-                android:id="@+id/lineName"
-                android:layout_toRightOf="@+id/bus_line_number"
-                android:layout_toEndOf="@+id/bus_line_number"
-                android:layout_toLeftOf="@+id/gcmFavorite"
-                android:layout_alignParentBottom="false"
-                android:layout_centerVertical="true" />
-
-            <CheckedTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checkMark="@android:drawable/btn_star"
-                android:id="@+id/gcmFavorite"
-                android:clickable="true"
-                android:checked="false"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Desconhecido"
+                android:textColor="@color/list_header_text"
+                android:textStyle="bold"
+                android:id="@+id/name"
+                android:gravity="center"
                 android:layout_alignParentRight="true"
-                android:layout_marginLeft="16dp"
-                android:layout_alignParentBottom="false"
                 android:layout_centerVertical="true"
-                android:onClick="gcmFavorite" />
-
+                android:maxLines="2"
+                android:ellipsize="marquee"/>
         </RelativeLayout>
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -84,8 +65,9 @@
             android:paddingTop="@dimen/activity_vertical_margin"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:background="@drawable/bus_timer_shape"
-            android:layout_margin="5dp"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp">
 
 
             <TextView
@@ -109,6 +91,25 @@
                 android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:text="Tabela de horários do ônibus:" />
+
+        <com.malinskiy.superrecyclerview.SuperRecyclerView
+            android:id="@+id/rec_list"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:mainLayoutId="@layout/layout_recyclerview_verticalscroll"
+            app:recyclerClipToPadding="false"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            app:recyclerPadding="0dp"
+            app:scrollbarStyle="insideOverlay" />
     </LinearLayout>
 
 </LinearLayout>
