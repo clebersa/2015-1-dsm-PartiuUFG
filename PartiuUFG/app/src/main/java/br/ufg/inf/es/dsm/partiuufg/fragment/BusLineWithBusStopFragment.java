@@ -88,7 +88,12 @@ public class BusLineWithBusStopFragment extends ProgressFragment {
         } else {
             completeBusStop = (CompleteBusStop) savedInstanceState.getSerializable("completeBusStop");
             errorStatus = savedInstanceState.getInt("errorStatus");
-            createView();
+            if(completeBusStop == null && errorStatus == 0) {
+                setContentShown(false);
+                getStopBusDataFromWeb();
+            } else {
+                createView();
+            }
         }
 
         List<BusLine> data = BusLineAdapter.getCreatedData(completeBusStop);

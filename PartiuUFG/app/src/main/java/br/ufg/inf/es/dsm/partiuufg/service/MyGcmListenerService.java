@@ -44,7 +44,8 @@ public class MyGcmListenerService extends GcmListenerService {
                 .setContentText(message)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentIntent(contentIntent)
-                .setAutoCancel(true);
+                .setAutoCancel(true)
+                .setVibrate(new long[] { 0, 1000 });
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder.setColor(getResources().getColor(android.R.color.transparent));

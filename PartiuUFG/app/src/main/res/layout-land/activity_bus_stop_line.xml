@@ -82,7 +82,6 @@
                     android:textColor="@color/bus_timer_text"
                     android:textSize="@dimen/bus_timer_no_forecast"
                     android:layout_centerInParent="true"
-                    android:textIsSelectable="true"
                     android:maxLines="1"
                     android:visibility="gone"/>
 
@@ -94,7 +93,7 @@
                     android:textColor="@color/bus_timer_text"
                     android:textSize="@dimen/bus_timer_text"
                     android:layout_centerInParent="true"
-                    android:textIsSelectable="true" />
+                    android:maxLines="1"/>
 
                 <TextView
                     android:layout_width="wrap_content"
