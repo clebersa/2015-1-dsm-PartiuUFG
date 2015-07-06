@@ -7,11 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
-import br.ufg.inf.es.dsm.partiuufg.fragment.BusStopListFragment;
+import br.ufg.inf.es.dsm.partiuufg.fragment.BusStopWithBusLineFragment;
 
 public class BusLineActivity extends AbstractActivity {
     private Integer lineNumber;
-    private BusStopListFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +20,8 @@ public class BusLineActivity extends AbstractActivity {
 
         if(savedInstanceState == null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            fragment = new BusStopListFragment();
+            BusStopWithBusLineFragment fragment = new BusStopWithBusLineFragment();
             Bundle b = new Bundle();
-            b.putInt("mode", BusStopListFragment.WEB_MODE);
-
             b.putInt("lineNumber", lineNumber);
             fragment.setArguments(b);
             ft.add(R.id.list_lines, fragment);
@@ -52,11 +49,5 @@ public class BusLineActivity extends AbstractActivity {
         super.onQueryTextSubmit(query);
         finish();
         return false;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putSerializable("busLine", lineNumber);
-        super.onSaveInstanceState(outState);
     }
 }

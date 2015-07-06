@@ -81,7 +81,7 @@ public class MonitoringBusStopLineAdapter extends RecyclerView.Adapter<Monitorin
         monBusStopLineViewHolder.vBusStopNumber.setText(ci.getPointNumber().toString());
 
         if(!ci.isLoaded()){
-            loadCompleteGCMBusStopLine(ci, i);
+            loadCompleteGCMBusStopLine(ci, i, monBusStopLineViewHolder);
             monBusStopLineViewHolder.vDataContent.setVisibility(View.INVISIBLE);
             monBusStopLineViewHolder.vLoadingContent.setVisibility(View.VISIBLE);
         } else {
@@ -109,6 +109,8 @@ public class MonitoringBusStopLineAdapter extends RecyclerView.Adapter<Monitorin
                 monBusStopLineViewHolder.vNextTime.setVisibility(View.VISIBLE);
                 if (!remainingMinutes.equals(nextTime)) {
                     monBusStopLineViewHolder.vNextTimeAproxLabel.setVisibility(View.VISIBLE);
+                } else {
+                    monBusStopLineViewHolder.vNextTimeAproxLabel.setVisibility(View.GONE);
                 }
             } else {
                 monBusStopLineViewHolder.vNoPrevision.setVisibility(View.VISIBLE);
@@ -150,7 +152,12 @@ public class MonitoringBusStopLineAdapter extends RecyclerView.Adapter<Monitorin
         return new MonBusStopLineViewHolder(itemView);
     }
 
-    public void loadCompleteGCMBusStopLine(final CompleteGCMBusStopLine ci, final int position) {
+    public void loadCompleteGCMBusStopLine(final CompleteGCMBusStopLine ci, final int position,
+                                           final MonBusStopLineViewHolder monBusStopLineViewHolder) {
+        monBusStopLineViewHolder.vLoadingContent.findViewById(R.id.load_error_message)
+                .setVisibility(View.GONE);
+        monBusStopLineViewHolder.vLoadingContent.findViewById(R.id.loading_progress_bar)
+                .setVisibility(View.VISIBLE);
         final MonitoringBusStopLineAdapter fAdapter = this;
         EasyBusService service = RestBusServiceFactory.getAdapter();
         service.getPoint(ci.getPointNumber().toString(), new Callback<CompleteBusStop>() {
@@ -164,7 +171,10 @@ public class MonitoringBusStopLineAdapter extends RecyclerView.Adapter<Monitorin
 
             @Override
             public void failure(RetrofitError error) {
-
+                monBusStopLineViewHolder.vLoadingContent.findViewById(R.id.load_error_message)
+                        .setVisibility(View.VISIBLE);
+                monBusStopLineViewHolder.vLoadingContent.findViewById(R.id.loading_progress_bar)
+                        .setVisibility(View.GONE);
             }
         });
     }

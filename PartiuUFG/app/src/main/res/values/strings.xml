@@ -7,7 +7,7 @@
     <string name="title_activity_bus_stop">Ponto %1$d</string>
     <string name="no_forecast">Sem prev.</string>
     <string name="about_next_minutes">(aprox.)</string>
-    <string name="title_activity_bus_stop_line">Linha %1$s do ponto %2$s</string>
+    <string name="title_activity_bus_stop_line">Linha %1$s no ponto %2$s</string>
     <string name="title_activity_bus_line_stops">%1$d - %2$s</string>
     <string name="item_display_next_time">%1$d min</string>
     <string name="item_before_time_to_alert">Alertar %1$d minutos antes</string>
@@ -18,6 +18,7 @@
 
     <string name="http_error_try_again">Tentar Novamente</string>
     <string name="http_error_subtitle">Um problema ocorreu durante esta requisição</string>
+    <string name="http_error_cannot_load">Não foi possível completar o carregamento</string>
 
     <string name="title_activity_campus">Campus</string>
     <string name="bus_stop_not_found">Ponto de ônibus não encontrado</string>

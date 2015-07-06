@@ -8,11 +8,11 @@ import br.ufg.inf.es.dsm.partiuufg.model.CompleteBusStop;
  * Created by bruno on 6/25/15.
  */
 public class SingleBusStop extends SugarRecord<SingleBusStop> {
-    Integer number;
-    String address;
-    String reference;
-    String lastSearchDate;
-    Long accessCount;
+    protected Integer number;
+    protected String address;
+    protected String reference;
+    protected String lastSearchDate;
+    protected Long accessCount;
 
     public SingleBusStop() {
     }

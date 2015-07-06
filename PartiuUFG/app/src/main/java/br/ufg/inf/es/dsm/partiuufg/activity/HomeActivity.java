@@ -1,32 +1,19 @@
 package br.ufg.inf.es.dsm.partiuufg.activity;
 
 import android.app.ActivityManager;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import br.ufg.inf.es.dsm.partiuufg.R;
 import br.ufg.inf.es.dsm.partiuufg.adapter.fragment.ViewPagerAdapter;
-import br.ufg.inf.es.dsm.partiuufg.dbModel.Campus;
-import br.ufg.inf.es.dsm.partiuufg.dbModel.SingleBusLine;
-import br.ufg.inf.es.dsm.partiuufg.fragment.BusStopListFragment;
-import br.ufg.inf.es.dsm.partiuufg.fragment.page.CampiPageFragment;
 import br.ufg.inf.es.dsm.partiuufg.service.GCMServer;
 import br.ufg.inf.es.dsm.partiuufg.service.RegistrationIntentService;
 import br.ufg.inf.es.dsm.partiuufg.view.SlidingTabLayout;
