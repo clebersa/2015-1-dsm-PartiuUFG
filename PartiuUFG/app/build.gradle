@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId "br.ufg.inf.es.dsm.partiuufg"
         minSdkVersion 10
-        targetSdkVersion 22
+        targetSdkVersion 20
         versionCode 1
         versionName "1.0"
     }

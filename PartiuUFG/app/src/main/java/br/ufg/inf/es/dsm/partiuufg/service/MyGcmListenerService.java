@@ -47,7 +47,7 @@ public class MyGcmListenerService extends GcmListenerService {
                 .setAutoCancel(true);
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            builder.setColor(android.R.color.transparent);
+            builder.setColor(getResources().getColor(android.R.color.transparent));
         }
 
         Notification notification = builder.build();
