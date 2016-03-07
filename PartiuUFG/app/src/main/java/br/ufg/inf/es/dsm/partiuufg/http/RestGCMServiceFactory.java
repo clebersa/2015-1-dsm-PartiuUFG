@@ -24,7 +24,6 @@ public class RestGCMServiceFactory {
                 .setRequestInterceptor(requestInterceptor)
                 .build();
 
-        GCMHttpService service = restAdapter.create(GCMHttpService.class);
-        return service;
+        return restAdapter.create(GCMHttpService.class);
     }
 }
